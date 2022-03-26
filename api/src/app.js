@@ -22,9 +22,9 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use('/', routes);
+server.use('/api', routes); // Nos devuelve en /api/* -> *=todo lo que haya adentro
 
-// Error catching endware.
+// Error catching endware. // Nos sirve para mostrar los errores que nos surjan con sequelize.-
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   const status = err.status || 500;
   const message = err.message || err;
