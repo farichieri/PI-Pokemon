@@ -17,7 +17,6 @@ router.post('/', (req, res, next)  => {
         name
     }) 
     .then((newType) => {
-        newType
         res.status(201).send(newType)
     })
     .catch (error => next(error))

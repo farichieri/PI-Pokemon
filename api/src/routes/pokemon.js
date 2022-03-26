@@ -24,16 +24,16 @@ router.post('/', async (req, res, next)  => {
     }
 })
 
-// router.post('/pokemonId/type/:typeId', (req, res, next) => {
-//     try {
-//         const { pokemonId, typeId } = req.params;
-//         const pokemon = await Pokemon.findByPk(pokemonId);
-//         await pokemon.addType(typeId);
-//         res.send(200)
-//     } catch (error) {
-//         next(error);
-//     }
-// })
+router.post('/:pokemonId/type/:typeId', async (req, res, next) => {
+    try {
+        const { pokemonId, typeId } = req.params;
+        const pokemon = await Pokemon.findByPk(pokemonId);
+        await pokemon.addType(typeId);
+        res.send(200);
+    } catch (error) {
+        next(error);
+    }
+})
 
 router.put('/', (req, res, next)  => {
     res.send('soy put /pokemon')
