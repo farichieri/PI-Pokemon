@@ -38,5 +38,9 @@ module.exports = (sequelize) => {
     //   type: DataTypes.INTEGER,
     //   allowNull: false
     // },
+    // img : {
+    //   type : DataTypes.STRING,
+    // defaultValue: 'https://cdn-icons-png.flaticon.com/512/634/634741.png' // Ver si la cambio
+    // }
   });
 };
