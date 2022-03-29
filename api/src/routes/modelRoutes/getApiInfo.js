@@ -1,5 +1,5 @@
 const axios = require('axios');
-
+// Función que me trae la información de la API:
 const getApiInfo = async () => { // se instala e importa AXIOS para poder usarla. (Si se usa fetch no es necesario)
     const apiUrl = await axios.get('https://pokeapi.co/api/v2/pokemon') // Se usa AWAIT porque uno nunca sabe cuanto va a demorar la respuesta, entonces le aviso que tienen que esperar a la respuesta antes de cargar la información a la variable apiUrl (de manera asíncrona).-
     const apiUrlRest = await axios.get(apiUrl.data.next);

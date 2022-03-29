@@ -12,11 +12,11 @@ router.get('/pokemons', async(req, res, next)  => { // FUNCIONA -> Ver por que s
     const totalPokemons = await getAllInfo();
     if (name){
         const pokemonName = totalPokemons.filter(ele=>ele.name.toLowerCase().includes(name.toLowerCase()))
-        if(pokemonName.length){
+        if (pokemonName.length) {
             return res.status(200).send(pokemonName);
         } return res.send({error: 'Pokemon not found'})
     } else {
-        try{
+        try {
             return res.status(200).send(totalPokemons);
         } catch(error){
             res.send(error)
@@ -46,9 +46,9 @@ router.post('/pokemons', async (req, res)=>{
 router.get('/pokemons/:idPokemon', async(req, res, next)  => { // FUNCIONA con id y con name /pokemons?name=pikachu
     const { idPokemon } = req.params;
     const totalPokemons = await getAllInfo();
-    if(idPokemon){
+    if (idPokemon) {
         const pokemonId = await totalPokemons.filter(pokeId => pokeId.id == idPokemon);
-        if(pokemonId.length){
+        if (pokemonId.length) {
             try{
                 return res.status(200).send(pokemonId)
             } catch(error){
