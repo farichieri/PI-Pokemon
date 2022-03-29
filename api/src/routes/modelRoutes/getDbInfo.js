@@ -5,15 +5,14 @@ const getDbInfo = async () => {
         include: {
             model: Type,
             attributes: ['name'],
-            through: {
-                attributes: [],
-            }
+            throught: { attributes: "" }
         }
     })
     const pokeJson = dbPokemons.map(pokemon => pokemon.toJSON());
+    console.log(pokeJson);
     const pokeType = pokeJson.map(pokemon=>{
-       const typeName = pokemon.type.map(type=> type.name)
-       return {...pokemon, type: typeName}
+       const typeName = pokemon.types.map(type=> type.name)
+       return {...pokemon, types: typeName} 
     })
     return pokeType;
 }

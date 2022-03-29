@@ -8,4 +8,4 @@ const getAllInfo = async()=>{
     return allPokemonsInfo;
 }
 
-module.exports = {getAllInfo}
+module.exports = {getAllInfo};

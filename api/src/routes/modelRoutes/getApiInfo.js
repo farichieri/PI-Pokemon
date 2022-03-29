@@ -19,6 +19,7 @@ const getApiInfo = async () => { // se instala e importa AXIOS para poder usarla
                 height: pokemon.data.height,
                 weigth: pokemon.data.weight,
                 img: pokemon.data.sprites.other.home.front_default,
+                types: pokemon.data.types.map( pokeTypes => [pokeTypes.type.name])
             }
         })
     )

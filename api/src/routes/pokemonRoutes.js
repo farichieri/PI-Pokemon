@@ -1,4 +1,4 @@
-const { Router, response } = require('express');
+const { Router } = require('express');
 const axios = require('axios');
 const { Pokemon, Type } = require('../db');
 const {getAllInfo} = require("./modelRoutes/getAllInfo");
@@ -25,26 +25,25 @@ router.get('/pokemons', async(req, res, next)  => { // FUNCIONA -> Ver por que s
 })
 
 router.post('/pokemons', async (req, res)=>{
-    const { img, name, type, id, hp, attack, defense, speed, weight, height, createdInDb } = req.body;
-    
-    try{
-        const newPokemon = await Pokemon.create({
-            img, name, id, hp, attack, defense, speed, weight, height, createdInDb
+    const {
+       img, name, types, hp, attack, defense, speed, weight, height } = req.body;
+    try {
+        let newPokemon = await Pokemon.create({
+            img, name, hp, attack, defense, speed, weight, height
         });
-    
-        const typeDb = await Type.findAll({
-            where: {
-                name: type
-            }
+
+        let typeDb = await Type.findAll({
+            where: { name: types }
         });
-        await newPokemon.addType(typeDb);
+
+        newPokemon.addType(typeDb);
         res.send(newPokemon);
     } catch (error){
         res.send(error);
     }
 })
 
-router.get('/pokemons/:idPokemon', async(req, res, next)  => { // FUNCIONA con id
+router.get('/pokemons/:idPokemon', async(req, res, next)  => { // FUNCIONA con id y con name /pokemons?name=pikachu
     const { idPokemon } = req.params;
     const totalPokemons = await getAllInfo();
     if(idPokemon){
@@ -56,17 +55,6 @@ router.get('/pokemons/:idPokemon', async(req, res, next)  => { // FUNCIONA con i
                 res.send(error)
             }
         }
-    }
-})
-
-router.post('/:pokemonId/type/:typeId', async (req, res, next) => {
-    try {
-        const { pokemonId, typeId } = req.params;
-        const pokemon = await Pokemon.findByPk(pokemonId);
-        await pokemon.addType(typeId);
-        res.send(200);
-    } catch (error) {
-        next(error);
     }
 })
 
