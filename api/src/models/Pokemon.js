@@ -40,8 +40,6 @@ module.exports = (sequelize) => {
     },
     img : {
       type : DataTypes.STRING,
-      // allowNull: false,
-      // defaultValue: 'https://cdn-icons-png.flaticon.com/512/634/634741.png' // Ver si la cambio
     },
   },
   {
