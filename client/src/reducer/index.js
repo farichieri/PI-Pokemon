@@ -10,6 +10,8 @@ function rootReducer (state = initialState, action) {
                 ...state, // manda todo lo que te mande la acción GET_POKEMONS
                 pokemons: action.payload
             }
+            default:
+                return state;
     }
 }
 

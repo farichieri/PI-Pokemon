@@ -1,12 +1,18 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from 'react';  
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
+import Home from './components/Home';
 
-function App() {
+function App() { // Acá se hace el ruteo // El switch envuelve a las rutas y va a ir un por una.-
   return (
     <BrowserRouter>
-      <div className="App">
-        <h1>Henry Pokemon</h1>
-      </div>
+      {/* <div className="App"> */}
+        <Routes> 
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/home' element={<Home />} />
+        </Routes>
+      {/* </div> */}
     </BrowserRouter>
   );
 }
