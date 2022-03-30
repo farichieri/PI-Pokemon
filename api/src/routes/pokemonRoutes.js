@@ -4,10 +4,7 @@ const { Pokemon, Type } = require('../db');
 const {getAllInfo} = require("./modelRoutes/getAllInfo");
 const router = Router();
 
-router.get('/pokemons', async(req, res, next)  => { // FUNCIONA -> Ver por que solo devuelve unos pocos
-    // Aca combinamos la información de la api y la info de mi base de datos en una sola request.
-    // Para obtener los personajes del link que nos dan de pokemons, vamos a usar Axios:
-    // Es una libreria que funciona con fetch.
+router.get('/pokemons', async (req, res, next)  => { // FUNCIONA -> Ver por que solo devuelve unos pocos
     // El query se pasa por URL y el body se pasa para coompletar un post con info. (ej formulario)
     const { name } = req.query;  // Funciona con name /pokemons?name=pikachu
     const totalPokemons = await getAllInfo(); // Funciona con todos los pokemons + DB
@@ -41,18 +38,12 @@ router.post('/pokemons', async (req, res) => {
     } 
 })
 
-router.get('/pokemons/:idPokemon', async(req, res, next)  => { // FUNCIONA con id 
+router.get('/pokemons/:idPokemon', async (req, res, next)  => { // FUNCIONA con id 
     const { idPokemon } = req.params;
-    const totalPokemons = await getAllInfo();
+    const totalPokemons = await getAllInfo(); // Me traigo TODO.-
     if (idPokemon) {
-        const pokemonId = await totalPokemons.filter(pokeId => pokeId.id == idPokemon);
-        if (pokemonId.length) {
-            try{
-                return res.status(200).send(pokemonId)
-            } catch(error){
-                res.send(error)
-            }
-        }
+        const pokemonId = await totalPokemons.filter(pokeId => pokeId.id == idPokemon); // Filtro al que matchea.-
+        pokemonId.length ? res.status(200).send(pokemonId) : res.status(404).send("Pokemon not found");    
     }
 })
 
