@@ -4,11 +4,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPokemons } from '../actions';
 import { Link } from 'react-router-dom'
 import Card from './Card';
+import Pagination from './Pagination';
 
 function Home() {
-    const dispatch = useDispatch() // Para usar la constante e ir dispatchando mis acciones. 
-    const allPokemons = useSelector ((state) => state.pokemons) // Esto se hace con hooks. Con useSelector traeme en esa constante, 
+    const dispatch = useDispatch(); // Para usar la constante e ir dispatchando mis acciones. 
+    const allPokemons = useSelector ((state) => state.pokemons); // Esto se hace con hooks. Con useSelector traeme en esa constante, 
                                             // todo lo que está en el estado de pokemons. Ahorra el map, state, to props
+    const [currentPage, setCurrentPage] = useState(1);  // Creamos estados locales. Uno con la página actual y otro que me setee la página actual. ponemos 1 porque arranca en la primer página.                                     
+    const [pokemonsPerPage, setPokemonsPerPage] = useState(12); // Cuántos pokemons quiero por página. (cuantas Cards)
+    const indexOfLastPokemon = currentPage * pokemonsPerPage; // 6
+    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // 0
+    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); // De más arriba.- // Slice toma una porción de un arreglo
+ 
+    const pagination = (pageNumber) => {
+        setCurrentPage(pageNumber)
+    }
+    
     // Ahora tratamos de traernos del estado los pokemons cuando el componente se monta:
     useEffect (() => {
         dispatch(getPokemons()) // Este dispatch es lo mismo que hacer el map dispatch to props
@@ -37,16 +48,23 @@ function Home() {
                 </select>
                 <select>
                     <option value='all'>All</option>
+                    <option value='originals'>Originals</option>
                     <option value='created'>Created</option>
                 </select>
+                <Pagination 
+                    pokemonsPerPage={pokemonsPerPage}
+                    allPokemons={allPokemons.length}
+                    pagination={pagination}
+                />
+                
     {
-        allPokemons && allPokemons.map((el) => {
+        currentPokemons?.map((el) => {
             return (
-                <fragment>
+                <div>
                     <Link to={'/home/' + el.id}>
-                        <Card name={el.name} img={el.img} types={el.types} />
+                        <Card name={el.name} img={el.img} types={el.types} key={el.id}/>
                     </Link>
-                </fragment>
+                </div>
             );
         })
     }
