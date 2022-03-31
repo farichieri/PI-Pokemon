@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons, filterPokemonsByTypes } from '../actions';
+import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName } from '../actions';
 import { Link } from 'react-router-dom'
 import Card from './Card';
 import Pagination from './Pagination';
@@ -15,7 +15,8 @@ function Home() {
     const indexOfLastPokemon = currentPage * pokemonsPerPage; // 6
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // 0
     const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); // De más arriba.- // Slice toma una porción de un arreglo // Me dice que pokemons vamos a renderizar dependiendo de la página.-
-    
+    const [order, setOrder] = useState('')
+
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber)
     }
@@ -35,6 +36,16 @@ function Home() {
         dispatch(filterPokemonsByTypes(e.target.value)) // e.target.value accede al valor a c/u de las opciones
     }
 
+    function handleFilterCreated(e) {
+        dispatch(filterPokemonsCreated(e.target.value)) // e.target.value accede al valor a c/u de las opciones (el payload)
+    }
+    function handleSort(e) {
+        e.preventDefault();
+        dispatch(orderByName(e.target.value));
+        setCurrentPage(1); // Seteo la página a la 1.
+        setOrder(`Ordened ${e.target.value}`) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
+    }
+
     return (
         <div>
             <Link to="/pokemons">Create Pokemon</Link>
@@ -48,12 +59,12 @@ function Home() {
                     <option value='fighting'>fighting</option>
                     <option value='poison'>poison</option>
                 </select>
-                <select>
+                <select onChange={e => handleFilterCreated(e)}>
                     <option value='all'>All</option>
-                    <option value='originals'>Originals</option>
+                    {/* <option value='originals'>Originals</option> */}
                     <option value='created'>Created</option>
                 </select>
-                <select>
+                <select onChange={e => handleSort(e)}>
                     <option value='asc'>Ascending</option>
                     <option value='desc'>Descending</option>
                 </select>
@@ -74,7 +85,7 @@ function Home() {
                         return (
                             <div>
                                 <Link to={'/home/' + el.id}>
-                                    <Card name={el.name} img={el.img} types={el.types} key={el.id}/>
+                                    <Card name={el.name} img={el.img} types={el.types}/>
                                 </Link>
                             </div>
                         );

@@ -22,9 +22,16 @@ export function filterPokemonsByTypes(payload) { // El payload será el value qu
 // Ya creada la acción, hay que dejar la menor cantidad de lógica en ella.
 // La acción es solamente despachar un tipo. Se recomienda hacerlo en reducer o Component.-
 
-export function filterCreated(payload) { // Este payload va a ser el value que fue creado.
+export function filterPokemonsCreated(payload) { // Este payload va a ser el value que fue creado.
     return {
-        type: 'FILTER_BY_CREATED',
+        type: 'FILTER_CREATED',
+        payload
+    }
+}
+
+export function orderByName(payload) {
+    return {
+        type: 'ORDER_BY_NAME',
         payload
     }
 }
