@@ -21,10 +21,10 @@ router.get('/pokemons', async (req, res, next)  => { // FUNCIONA -> Ver por que 
 })
 
 router.post('/pokemons', async (req, res) => {
-    const { img, name, types, hp, attack, defense, speed, weight, height } = req.body;
+    const { img, name, types, hp, attack, defense, speed, weight, height, createdInDb } = req.body;
     try {
         let newPokemon = await Pokemon.create({ // NO le paso types porque tengo que hacer relación aparte.
-            img, name, hp, attack, defense, speed, weight, height 
+            img, name, hp, attack, defense, speed, weight, height, createdInDb
         }); 
 
         let typeDb = await Type.findAll({ // el Type lo tengo que encontrar en el modelo Type que tiene todas las ocupaciones.-

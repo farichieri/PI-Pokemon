@@ -67,20 +67,19 @@ function Home() {
                     pagination={pagination}
                 />
                 
-                {load ? (<h1>Cargando bro</h1>) : 
-                !allPokemons.length? (<h1>No se encontro nada capo</h1>) :
-    
-        currentPokemons?.map((el) => {
-            return (
-                <div>
-                    <Link to={'/home/' + el.id}>
-                        <Card name={el.name} img={el.img} types={el.types} key={el.id}/>
-                    </Link>
-                </div>
-            );
-        })
-    
-}
+                {
+                load ? (<h1>Cargando bro</h1>) :
+                    !allPokemons.length? (<h1>No se encontro nada capo</h1>) :
+                    currentPokemons?.map((el) => {
+                        return (
+                            <div>
+                                <Link to={'/home/' + el.id}>
+                                    <Card name={el.name} img={el.img} types={el.types} key={el.id}/>
+                                </Link>
+                            </div>
+                        );
+                    })
+                }
             </div>
         </div>
     )

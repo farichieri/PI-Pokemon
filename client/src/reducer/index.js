@@ -9,7 +9,7 @@ function rootReducer (state = initialState, action) {
         case 'GET_POKEMONS':
             return { // En mi estado pokemons, que en un principio es un arreglo vacío, 
                 ...state, // manda todo lo que te mande la acción GET_POKEMONS
-                pokemons: action.payload,
+                pokemons: action.payload, // Guardo en un estado pokemons todos los pokemons
                 isLoading: false
             }
         case 'FILTER_BY_TYPES':
@@ -20,6 +20,12 @@ function rootReducer (state = initialState, action) {
                 ...state,
                 pokemons: typesFilter
             }
+        // case 'FILTER_CREATED':
+        //     const allPokemons = state.pokemons
+        //     const createdFilter = action.payload === 'created' ? allPokemons.filter(el => el.)
+        //     return {
+
+        //     }
         default:
             return state;
     }
