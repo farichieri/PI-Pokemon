@@ -12,3 +12,12 @@ export function getPokemons() {
         })
     }
 }
+// function para los filtros (ver Home)
+export function filterPokemonsByAttack(payload) { // El payload será el value que me va a llegar.
+    return {
+        type: 'FILTER_BY_STATE',
+        payload
+    }
+}
+// Ya creada la acción, hay que dejar la menor cantidad de lógica en la acción. 
+// La acción es solamente despachar un tipo. Se recomienda hacerlo en reducer o Component.-

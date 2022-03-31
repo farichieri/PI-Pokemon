@@ -10,8 +10,15 @@ function rootReducer (state = initialState, action) {
                 ...state, // manda todo lo que te mande la acción GET_POKEMONS
                 pokemons: action.payload
             }
-            default:
-                return state;
+        // case 'FILTER_BY_STATE':
+        //     const allPokemons = state.pokemons
+        //     const attackFilter = action.payload  === 'All' ? allPokemons : allPokemons.filter(el => el.status === action.payload) 
+        //     // Si mi payload es All, traeme todo y sino filtramelo por el payload que me pasen (original o created)
+        //     return {
+
+        //     }
+        default:
+            return state;
     }
 }
 

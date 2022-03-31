@@ -14,7 +14,7 @@ function Home() {
     const [pokemonsPerPage, setPokemonsPerPage] = useState(12); // Cuántos pokemons quiero por página. (cuantas Cards)
     const indexOfLastPokemon = currentPage * pokemonsPerPage; // 6
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // 0
-    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); // De más arriba.- // Slice toma una porción de un arreglo
+    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); // De más arriba.- // Slice toma una porción de un arreglo // Me dice que pokemons vamos a renderizar dependiendo de la página.-
  
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber)
@@ -38,6 +38,11 @@ function Home() {
                 Volver a cargar todos los Pokemons
             </button>
             <div>
+                {/* <select>
+                    <option value='all'>All</option>
+                    <option value='originals'>Originals</option>
+                    <option value='created'>Created</option>
+                </select>
                 <select>
                     <option value='asc'>Ascending</option>
                     <option value='desc'>Descending</option>
@@ -45,12 +50,7 @@ function Home() {
                 <select>
                     <option value='more_attack'>More attack</option>
                     <option value='less_attack'>Less attack</option>
-                </select>
-                <select>
-                    <option value='all'>All</option>
-                    <option value='originals'>Originals</option>
-                    <option value='created'>Created</option>
-                </select>
+                </select> */}
                 <Pagination 
                     pokemonsPerPage={pokemonsPerPage}
                     allPokemons={allPokemons.length}
