@@ -13,9 +13,9 @@ export function getPokemons() {
     }
 }
 // function para los filtros (ver Home)
-export function filterPokemonsByAttack(payload) { // El payload será el value que me va a llegar.
+export function filterPokemonsByTypes(payload) { // El payload será el value que me va a llegar.
     return {
-        type: 'FILTER_BY_STATE',
+        type: 'FILTER_BY_TYPES',
         payload
     }
 }

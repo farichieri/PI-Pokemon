@@ -3,7 +3,7 @@ import React from 'react'
 function Pagination({ pokemonsPerPage, allPokemons, pagination }) { // Renderizamos los numeritos del pagination
     const pageNumbers = [];
     
-    for (let i = 1; i < Math.ceil(allPokemons/pokemonsPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(allPokemons/pokemonsPerPage); i++) {
         pageNumbers.push(i)
     }
 

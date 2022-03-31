@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons } from '../actions';
+import { getPokemons, filterPokemonsByTypes } from '../actions';
 import { Link } from 'react-router-dom'
 import Card from './Card';
 import Pagination from './Pagination';
@@ -15,11 +15,12 @@ function Home() {
     const indexOfLastPokemon = currentPage * pokemonsPerPage; // 6
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // 0
     const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); // De más arriba.- // Slice toma una porción de un arreglo // Me dice que pokemons vamos a renderizar dependiendo de la página.-
- 
+    
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber)
     }
     
+    const load = useSelector((state) => state.isLoading);
     // Ahora tratamos de traernos del estado los pokemons cuando el componente se monta:
     useEffect (() => {
         dispatch(getPokemons()) // Este dispatch es lo mismo que hacer el map dispatch to props
@@ -30,6 +31,10 @@ function Home() {
         dispatch(getPokemons()) // Resetea los pokemons
     }
 
+    function handleFilterTypes(e) {
+        dispatch(filterPokemonsByTypes(e.target.value)) // e.target.value accede al valor a c/u de las opciones
+    }
+
     return (
         <div>
             <Link to="/pokemons">Create Pokemon</Link>
@@ -38,7 +43,12 @@ function Home() {
                 Volver a cargar todos los Pokemons
             </button>
             <div>
-                {/* <select>
+                <select onChange={e => handleFilterTypes(e)}>
+                    <option value='all'>All</option>
+                    <option value='fighting'>fighting</option>
+                    <option value='poison'>poison</option>
+                </select>
+                <select>
                     <option value='all'>All</option>
                     <option value='originals'>Originals</option>
                     <option value='created'>Created</option>
@@ -50,14 +60,16 @@ function Home() {
                 <select>
                     <option value='more_attack'>More attack</option>
                     <option value='less_attack'>Less attack</option>
-                </select> */}
+                </select>
                 <Pagination 
                     pokemonsPerPage={pokemonsPerPage}
                     allPokemons={allPokemons.length}
                     pagination={pagination}
                 />
                 
-    {
+                {load ? (<h1>Cargando bro</h1>) : 
+                !allPokemons.length? (<h1>No se encontro nada capo</h1>) :
+    
         currentPokemons?.map((el) => {
             return (
                 <div>
@@ -67,7 +79,8 @@ function Home() {
                 </div>
             );
         })
-    }
+    
+}
             </div>
         </div>
     )
