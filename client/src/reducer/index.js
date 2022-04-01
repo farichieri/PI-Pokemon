@@ -1,6 +1,8 @@
 // Genero estado incial.
 const initialState = {
-    pokemons : [], // Estado donde guarde los Pokemons 
+    pokemons : [], // Estado donde guarde los Pokemons
+    allPokemons: [], 
+    types: [],
     isLoading : true
 }
 
@@ -10,6 +12,7 @@ function rootReducer (state = initialState, action) {
             return { // En mi estado pokemons, que en un principio es un arreglo vacío, 
                 ...state, // manda todo lo que te mande la acción GET_POKEMONS
                 pokemons: action.payload, // Guardo en un estado pokemons todos los pokemons
+                allPokemons: action.payload,
                 isLoading: false
             }
         // case 'FILTER_BY_TYPES':
@@ -21,12 +24,12 @@ function rootReducer (state = initialState, action) {
         //         pokemons: typesFilter
         //     }
         case 'FILTER_CREATED':
-            const allPokemons2 = state.pokemons;
-            const createdFilter = action.payload === 'created' ? allPokemons2.filter(el => el.createdInDb) : allPokemons2.filter( el => !el.createdInDb)
+            const allPokemons = state.allPokemons;
+            const createdFilter = action.payload === 'created' ? allPokemons.filter(el => el.createdInDb) : allPokemons.filter( el => !el.createdInDb)
             console.log(state)
             return {
                 ...state,
-                pokemons: action.payload === 'all' ? allPokemons2 : createdFilter
+                pokemons: action.payload === 'all' ? allPokemons : createdFilter
             }
         case 'ORDER_BY_NAME':
             let sortedArr = action.payload === 'asc' 
@@ -63,6 +66,14 @@ function rootReducer (state = initialState, action) {
                 ...state,
                 pokemons: action.payload // pokemons = arreglo que estoy renderizando.
             }
+            case 'GET_TYPES':
+                return {
+                    ...state,
+                }
+            case 'POST_POKEMON':
+                return {
+                    ...state,
+                }
         default:
             return state;
     }

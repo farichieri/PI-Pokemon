@@ -57,3 +57,25 @@ export function getNamePokemons(name) { // A este payload le llamamos name. (Es 
         }
     }
 }
+
+export function getTypes() { // A este payload le llamamos name. (Es lo mismo)
+    return async function(dispatch) {
+        try {
+            var json = await axios.get("http://localhost:3001/types");
+            return dispatch({
+                type: 'GET_TYPES',
+                payload: json.data
+            })
+        } catch(error) {
+            console.log(error);
+        }
+    }
+}
+
+export function postPokemon (payload) {
+    return async function(dispatch) {
+        const response = await axios.post("http://localhost:3001/pokemons", payload); // En esta ruta le hago un post del payload (el payload me llega del front) y se pone después de la ,
+        console.log(response);
+        return response;
+    }
+}
