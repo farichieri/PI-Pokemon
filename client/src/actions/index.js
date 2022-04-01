@@ -58,7 +58,7 @@ export function getNamePokemons(name) { // A este payload le llamamos name. (Es 
     }
 }
 
-export function getTypes() { // A este payload le llamamos name. (Es lo mismo)
+export function getTypes() { 
     return async function(dispatch) {
         try {
             var json = await axios.get("http://localhost:3001/types");

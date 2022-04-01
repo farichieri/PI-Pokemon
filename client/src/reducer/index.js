@@ -17,7 +17,7 @@ function rootReducer (state = initialState, action) {
             }
         case 'FILTER_BY_TYPES':
             const allPokemons1 = state.allPokemons
-            const typesFilter = action.payload  === 'All' ? allPokemons1 : allPokemons1.filter(el => el.types === action.payload) 
+            const typesFilter = action.payload  === 'All' ? allPokemons1 : allPokemons1.filter(el => el.types.name === action.payload) 
             // Si mi payload es All, traeme todo y sino filtramelo por el payload que me pasen (original o created)
             return {
                 ...state,

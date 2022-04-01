@@ -37,6 +37,7 @@ function PokemonCreate() {
     // }
 
     function handleSelect(e) {
+        console.log(e.target.value)
         setInput({
             ...input,
             types: [...input.types, e.target.value]
@@ -45,7 +46,6 @@ function PokemonCreate() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(input);
         dispatch(postPokemon(input))
         alert('Pokemon created broodiii!!')
         setInput({
@@ -64,7 +64,7 @@ function PokemonCreate() {
 
     useEffect(() => {
         dispatch(getTypes())
-    }, []);
+    }, [dispatch]);
 
   return (
       <div>
@@ -106,10 +106,10 @@ function PokemonCreate() {
               <div>
                   <select onChange={(e) => handleSelect(e)}>
                       {types.map((t) => (
-                          <option value={t.name}>{t.name}</option>
+                          <option key={t.name} value={t.name}>{t.name}</option>
                        ))}
                   </select>
-                  <ul><il>{input.types.map(el => el + " ,")}</il></ul> 
+                  <ul><li>{input.types.map(el => el + " ,")}</li></ul> 
 
                   <button type='submit'>Create Pokemon</button>
               </div>
