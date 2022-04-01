@@ -1,10 +1,15 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName, orderByAttack } from '../actions';
 import { Link } from 'react-router-dom'
+// importo los hooks que voy a usar de react:
+import { useState, useEffect } from 'react';
+// importo los hooks de react-redux (hay que instalar antes con npm i react-redux)
+import { useDispatch, useSelector } from 'react-redux';
+// importo las actions que me interesa usar en este componente
+import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName, orderByAttack } from '../actions';
+// Importo lso componentes que voy a usar
 import Card from './Card';
 import Pagination from './Pagination';
+import SearchBar from './SearchBar';
 
 
 // Siempre que voy a trabajar con algo que funcione solo en este componente (HOME), lo establezco acá. Para no perder tiempo haciendo toda esta lógica en un estado global, genero estado local en este componente. 
@@ -85,6 +90,8 @@ function Home() {
                     allPokemons={allPokemons.length}
                     pagination={pagination}
                 />
+                
+                <SearchBar />
                 
                 {
                 load ? (<h1>Cargando bro</h1>) :

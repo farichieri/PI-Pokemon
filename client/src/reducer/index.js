@@ -1,6 +1,6 @@
 // Genero estado incial.
 const initialState = {
-    pokemons : [], // Estado donde guarde los Pokemons
+    pokemons : [], // Estado donde guarde los Pokemons 
     isLoading : true
 }
 
@@ -57,6 +57,11 @@ function rootReducer (state = initialState, action) {
             return {
                 ...state,
                 pokemons: sortedAttack
+            }
+        case 'GET_NAME_POKEMONS':
+            return {
+                ...state,
+                pokemons: action.payload // pokemons = arreglo que estoy renderizando.
             }
         default:
             return state;
