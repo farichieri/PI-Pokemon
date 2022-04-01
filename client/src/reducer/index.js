@@ -17,8 +17,9 @@ function rootReducer (state = initialState, action) {
             }
         case 'FILTER_BY_TYPES':
             const allPokemons1 = state.allPokemons
-            const typesFilter = action.payload  === 'All' ? allPokemons1 : allPokemons1.filter(el => el.types.name === action.payload) 
-            // Si mi payload es All, traeme todo y sino filtramelo por el payload que me pasen (original o created)
+            const typesFilter = action.payload  === 'all' ? allPokemons1 : allPokemons1.filter(pok => pok.types[0][0] === action.payload || pok.types[0][1] === action.payload)
+            console.log(allPokemons1)
+            console.log(action.payload)
             return {
                 ...state,
                 pokemons: typesFilter
@@ -26,6 +27,7 @@ function rootReducer (state = initialState, action) {
         case 'FILTER_CREATED':
             const allPokemons = state.allPokemons;
             const createdFilter = action.payload === 'created' ? allPokemons.filter(el => el.createdInDb) : allPokemons.filter( el => !el.createdInDb)
+            // Si mi payload es All, traeme todo y sino filtramelo por el payload que me pasen (original o created)
             return {
                 ...state,
                 pokemons: action.payload === 'all' ? allPokemons : createdFilter

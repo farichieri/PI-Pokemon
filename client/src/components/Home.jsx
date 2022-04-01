@@ -76,13 +76,13 @@ function Home() {
             </button>
             <div>
                 <select onChange={e => handleFilterTypes(e)}>
-                    <option value='all'>Types (Falta)</option>
+                    <option value='all'>All Types</option>
                     {allPokemonsTypes?.map((t) => (
                           <option key={t.name} value={t.name}>{t.name}</option>
                        ))}
                 </select>
                 <select onChange={e => handleFilterCreated(e)}>
-                    <option value='all'>All</option>
+                    <option value='all'>All Pokemons</option>
                     <option value='created'>Created</option>
                 </select>
                 <select onChange={e => handleSort(e)}>
