@@ -12,19 +12,21 @@ function rootReducer (state = initialState, action) {
                 pokemons: action.payload, // Guardo en un estado pokemons todos los pokemons
                 isLoading: false
             }
-        case 'FILTER_BY_TYPES':
-            const allPokemons = state.allPokemons
-            const typesFilter = action.payload  === 'All' ? allPokemons : allPokemons.filter(el => el.types === action.payload) 
-            // Si mi payload es All, traeme todo y sino filtramelo por el payload que me pasen (original o created)
-            return {
-                ...state,
-                pokemons: typesFilter
-            }
+        // case 'FILTER_BY_TYPES':
+        //     const allPokemons = state.allPokemons
+        //     const typesFilter = action.payload  === 'All' ? allPokemons : allPokemons.filter(el => el.types === action.payload) 
+        //     // Si mi payload es All, traeme todo y sino filtramelo por el payload que me pasen (original o created)
+        //     return {
+        //         ...state,
+        //         pokemons: typesFilter
+        //     }
         case 'FILTER_CREATED':
-            const createdFilter = action.payload === 'created' ? state.allPokemons.filter(el => el.createdInDb) : state.allPokemons.filter( el => !el.createdInDb)
+            const allPokemons2 = state.pokemons;
+            const createdFilter = action.payload === 'created' ? allPokemons2.filter(el => el.createdInDb) : allPokemons2.filter( el => !el.createdInDb)
+            console.log(state)
             return {
                 ...state,
-                pokemons: action.payload === 'all' ? state.allPokemons : createdFilter
+                pokemons: action.payload === 'all' ? allPokemons2 : createdFilter
             }
         case 'ORDER_BY_NAME':
             let sortedArr = action.payload === 'asc' 
@@ -40,6 +42,21 @@ function rootReducer (state = initialState, action) {
             return {
                 ...state,
                 pokemons: sortedArr
+            }
+        case 'ORDER_BY_ATTACK':
+            let sortedAttack = action.payload === 'less_attack'
+            ? state.pokemons.sort(function(a, b) {
+                if (a.attack > b.attack) return 1;
+                if (b.attack > a.attack) return -1;
+                return 0;
+            }) : state.pokemons.sort(function(a, b) { // 'less_attack'
+                if (a.attack > b.attack) return -1;
+                if (b.attack > a.attack) return 1;
+                return 0;
+            })
+            return {
+                ...state,
+                pokemons: sortedAttack
             }
         default:
             return state;

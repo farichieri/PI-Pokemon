@@ -35,3 +35,10 @@ export function orderByName(payload) {
         payload
     }
 }
+
+export function orderByAttack(payload) {
+    return {
+        type: 'ORDER_BY_ATTACK',
+        payload
+    }
+}

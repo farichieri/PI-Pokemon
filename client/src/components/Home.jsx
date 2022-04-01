@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName } from '../actions';
+import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName, orderByAttack } from '../actions';
 import { Link } from 'react-router-dom'
 import Card from './Card';
 import Pagination from './Pagination';
 
+
+// Siempre que voy a trabajar con algo que funcione solo en este componente (HOME), lo establezco acá. Para no perder tiempo haciendo toda esta lógica en un estado global, genero estado local en este componente. 
 function Home() {
     const dispatch = useDispatch(); // Para usar la constante e ir dispatchando mis acciones. 
     const allPokemons = useSelector ((state) => state.pokemons); // Esto se hace con hooks. Con useSelector traeme en esa constante, 
@@ -38,12 +40,21 @@ function Home() {
 
     function handleFilterCreated(e) {
         dispatch(filterPokemonsCreated(e.target.value)) // e.target.value accede al valor a c/u de las opciones (el payload)
+        e.preventDefault()
     }
+    
     function handleSort(e) {
         e.preventDefault();
         dispatch(orderByName(e.target.value));
         setCurrentPage(1); // Seteo la página a la 1.
-        setOrder(`Ordened ${e.target.value}`) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
+        setOrder(`Ordered ${e.target.value}`) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
+    }
+
+    function handleAttack(e) {
+        e.preventDefault();
+        dispatch(orderByAttack(e.target.value));
+        setCurrentPage(1); // Seteo la página a la 1.
+        setOrder(`Ordered ${e.target.value}`) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
     }
 
     return (
@@ -55,24 +66,21 @@ function Home() {
             </button>
             <div>
                 <select onChange={e => handleFilterTypes(e)}>
-                    <option value='all'>All</option>
-                    <option value='fighting'>fighting</option>
-                    <option value='poison'>poison</option>
+                    <option value='all'>Types (Falta)</option>
                 </select>
                 <select onChange={e => handleFilterCreated(e)}>
                     <option value='all'>All</option>
-                    {/* <option value='originals'>Originals</option> */}
                     <option value='created'>Created</option>
                 </select>
                 <select onChange={e => handleSort(e)}>
-                    <option value='asc'>Ascending</option>
-                    <option value='desc'>Descending</option>
+                    <option value='asc'>A - Z</option>
+                    <option value='desc'>Z - A</option>
                 </select>
-                <select>
-                    <option value='more_attack'>More attack</option>
-                    <option value='less_attack'>Less attack</option>
+                <select onChange={e => handleAttack(e)}>
+                    <option value='more_attack'>+ Attack </option>
+                    <option value='less_attack'>- Attack </option>
                 </select>
-                <Pagination 
+                <Pagination
                     pokemonsPerPage={pokemonsPerPage}
                     allPokemons={allPokemons.length}
                     pagination={pagination}
@@ -85,7 +93,7 @@ function Home() {
                         return (
                             <div>
                                 <Link to={'/home/' + el.id}>
-                                    <Card name={el.name} img={el.img} types={el.types}/>
+                                    <Card key={el.id} name={el.name} img={el.img} types={el.types}/>
                                 </Link>
                             </div>
                         );
