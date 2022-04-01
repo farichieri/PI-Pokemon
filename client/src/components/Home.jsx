@@ -72,6 +72,9 @@ function Home() {
             <div>
                 <select onChange={e => handleFilterTypes(e)}>
                     <option value='all'>Types (Falta)</option>
+                    {/* {allPokemons.types.map((t) => (
+                          <option value={t.name}>{t.name}</option>
+                       ))} */}
                 </select>
                 <select onChange={e => handleFilterCreated(e)}>
                     <option value='all'>All</option>

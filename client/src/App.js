@@ -11,7 +11,7 @@ function App() { // Acá se hace el ruteo //
         <Routes> 
           <Route path='/' element={<LandingPage />} />
           <Route path='/home' element={<Home />} />
-          <Route path='/pokemon' element={<PokemonCreate />} />
+          <Route path='/pokemons' element={<PokemonCreate />} />
         </Routes>
     </BrowserRouter>
   );
