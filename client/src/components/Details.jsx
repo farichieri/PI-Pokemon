@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDetail } from '../actions';
 import { useEffect } from 'react';
 
-function Details(props) {
-    console.log(props);
+function Details() {
     const dispatch = useDispatch();
+
+    const {id} = useParams();
     useEffect(() => {
-        dispatch(getDetail(props.match.params.id)) // props.match.params.id es para ingresar al id de ese detail.
+        dispatch(getDetail(id)) // props.match.params.id es para ingresar al id de ese detail.
     }, [dispatch])
     const myPokemon = useSelector((state) => state.detail);
-
   return (
     <div>
         {
@@ -25,7 +25,7 @@ function Details(props) {
                 <h2>Speed: {myPokemon[0].speed}</h2>
                 <h2>Height: {myPokemon[0].height}</h2>
                 <h2>Weight: {myPokemon[0].weight}</h2>
-                <h2>Types: {myPokemon[0].types[0][0]} and {myPokemon[0].types[0][1]}</h2>
+                <h2>Types: {myPokemon[0].types[0] + " " + myPokemon[0].types[1]}</h2>
             </div>
             : <p>Loading...</p>
         }
