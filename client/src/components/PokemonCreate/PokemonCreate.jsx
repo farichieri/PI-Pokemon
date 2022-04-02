@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getTypes, postPokemon } from '../actions';
+import { getTypes, postPokemon } from '../../actions';
 import { useDispatch, useSelector} from 'react-redux';
 
 function validate(input) { // input es mi estado local.

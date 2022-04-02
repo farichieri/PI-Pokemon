@@ -5,11 +5,11 @@ import { useState, useEffect } from 'react';
 // importo los hooks de react-redux (hay que instalar antes con npm i react-redux)
 import { useDispatch, useSelector } from 'react-redux';
 // importo las actions que me interesa usar en este componente
-import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName, orderByAttack, getTypes } from '../actions';
+import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName, orderByAttack, getTypes } from '../../actions';
 // Importo lso componentes que voy a usar
-import Card from './Card';
-import Pagination from './Pagination';
-import SearchBar from './SearchBar';
+import Card from '../Card/Card'
+import Pagination from '../Pagination/Pagination';
+import SearchBar from '../SearchBar/SearchBar';
 
 
 // Siempre que voy a trabajar con algo que funcione solo en este componente (HOME), lo establezco acá. Para no perder tiempo haciendo toda esta lógica en un estado global, genero estado local en este componente. 
