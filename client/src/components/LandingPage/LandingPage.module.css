@@ -5,35 +5,50 @@ body {
     background-attachment: fixed;
     background-position: center;
     border-style: none;
+
 }
+
 
 .welcome {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 75%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
 
 .enter {
-    color: red;
-    background-color: rgba(0, 0, 0, 0.326);
-    padding: 10px;
-    border-radius: 10px;
-    transition: .3s;
+    color: transparent;
+    background-color: white;
+    padding: 16px;
+    border-radius: 50%;
+    transition: .5s;
     border: none;
+    position: absolute;
+    display: flex;
+    top: 53%;
+    left: 29%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: .7rem;
 }
 
 .enter:hover {
-    opacity: .5;
+    background-color: aqua;
+    padding: 20px;
 }
 
 .image {
+    background: url("./Pokemon-Pokeball-PNG-Pic.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     position: relative;
     display: flex;
-    width: 250px;
-    height: 250px;
-    background-image: url("./pokeball-transparent-image-vector-clipart-168604.png");
-    background-size: contain;
+    width: 300px;
+    height: 300px; 
+    opacity: .8;
+    filter: contrast(200%);
 }
 
