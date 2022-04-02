@@ -18,6 +18,7 @@ function Details() {
             myPokemon.length > 0 ? // Osea, ¿Tiene algo?
             <div>
                 <h1>I'm {myPokemon[0].name}</h1>
+                <h2>ID: {myPokemon[0].id}</h2>
                 <img src={myPokemon[0].img} alt="" width="500px" height="500px" />
                 <h2>Hp: {myPokemon[0].hp}</h2>
                 <h2>Attack: {myPokemon[0].attack}</h2>
