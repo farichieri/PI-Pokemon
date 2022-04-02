@@ -10,6 +10,7 @@ import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName,
 import Card from '../Card/Card'
 import Pagination from '../Pagination/Pagination';
 import SearchBar from '../SearchBar/SearchBar';
+import styles from './Home.module.css'
 
 
 // Siempre que voy a trabajar con algo que funcione solo en este componente (HOME), lo establezco acá. Para no perder tiempo haciendo toda esta lógica en un estado global, genero estado local en este componente. 
@@ -100,20 +101,22 @@ function Home() {
                 />
                 
                 <SearchBar />
-                
-                {
-                load ? (<h1>Cargando bro</h1>) :
-                    !allPokemons.length? (<h1>No se encontro nada capo</h1>) :
-                    currentPokemons?.map((el) => {
-                        return (
-                            <div>
-                                <Link to={'/home/' + el.id}>
-                                    <Card key={el.id} name={el.name} img={el.img} types={el.types}/>
-                                </Link>
-                            </div>
-                        );
-                    })
-                }
+                <div className={styles.cardsContainer}>
+                    {
+                    load ? (<h1>Cargando bro</h1>) :
+                        !allPokemons.length? (<h1>No se encontro nada capo</h1>) :
+                        currentPokemons?.map((el) => {
+                            return (
+                                <div>
+                                    <Link to={'/home/' + el.id}>
+                                        <Card key={el.id} name={el.name} img={el.img} types={el.types} />
+                                    </Link>
+                                </div>
+                            );
+                        })
+                    }
+                </div>
+
             </div>
         </div>
     )

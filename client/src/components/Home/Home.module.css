@@ -1,1 +1,10 @@
-/* className={style.miclase} */
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
