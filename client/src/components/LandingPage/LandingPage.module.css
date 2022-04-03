@@ -5,7 +5,6 @@ body {
     background-attachment: fixed;
     background-position: center;
     border-style: none;
-
 }
 
 
@@ -19,23 +18,40 @@ body {
 
 .enter {
     color: transparent;
-    background-color: white;
-    padding: 16px;
-    border-radius: 50%;
-    transition: .5s;
+    padding: 20px;
+    transition: 1s;
     border: none;
     position: absolute;
     display: flex;
-    top: 53%;
-    left: 29%;
+    top: 52.5%;
+    left: 29.5%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    font-size: .7rem;
+    font-size: 1rem;
+    border-radius: 100%;
+    box-shadow: 7px 0px 5px 10px aqua;
+    filter: blur(30px) brightness(500%);
+    animation: mymove 1s ease infinite;
+}
+
+@keyframes mymove {
+    from {
+        transform: translate(-50%, -50%) scale(.5)
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(.75);
+    }
+    
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 .enter:hover {
     background-color: aqua;
-    padding: 20px;
+    cursor: pointer;
+    animation: none;
 }
 
 .image {
@@ -48,7 +64,7 @@ body {
     display: flex;
     width: 300px;
     height: 300px; 
-    opacity: .8;
     filter: contrast(200%);
+    
 }
 

@@ -8,7 +8,7 @@ export default function LandingPage() {
             <div className={styles.welcome}>
                 <div className={styles.image} />
                 <Link to='/home'> 
-                    <button className={styles.enter}>X</button>
+                    <button className={styles.enter}>.. .</button>
                 </Link>
             </div>
         </div>
