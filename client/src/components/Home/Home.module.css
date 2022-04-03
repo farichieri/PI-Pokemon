@@ -1,7 +1,7 @@
 .home {
     margin: 0;
     padding: 0;
-    background: black;
+    background: url(./4508862.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -12,4 +12,19 @@
 .cardsContainer {
     display: flex;
     flex-wrap: wrap;
+}
+
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+.light-mode {
+  background-color: white;
+  color: black;
 }

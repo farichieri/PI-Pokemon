@@ -68,8 +68,26 @@ function Home() {
         setOrder(`Ordered ${e.target.value}`) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
     }
 
+
+    function darkMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "dark-mode";
+        content.innerText = "Dark Mode is ON";
+      }
+      function lightMode() {
+        var element = document.body;
+        var content = document.getElementById("DarkModetext");
+        element.className = "light-mode";
+        content.innerText = "Dark Mode is OFF";
+      }
+
     return (
         <div className={styles.home}>
+                <h3 id="DarkModetext">Dark Mode is OFF</h3>
+                <button onClick={darkMode}>Darkmode</button>
+                <button onClick={lightMode}>LightMode</button>
+
             <Link to="/pokemons">Create Pokemon</Link>
             <h1>Dale dale Pokemon!</h1>
             <button onClick={e => {handleClick(e)}}>

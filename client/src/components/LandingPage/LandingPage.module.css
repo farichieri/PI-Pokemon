@@ -1,5 +1,5 @@
 body {
-    background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7c4954bf-7a87-490e-b188-f8a71f05f703/d9x9e44-4d589326-8d58-47ea-a6c2-4e2abe827b42.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdjNDk1NGJmLTdhODctNDkwZS1iMTg4LWY4YTcxZjA1ZjcwM1wvZDl4OWU0NC00ZDU4OTMyNi04ZDU4LTQ3ZWEtYTZjMi00ZTJhYmU4MjdiNDIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3KCJPUI2ATfwLEXYjFOyIxjRr0x2Y8DFEuIpR6CksPA");
+    background: url(./charmanderGif.gif);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -7,10 +7,9 @@ body {
     border-style: none;
 }
 
-
 .welcome {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 75%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -18,7 +17,7 @@ body {
 
 .enter {
     color: transparent;
-    padding: 20px;
+    padding: 15px;
     transition: 1s;
     border: none;
     position: absolute;
@@ -29,14 +28,15 @@ body {
     transform: translate(-50%, -50%);
     font-size: 1rem;
     border-radius: 100%;
-    box-shadow: 7px 0px 5px 10px aqua;
-    filter: blur(30px) brightness(500%);
+    box-shadow: 0px 0px 15px 5px #00ffff;
+    filter: blur(20px) brightness(200%);
     animation: mymove 1s ease infinite;
+
 }
 
 @keyframes mymove {
     from {
-        transform: translate(-50%, -50%) scale(.5)
+        transform: translate(-50%, -50%) scale(1)
     }
 
     to {
@@ -44,27 +44,58 @@ body {
     }
     
     to {
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(.5);
     }
 }
 
 .enter:hover {
-    background-color: aqua;
+    background-color: #00ffff;
+    filter: blur(15px);
+    box-shadow: 0px 3px 25px 20px #00ffff;
     cursor: pointer;
     animation: none;
+
 }
 
+h1 {
+    font-size: 9px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    top: 52.5%;
+    left: 29%;
+    z-index: 0;
+    font-family: 'Rubik Glitch', cursive;;
+    font-weight: 200;
+}
+
+
 .image {
-    background: url("./Pokemon-Pokeball-PNG-Pic.png");
+    background: url(./pokeBall.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     position: relative;
     display: flex;
-    width: 300px;
-    height: 300px; 
-    filter: contrast(200%);
-    
+    width: 250px;
+    height: 250px; 
+    filter: contrast(125%);
+    opacity: 0.8;
 }
 
+@media only screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-attachment: fixed;
+
+    }
+
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+}
