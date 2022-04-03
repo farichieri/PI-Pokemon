@@ -33,7 +33,6 @@ router.post('/pokemons', async (req, res) => {
         newPokemon.addType(typeDb); // addType es un método de Sequelize que me trae de la tabla Type el typeDb. 
                                     // A el nuevo Pokemon, agregale el type que le pase por body.
         res.send("Pokemon created successfully!");
-        console.log(typeDb)
     } catch (error){
         res.send(error);
     } 

@@ -1,26 +1,31 @@
-/* body {
-  padding: 0;
-  background-color: white;
-  color: black;
+body {
   font-size: 25px;
   height: 100%;
-  background: url(./4508862.jpg)
-} */
+  margin: 0;
+  text-transform: none;
+  text-decoration: inherit;
+  color: white;
+}
 
 .home {
     margin: 0;
     padding: 0;
-    background: url(./ash.jpg);
+    background: url(./ash.jpg) black;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    min-height: 100vw;
+    min-height: 100vh;
+    min-width: 100vh;
   }
 
 .cardsContainer {
-    display: flex;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  position: relative;
 }
 
 .createAndSearch {

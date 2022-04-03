@@ -11,7 +11,6 @@ const getDbInfo = async () => {
     const pokeJson = dbPokemons.map(pokemon => pokemon.toJSON());
     const pokeType = pokeJson.map(pokemon=>{
        const typeName = pokemon.types.map(type=> [type.name])
-       console.log(typeName)
        return {...pokemon, types: typeName} 
     })
     return pokeType;

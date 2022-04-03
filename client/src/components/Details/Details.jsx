@@ -25,8 +25,8 @@ function Details() {
                 <h2>Defense: {myPokemon[0].defense}</h2>
                 <h2>Speed: {myPokemon[0].speed}</h2>
                 <h2>Height: {myPokemon[0].height}</h2>
-                <h2>Weight: {myPokemon[0].weight}</h2>
-                <h2>Types: {myPokemon[0].types[0] + " " + myPokemon[0].types[1]}</h2>
+                <h2>Weight: {myPokemon[0].weigth}</h2>
+                <h2>Types: {myPokemon[0].types[0] + " " + (myPokemon[0].types[1] ? myPokemon[0].types[1] : " ")}</h2>
             </div>
             : <p>Loading...</p>
         }
