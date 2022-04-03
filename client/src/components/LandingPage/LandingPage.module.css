@@ -17,7 +17,7 @@ body {
 
 .enter {
     color: transparent;
-    padding: 15px;
+    padding: 11px;
     transition: 1s;
     border: none;
     position: absolute;
@@ -28,8 +28,8 @@ body {
     transform: translate(-50%, -50%);
     font-size: 1rem;
     border-radius: 100%;
-    box-shadow: 0px 0px 15px 5px #00ffff;
-    filter: blur(20px) brightness(200%);
+    box-shadow: 0px 0px 0px 15px #00ffff;
+    filter: blur(20px) brightness(200%) ;
     animation: mymove 1s ease infinite;
 
 }
@@ -59,7 +59,7 @@ body {
 
 h1 {
     font-size: 9px;
-    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.62);
     position: absolute;
     display: flex;
     z-index: 1;

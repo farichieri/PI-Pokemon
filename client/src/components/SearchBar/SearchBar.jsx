@@ -21,7 +21,7 @@ function SearchBar() {
   return (
     <div>
         <input type='text' placeholder='Search...' onChange={(e) => handleInputChange(e)}/>
-        <button type='submit' onClick={(e) => handleSubmit(e)}>Search</button>
+        <button type='submit' onClick={(e) => handleSubmit(e)}>Search Pokemon</button>
     </div>
   )
 }
