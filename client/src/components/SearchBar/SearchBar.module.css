@@ -50,3 +50,13 @@
   .searchBarContainer button:focus {
     outline: 0;
   }
+
+  @media only screen and (max-width: 700px) {
+    .searchBarContainer input {
+      width: 100px;
+    }
+
+    .searchBarContainer button {
+      width: 25px;
+    }
+  }

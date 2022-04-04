@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDetail } from '../../actions';
 import { useEffect } from 'react';
+import styles from './Details.module.css'
 
 function Details() {
     const dispatch = useDispatch();
@@ -13,12 +14,12 @@ function Details() {
     }, [dispatch])
     const myPokemon = useSelector((state) => state.detail);
   return (
-    <div>
+    <div className={styles.detailsContainer}>
         {
             myPokemon.length > 0 ? // Osea, ¿Tiene algo?
-            <div>
-                <h1>I'm {myPokemon[0].name}</h1>
+            <div className={styles.details}>
                 <h2>ID: {myPokemon[0].id}</h2>
+                <h1>Hi! I'm {myPokemon[0].name}</h1>
                 <img src={myPokemon[0].img} alt="" width="500px" height="500px" />
                 <h2>Hp: {myPokemon[0].hp}</h2>
                 <h2>Attack: {myPokemon[0].attack}</h2>
