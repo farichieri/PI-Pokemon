@@ -2,12 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rubik+Glitch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,500;0,600;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* @import url("//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon"); */
+@font-face {font-family: "Pokemon"; src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot"); src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff") format("woff"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon") format("svg"); }
 
 html {
   /* font-family: 'Orbitron', sans-serif; */
   /* font-family: 'Rubik Glitch'; */
   /* font-family: 'Exo', sans-serif; */
   font-family: 'Press Start 2P', cursive;
+  /* font-family: "Pokemon"; */
   scroll-behavior: smooth;
 }
 
@@ -29,7 +32,7 @@ html {
 .pagination .number {
   margin: 0 10px 0 10px;
   text-align: center;
-  height: auto;
+  height: 40px;
   width: 20px;
   padding: 5px;
   border: 1px solid black;

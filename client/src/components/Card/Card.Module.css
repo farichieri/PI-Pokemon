@@ -10,7 +10,6 @@
     background-color: rgba(0, 0, 0, 0.606);
     opacity: 1;
     transition: .3s;
-    font-size: 15px;
    }
 
    .card::before {
@@ -28,5 +27,27 @@
     filter: brightness(125%);
     background-color: rgb(185, 0, 0);
     transform: scale(1.1);
+  }
 
+  .cardName {
+    font-size: .6em;
+    color: white;
+    letter-spacing: .2rem;
+    margin-bottom: 5px;
+  }
+
+  .cardTypes {
+    font-size: .4em;
+    color: rgb(124, 124, 124);
+    letter-spacing: .2rem;
+  }
+
+  .cardImg {
+    margin: 0;
+    width: 150px;
+    height: 150px;
+  }
+
+  .cardContainer {
+    margin: 30px auto;
   }

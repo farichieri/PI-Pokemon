@@ -10,6 +10,7 @@
   }
   .searchBarContainer input {
     font-family: 'Press Start 2P', cursive;
+    /* font-family: "Pokemon"; */
     width: 200px;
     padding: 10px 5px;
     float: left;
@@ -18,6 +19,8 @@
     background: transparent;
     border-radius: 20px 0 0 20px;
     font-size: 0.6em;
+    letter-spacing: .1rem;
+
   }
   
   .searchBarContainer input:focus {
@@ -26,7 +29,9 @@
   }
   .searchBarContainer button {
     font-family: 'Press Start 2P', cursive;
-    font-size: 0.8em;
+    /* font-family: "Pokemon"; */
+    font-size: .7em;
+    letter-spacing: .1rem;
     position: relative;
     float: right;
     border: 0;

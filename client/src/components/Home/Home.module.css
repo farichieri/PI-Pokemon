@@ -41,7 +41,8 @@ body {
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
-  font-size: 0.5em;
+  font-size: 0.6em;
+  letter-spacing: .2rem;
   text-decoration: none;
 }
 
