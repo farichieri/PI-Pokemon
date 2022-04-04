@@ -70,10 +70,10 @@ function Home() {
 
     return (
         <div className={styles.home}>
-            <nav className={styles.createAndSearch}>
-                <Link to="/">Exit</Link>
+            <nav className={styles.exitSearchAndCreate}>
+                <Link to="/"><i src="./exit.png" ></i><h1 className={styles.exit}>Exit</h1></Link>
                 <SearchBar />
-                <Link to="/pokemons">Create Pokemon</Link>
+                <Link to="/pokemons"><h1 className={styles.create}>Create Pokemon</h1></Link>
             </nav>
             
             <div className={styles.filtersAndRefresh}>

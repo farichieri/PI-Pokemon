@@ -15,7 +15,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.enter {
+.enterButton {
     color: transparent;
     padding: 11px;
     transition: 1s;
@@ -48,7 +48,7 @@ body {
     }
 }
 
-.enter:hover {
+.enterButton:hover {
     background-color: #00ffff;
     filter: blur(15px);
     box-shadow: 0px 3px 25px 20px #00ffff;
@@ -57,9 +57,9 @@ body {
 
 }
 
-h1 {
-    font-size: 9px;
-    color: rgba(0, 0, 0, 0.62);
+.enter {
+    font-size: 5px;
+    color: rgb(0, 0, 0);
     position: absolute;
     display: flex;
     z-index: 1;
@@ -68,8 +68,8 @@ h1 {
     top: 52.5%;
     left: 29%;
     z-index: 0;
-    font-family: 'Rubik Glitch', cursive;;
-    font-weight: 200;
+    /* font-family: 'Rubik Glitch', cursive;; */
+    font-weight: 400;
 }
 
 

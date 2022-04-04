@@ -10,7 +10,7 @@ body {
 .home {
     margin: 0;
     padding: 0;
-    background: url(./ash.jpg) black;
+    background: url(./2.jpg) black;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -28,7 +28,7 @@ body {
   position: relative;
 }
 
-.createAndSearch {
+.exitSearchAndCreate {
   position: relative;
   display: flex;
   padding: 0 10px 0 10px;;
@@ -38,6 +38,8 @@ body {
   justify-content:space-evenly;
   text-align: center;
   color: white;
+  font-size: 0.5em;
+  text-decoration: none;
 }
 
 .filtersAndRefresh {
@@ -47,4 +49,23 @@ body {
   margin: 0;
   padding: 10px;
   text-align: center;
+}
+
+.exit {
+  color: white;
+  transition: .3s;
+}
+
+.exit:hover {
+  color: red;
+}
+
+.create {
+  color: white;
+  transition: .3s;
+
+}
+
+.create:hover {
+  color: red;
 }
