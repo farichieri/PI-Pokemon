@@ -8,13 +8,13 @@ body {
 }
 
 .home {
-    background: url(./2.jpg) black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    min-height: 100vh;
-    min-width: 100vh;
+  background: url(./2.jpg) black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  min-width: 100vh;
 }
 
 .cardsContainer {
@@ -34,7 +34,7 @@ body {
   position: relative;
   display: flex;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.656);
+  background-color: rgba(0, 0, 0, 0.55);
   border-radius: 0px 0px 25px 25px;
   align-items: center;
   justify-content: space-around;
@@ -80,6 +80,70 @@ body {
   right: 10%;
 }
 
+/* FILTERS */
+.filtersAndRefresh {
+  /* background-color: rgb(0, 0, 0); */
+  /* border-radius: 0 0 45px 45px ; */
+  width: 600px;
+  height: 40px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.refreshSelect {
+  font-family: 'Press Start 2P', cursive;
+  background-color: rgba(0, 0, 0, 0.277);
+  color: white;
+  border-radius: 15px 0 0 15px;
+  border: 1px solid black;
+  font-size: .4rem;
+  padding: 5px;
+  height: 25px;
+  padding: 5px;
+}
+
+.refreshSelect:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.refreshSelect:active {
+  box-shadow: 0px 0px 25px 0px #e1e1e1;
+}
+
+.refreshSelect:focus {
+  outline: 0;
+}
+
+.filter {
+  height: 25px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: rgba(0, 0, 0, 0.277);
+  color: white;
+  border-radius: 0;
+  border: 1px solid black;
+  font-size: .6rem;
+  padding: 5px;
+}
+
+.filterAttack {
+  height: 25px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: rgba(0, 0, 0, 0.277);
+  color: white;
+  border-radius: 0 15px 15px 0;
+  border: 1px solid black;
+  font-size: .6rem;
+  padding: 5px;
+}
+
+.filter:hover {
+  /* background-color: red; */
+  cursor: pointer;
+}
+
+/* END FILTERS */
 
 @media only screen and (max-width: 1300px) {
   .cardsContainer {

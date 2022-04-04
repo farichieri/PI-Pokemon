@@ -30,7 +30,7 @@
   .searchBarContainer button {
     font-family: 'Press Start 2P', cursive;
     /* font-family: "Pokemon"; */
-    font-size: .7em;
+    font-size: .8em;
     letter-spacing: .1rem;
     position: relative;
     float: right;
@@ -45,15 +45,22 @@
     border-radius: 0 20px 20px 0;
     transition: .3s;
   }
+  
   .searchBarContainer button:hover {
     background: #ff0000;
     border-color: #ff0000;
   }
+
   .searchBarContainer button:active {
     box-shadow: 0px 0px 50px 0px #e1e1e1;
   }
+
   .searchBarContainer button:focus {
     outline: 0;
+  }
+
+  .searchBarInput:focus::placeholder {
+    color: transparent;
   }
 
   @media only screen and (max-width: 700px) {

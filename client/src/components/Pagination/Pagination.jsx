@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Pagination.module.css'
 
 function Pagination({ pokemonsPerPage, allPokemons, pagination }) { // Renderizamos los numeritos del pagination
     const pageNumbers = [];
@@ -8,8 +9,8 @@ function Pagination({ pokemonsPerPage, allPokemons, pagination }) { // Renderiza
     }
 
   return ( // Acá renderizamos el nav de los números de páginas.-
-    <nav> 
-        <ul className='pagination'>
+    <nav > 
+        <ul className={styles.paginationContainer}>
             { pageNumbers && pageNumbers.map(number => (
                 <li className='number' key={number}>
                     <a onClick={() => pagination(number)}>{number}</a>

@@ -1,0 +1,29 @@
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    list-style-type: none;
+  }
+  
+  .paginationContainer li {
+    font-size: 0.6em;
+    margin: 0 10px 0 10px;
+    text-align: center;
+    height: 15px;
+    width: 15px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: rgba(255, 0, 0, 0.532);
+    color: black;
+    font-weight: bolder;
+    margin: 0;
+    transition: .3s;
+  }
+  
+  .paginationContainer li:hover {
+    background-color: red;
+    cursor: pointer;
+  }
+  
+  

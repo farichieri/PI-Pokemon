@@ -82,24 +82,24 @@ function Home() {
                 </div>
             </nav>
             <div className={styles.filtersAndRefresh}>
-                <button onClick={e => {handleClick(e)}}>
-                    Refresh All Pokemons
+                <button className={styles.refreshSelect} onClick={e => {handleClick(e)}}>
+                    <h2>Refresh All</h2>
                 </button>
-                <select onChange={e => handleFilterTypes(e)}>
+                <select className={styles.filter} onChange={e => handleFilterTypes(e)}>
                     <option value='all'>All Types</option>
                     {allPokemonsTypes?.map((t) => (
                           <option key={t.name} value={t.name}>{t.name}</option>
                        ))}
                 </select>
-                <select onChange={e => handleFilterCreated(e)}>
+                <select className={styles.filter} onChange={e => handleFilterCreated(e)}>
                     <option value='all'>All Pokemons</option>
                     <option value='created'>Created</option>
                 </select>
-                <select onChange={e => handleSort(e)}>
+                <select  className={styles.filter} onChange={e => handleSort(e)}>
                     <option value='asc'>A - Z</option>
                     <option value='desc'>Z - A</option>
                 </select>
-                <select onChange={e => handleAttack(e)}>
+                <select  className={styles.filterAttack} onChange={e => handleAttack(e)}>
                     <option value='more_attack'>+ Attack </option>
                     <option value='less_attack'>- Attack </option>
                 </select>
