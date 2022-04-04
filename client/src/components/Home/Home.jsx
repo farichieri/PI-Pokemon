@@ -74,7 +74,7 @@ function Home() {
                 <div className={styles.exitContainer}>
                     <Link to="/"><i src="./exit.png" ></i><h1 className={styles.exit}>Exit</h1></Link>
                 </div>
-                <div  className={styles.searchBarContainer}>
+                <div className={styles.searchBarContainer}>
                     <SearchBar />
                 </div>
                 <div className={styles.createContainer}>
@@ -104,14 +104,9 @@ function Home() {
                     <option value='less_attack'>- Attack </option>
                 </select>
             </div>
-                <Pagination
-                    pokemonsPerPage={pokemonsPerPage}
-                    allPokemons={allPokemons.length}
-                    pagination={pagination}
-                />
                 <div className={styles.cardsContainer}>
                     {
-                    load ? (<h1>Cargando bro</h1>) :
+                        load ? (<h1>Cargando bro</h1>) :
                         !allPokemons.length? (<h1>No se encontro nada capo</h1>) :
                         currentPokemons?.map((el) => {
                             return (
@@ -124,6 +119,11 @@ function Home() {
                         })
                     }
                 </div>
+                    <Pagination
+                        pokemonsPerPage={pokemonsPerPage}
+                        allPokemons={allPokemons.length}
+                        pagination={pagination}
+                    />
         </div>
     )
 }

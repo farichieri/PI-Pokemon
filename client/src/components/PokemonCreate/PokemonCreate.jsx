@@ -143,7 +143,7 @@ function PokemonCreate() {
           {input.types.map(el => 
             <div>
                 <p>{el}</p>
-                <button className='buttonX' onClick={() => handleDelete(el)}>x</button>
+                <button key={el} className='buttonX' onClick={() => handleDelete(el)}>x</button>
             </div>)}
       </div>
   )

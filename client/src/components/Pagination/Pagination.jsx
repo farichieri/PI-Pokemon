@@ -9,10 +9,10 @@ function Pagination({ pokemonsPerPage, allPokemons, pagination }) { // Renderiza
     }
 
   return ( // Acá renderizamos el nav de los números de páginas.-
-    <nav > 
+    <nav> 
         <ul className={styles.paginationContainer}>
             { pageNumbers && pageNumbers.map(number => (
-                <li className='number' key={number}>
+                <li className={styles.paginationNumber} key={number}>
                     <a onClick={() => pagination(number)}>{number}</a>
                 </li>
             )) }
