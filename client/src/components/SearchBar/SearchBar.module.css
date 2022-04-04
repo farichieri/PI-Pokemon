@@ -1,26 +1,12 @@
-/* .searchBar {
-    margin: 0;
-    text-align: center;
-    align-items: center;
-}
-
-.searchBarInput {
-    border-radius: 10px;
-}
-
-.searchBarButton {
-    border-radius: 10px;
-} */
-
 .searchBarContainer {
+    margin: 0 auto;
     display: flex;
     font-family: 'Press Start 2P', cursive;
     width: 300px;
     height: 30px;
-    background: #444;
     background: rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-    border: 1px solid #fff;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.202);
   }
   .searchBarContainer input {
     font-family: 'Press Start 2P', cursive;
@@ -30,10 +16,10 @@
     color: #ff0000;
     border: 0;
     background: transparent;
-    border-radius: 3px 0 0 3px;
+    border-radius: 20px 0 0 20px;
     font-size: 0.6em;
-
   }
+  
   .searchBarContainer input:focus {
     outline: 0;
     background: transparent;
@@ -50,15 +36,16 @@
     width: 100px;
     color: #fff;
     background: transparent;
-    border-left: 1px solid #fff;
-    border-radius: 0 3px 3px 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.202);
+    border-radius: 0 20px 20px 0;
+    transition: .3s;
   }
   .searchBarContainer button:hover {
     background: #ff0000;
-    color: #444;
+    border-color: #ff0000;
   }
   .searchBarContainer button:active {
-    box-shadow: 0px 0px 12px 0px #e1e1e1;
+    box-shadow: 0px 0px 50px 0px #e1e1e1;
   }
   .searchBarContainer button:focus {
     outline: 0;

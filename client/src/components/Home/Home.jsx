@@ -71,11 +71,16 @@ function Home() {
     return (
         <div className={styles.home}>
             <nav className={styles.exitSearchAndCreateNav}>
-                <Link to="/"><i src="./exit.png" ></i><h1 className={styles.exit}>Exit</h1></Link>
-                <SearchBar />
-                <Link to="/pokemons"><h1 className={styles.create}>Create Pokemon</h1></Link>
+                <div className={styles.exitContainer}>
+                    <Link to="/"><i src="./exit.png" ></i><h1 className={styles.exit}>Exit</h1></Link>
+                </div>
+                <div  className={styles.searchBarContainer}>
+                    <SearchBar />
+                </div>
+                <div className={styles.createContainer}>
+                    <Link to="/pokemons"><h1 className={styles.create}>Create</h1></Link>
+                </div>
             </nav>
-            
             <div className={styles.filtersAndRefresh}>
                 <button onClick={e => {handleClick(e)}}>
                     Refresh All Pokemons
@@ -99,14 +104,11 @@ function Home() {
                     <option value='less_attack'>- Attack </option>
                 </select>
             </div>
-
                 <Pagination
                     pokemonsPerPage={pokemonsPerPage}
                     allPokemons={allPokemons.length}
                     pagination={pagination}
                 />
-                
-                
                 <div className={styles.cardsContainer}>
                     {
                     load ? (<h1>Cargando bro</h1>) :

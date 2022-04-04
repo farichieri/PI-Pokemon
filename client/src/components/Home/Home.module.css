@@ -8,8 +8,6 @@ body {
 }
 
 .home {
-    margin: 0;
-    padding: 0;
     background: url(./2.jpg) black;
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,7 +15,7 @@ body {
     background-position: center;
     min-height: 100vh;
     min-width: 100vh;
-  }
+}
 
 .cardsContainer {
   display: grid;
@@ -26,9 +24,11 @@ body {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   position: relative;
+  flex-direction: column;
 }
 
 .exitSearchAndCreateNav {
+  width: 100%;
   position: relative;
   display: flex;
   height: 50px;
@@ -59,4 +59,24 @@ body {
 
 .create:hover {
   color: red;
+}
+
+.exitContainer{
+  position: absolute;
+  left: 10%;
+}
+
+.createContainer {
+  position: absolute;
+  right: 10%;
+}
+
+.searchBarContainer {
+  position: absolute;
+}
+
+@media only screen and (max-width: 1300px) {
+  .cardsContainer {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }

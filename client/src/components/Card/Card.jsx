@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Card.module.css'
 
-function Card( {name, img, types }) {
+function Card( { name, img, types }) {
   return (
     <div className={styles.card}>
         <h3>{name}</h3>
