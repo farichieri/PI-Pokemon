@@ -7,7 +7,7 @@ export default function Loader(){
     return(
         <div className={styles.loading}>
             <img src={pokeBall} alt="gif" />
-            <h1>PAGINA CARGANDO CAPO</h1>
+            <h1>Loading...</h1>
         </div>
     );
 }

@@ -1,5 +1,5 @@
 body {
-    background: url(./charmanderGif.gif);
+    background: url(./img/charmanderGif.gif);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -74,7 +74,7 @@ body {
 
 
 .image {
-    background: url(./pokeBall.png);
+    background: url(./img/pokeBall.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
