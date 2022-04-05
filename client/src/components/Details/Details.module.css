@@ -17,7 +17,7 @@
     width: 100vw;
     height: 600px;
     max-width: 700px;
-    margin: 0;
+    margin: 45px 0 0 0;;
     background-color: rgba(0, 0, 0, 0.531);
     border-radius: 10%;
 }
@@ -37,4 +37,11 @@
     color: #CE2211;
     letter-spacing: .2rem;
 
-  }
+}
+
+.detailsId {
+    color: #0A285F;
+    margin: 5px;
+    position:relative;
+    top: 0;
+}
