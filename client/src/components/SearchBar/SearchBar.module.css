@@ -39,11 +39,11 @@
     cursor: pointer;
     height: 30px;
     width: 100px;
-    color: #fff;
+    color: #EFFCD5;
     background: transparent;
     border-left: 1px solid rgba(255, 255, 255, 0.202);
     border-radius: 0 20px 20px 0;
-    transition: .3s;
+    transition: .5s;
   }
   
   .searchBarContainer button:hover {

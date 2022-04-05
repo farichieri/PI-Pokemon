@@ -1,5 +1,4 @@
 .card {
-    border: 0px solid aqua;
     margin: 10px auto;
     position: relative;
     overflow: hidden;
@@ -7,7 +6,7 @@
     width: 200px;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     border-radius: 40px;
-    background-color: rgba(0, 0, 0, 0.606);
+    background-color: rgba(239, 239, 239, 0);
     opacity: 1;
     transition: .3s;
    }
@@ -25,20 +24,20 @@
 
   .card:hover {
     filter: brightness(125%);
-    background-color: rgba(9, 6, 6, 0.407);
+    background-color: #ffcb05;
     transform: scale(1.1);
   }
 
   .cardName {
     font-size: .6em;
-    color: white;
+    color: #CE2211;
     letter-spacing: .2rem;
     margin-bottom: 5px;
   }
 
   .cardTypes {
     font-size: .4em;
-    color: rgb(124, 124, 124);
+    color: #EFFCD5;
     letter-spacing: .2rem;
   }
 

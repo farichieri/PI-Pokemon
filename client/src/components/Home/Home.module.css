@@ -4,7 +4,7 @@ body {
   margin: 0;
   text-transform: none;
   text-decoration: inherit;
-  color: white;
+  color: #EFFCD5;
 }
 
 .home {
@@ -25,8 +25,11 @@ body {
   grid-row-gap: 5px;
   position: relative;
   flex-direction: column;
-  max-width: 1800px;
+  max-width: 1300px;
   margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.531);
+  border-radius: 20px;
+  height: 80vh;
 }
 
 .exitSearchAndCreateNav {
@@ -40,14 +43,14 @@ body {
   justify-content: space-around;
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  color: #EFFCD5;
   font-size: 0.6em;
   letter-spacing: .2rem;
   text-decoration: none;
 }
 
 .exit {
-  color: white;
+  color: #EFFCD5;
   transition: .3s;
 }
 
@@ -57,7 +60,7 @@ body {
 }
 
 .create {
-  color: white;
+  color: #EFFCD5;
   transition: .3s;
 }
 
@@ -84,7 +87,7 @@ body {
 .filtersAndRefresh {
   /* background-color: rgb(0, 0, 0); */
   /* border-radius: 0 0 45px 45px ; */
-  width: 600px;
+  width: 700px;
   height: 40px;
   margin: 0 auto;
   justify-content: center;
@@ -93,14 +96,16 @@ body {
 
 .refreshSelect {
   font-family: 'Press Start 2P', cursive;
-  background-color: rgba(0, 0, 0, 0.277);
-  color: white;
+  background-color: rgba(79, 78, 78, 0.184);
+  color: #EFFCD5;
   border-radius: 15px 0 0 15px;
   border: 1px solid black;
   font-size: .4rem;
   padding: 5px;
   height: 25px;
   padding: 5px;
+  width: 140px;
+  text-align: center;
 }
 
 .refreshSelect:hover {
@@ -120,22 +125,24 @@ body {
   height: 25px;
   font-family: 'Press Start 2P', cursive;
   background-color: rgba(0, 0, 0, 0.277);
-  color: white;
+  color: #EFFCD5;
   border-radius: 0;
   border: 1px solid black;
   font-size: .6rem;
   padding: 5px;
+  outline: 0px;
 }
 
 .filterAttack {
   height: 25px;
   font-family: 'Press Start 2P', cursive;
   background-color: rgba(0, 0, 0, 0.277);
-  color: white;
+  color: #EFFCD5;
   border-radius: 0 15px 15px 0;
   border: 1px solid black;
   font-size: .6rem;
   padding: 5px;
+  outline: 0px;
 }
 
 .filter:hover {

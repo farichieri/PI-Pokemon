@@ -95,7 +95,7 @@ function Home() {
                     <option value='all'>All Pokemons</option>
                     <option value='created'>Created</option>
                 </select>
-                <select  className={styles.filter} onChange={e => handleSort(e)}>
+                <select className={styles.filter} onChange={e => handleSort(e)}>
                     <option value='asc'>A - Z</option>
                     <option value='desc'>Z - A</option>
                 </select>

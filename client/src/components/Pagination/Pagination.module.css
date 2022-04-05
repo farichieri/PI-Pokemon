@@ -17,11 +17,12 @@
     height: 10px;
     width: 10px;
     padding: 5px;
-    border: 1px solid black;
-    background-color: red;
+    border: 1px solid #0A285F;
+    background-color: #FFCC00;
     opacity: .7;
     color: black;
     transition: .3s;
+    border-radius: 5px;
   }
   
   .paginationContainer li:hover {
