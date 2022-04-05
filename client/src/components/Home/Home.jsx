@@ -86,20 +86,24 @@ function Home() {
                     <h2>Refresh All</h2>
                 </button>
                 <select className={styles.filter} onChange={e => handleFilterTypes(e)}>
+                    <option value='' selected="selected">Types</option>
                     <option value='all'>All Types</option>
                     {allPokemonsTypes?.map((t) => (
                           <option key={t.name} value={t.name}>{t.name}</option>
                        ))}
                 </select>
-                <select className={styles.filter} onChange={e => handleFilterCreated(e)}>
+                <select className={styles.filter} onChange={e => handleFilterCreated(e)} value='disabled'>
+                    <option value='' selected="selected">Origin</option>
                     <option value='all'>All Pokemons</option>
                     <option value='created'>Created</option>
                 </select>
                 <select className={styles.filter} onChange={e => handleSort(e)}>
+                    <option value='' selected="selected">Name</option>
                     <option value='asc'>A - Z</option>
                     <option value='desc'>Z - A</option>
                 </select>
                 <select className={styles.filterAttack} onChange={e => handleAttack(e)}>
+                    <option value='' selected="selected">Attack</option>
                     <option value='more_attack'>+ Attack </option>
                     <option value='less_attack'>- Attack </option>
                 </select>
