@@ -5,21 +5,20 @@
     padding: 5px;
     list-style-type: none;
     width: 100px;
-    margin: 0 auto;
+    margin: 5px auto;
     border-radius: 10px;
     height: 20px;
   }
   
   .paginationNumber {
     justify-content: space-between;
-    font-size: 0.4em;
+    font-size: 0.35em;
     text-align: center;
     height: 10px;
     width: 10px;
     padding: 5px;
     border: 1px solid #0A285F;
-    background-color: #FFCC00;
-    opacity: .7;
+    background-color: #ffcc00;
     color: black;
     transition: .3s;
     border-radius: 5px;

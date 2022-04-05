@@ -40,7 +40,6 @@ function Home() {
     function handleClick(e) { // Siempre hay que crear los handles de las cosas que usemos abajo
         e.preventDefault(); // preventDefault es para que no se recargue la página y no se me rompan las cosas. (Porque al recargar los estados de redux, vuelven a cargarse si tenemos useEffect )
         dispatch(getPokemons()) // Resetea los pokemons
-        console.log(allPokemonsTypes)
     }
 
     function handleFilterTypes(e) {
@@ -82,31 +81,32 @@ function Home() {
                 </div>
             </nav>
             <div className={styles.filtersAndRefresh}>
-                <button className={styles.refreshSelect} onClick={e => {handleClick(e)}}>
-                    <h2>Refresh All</h2>
-                </button>
-                <select className={styles.filter} onChange={e => handleFilterTypes(e)}>
-                    <option value='' selected="selected">Types</option>
+                <button className={styles.filterBy}><h2>Filters <p className={styles.flechita}>&gt;</p> </h2></button>
+                <select className={styles.filter} onChange={e => handleFilterTypes(e)} value='disabled'>
+                    <option value=''>Types</option>
                     <option value='all'>All Types</option>
                     {allPokemonsTypes?.map((t) => (
                           <option key={t.name} value={t.name}>{t.name}</option>
                        ))}
                 </select>
                 <select className={styles.filter} onChange={e => handleFilterCreated(e)} value='disabled'>
-                    <option value='' selected="selected">Origin</option>
-                    <option value='all'>All Pokemons</option>
+                    <option value=''>Origin</option>
+                    <option value='all'>All</option>
                     <option value='created'>Created</option>
                 </select>
-                <select className={styles.filter} onChange={e => handleSort(e)}>
-                    <option value='' selected="selected">Name</option>
+                <select className={styles.filter} onChange={e => handleSort(e)} value='disabled'>
+                    <option value=''>Name</option>
                     <option value='asc'>A - Z</option>
                     <option value='desc'>Z - A</option>
                 </select>
-                <select className={styles.filterAttack} onChange={e => handleAttack(e)}>
-                    <option value='' selected="selected">Attack</option>
+                <select className={styles.filter} onChange={e => handleAttack(e)} value='disabled'>
+                    <option value=''>Attack</option>
                     <option value='more_attack'>+ Attack </option>
                     <option value='less_attack'>- Attack </option>
                 </select>
+                <button className={styles.refreshButton} onClick={e => {handleClick(e)}}>
+                    <h2>Refresh All</h2>
+                </button>
             </div>
                 <div className={styles.cardsContainer}>
                     {
