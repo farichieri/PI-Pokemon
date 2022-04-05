@@ -6,6 +6,7 @@
     background-position: center;
     min-height: 100vh;
     min-width: 100vh;
+    font-size: 25px;
 }
 
 .detailsContainer {
@@ -15,16 +16,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100vw;
-    height: 600px;
+    height: 550px;
     max-width: 700px;
-    margin: 45px 0 0 0;;
+    margin-top: 55px;
+    /* margin: 0 auto;; */
     background-color: rgba(0, 0, 0, 0.531);
     border-radius: 10%;
 }
 
 .details {
     position: relative;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 .details img{
@@ -40,8 +42,87 @@
 }
 
 .detailsId {
-    color: #0A285F;
+    color: #D5A100;
     margin: 5px;
     position:relative;
-    top: 0;
 }
+
+.exitSearchAndCreateNav {
+    width: 100%;
+    position: relative;
+    display: flex;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 0px 0px 25px 25px;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #EFFCD5;
+    font-size: 0.6em;
+    letter-spacing: .2rem;
+    text-decoration: none;
+  }
+
+  .back {
+    color: #EFFCD5;
+    transition: .3s;
+  }
+  
+  .back:hover {
+    color: red;
+  }
+
+  .animated-progress {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 20px 10px;
+    border: 1px solid rgb(189, 113, 113);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .animated-progress span {
+    height: 100%;
+    display: block;
+    width: 0;
+    color: rgb(255, 251, 251);
+    line-height: 30px;
+    position: absolute;
+    text-align: end;
+    padding-right: 5px;
+  }
+  
+  .progress-blue span {
+    background-color: blue;
+  }
+  .progress-green span {
+    background-color: green;
+  }
+  .progress-purple span {
+    background-color: indigo;
+  }
+  .progress-red span {
+    background-color: red;
+  }
+  
+
+  .hpProgress {
+    border-radius: 7px; 
+    width: 300px;
+    height: 22px;
+    margin-left: -11.5%;
+    box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+  }
+  .hpProgress::-webkit-progress-bar {
+    background-color: yellow;
+    border-radius: 7px;
+  }
+  .hpProgress::-webkit-progress-value {
+    background-color: red;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px 3px rgba( 255, 0, 0, 0.8 );
+  }
+  /* .hpProgress::-moz-progress-bar {
+  } */

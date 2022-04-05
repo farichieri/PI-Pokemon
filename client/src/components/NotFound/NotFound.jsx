@@ -7,7 +7,7 @@ export default function NotFound(){
     return(
         <div className={styles.notFound}>
             <img src={notFound} alt="gif" />
-            <h1>Pokemon Not Found</h1>
+            <h1>No pokemons found</h1>
         </div>
     );
 }

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getTypes, postPokemon } from '../../actions';
 import { useDispatch, useSelector} from 'react-redux';
+import styles from './PokemonCreate.module.css'
 
 function validate(input) { // input es mi estado local.
     let errors = {};
@@ -90,62 +91,69 @@ function PokemonCreate() {
         dispatch(getTypes())
     }, [dispatch]);
 
-  return (
-      <div>
-          <Link to='/home'><button>Back</button></Link>
-          <h1>Create your pokemon!</h1>
-          <form onSubmit={(e) => handleSubmit(e)}>
-              <div>
-                  <label>Name: </label>
-                  <input type='text' value={input.name} name='name' onChange={handleChange} />
-                  {errors.name && (<p className='error'>{errors.name}</p>)}
-              </div>
-              <div>
-                  <label>Hp: </label>
-                  <input type='text' value={input.hp} name='hp' onChange={handleChange} />
-                  {errors.hp && (<p className='error'>{errors.hp}</p>)}
-              </div>
-              <div>
-                  <label>Attack: </label>
-                  <input type='text' value={input.attack} name='attack' onChange={handleChange} />
-              </div>
-              <div>
-                  <label>Defense: </label>
-                  <input type='text' value={input.defense} name='defense' onChange={handleChange} />
-              </div>
-              <div>
-                  <label>Speed: </label>
-                  <input type='text' value={input.speed} name='speed' onChange={handleChange} />
-              </div>
-              <div>
-                  <label>Height: </label>
-                  <input type='text' value={input.height} name='height' onChange={handleChange} />
-              </div>
-              <div>
-                  <label>Weight: </label>
-                  <input type='text' value={input.weight} name='weight' onChange={handleChange} />
-              </div>
-              <div>
-                  <label>Image: </label>
-                  <input type='text' value={input.img} name='img' onChange={handleChange} />
-              </div>
-              <div>
-                  <select onChange={(e) => handleSelect(e)}>
-                      {types.map((t) => (
-                          <option key={t.name} value={t.name}>{t.name}</option>
-                       ))}
-                  </select>
-                  {/* <ul><li>{input.types.map(el => el + " ,")}</li></ul>  */}
+return (
+    <div className={styles.pokemonCreatePage}>
+        <nav className={styles.exitSearchAndCreateNav}>
+            <div className={styles.backContainer}>
+            <Link to="/home"><h1 className={styles.back}>Home</h1></Link>
+            </div>
+        </nav>
+        
+        <div className={styles.pokemonCreateContainer}>
+            <h1>Create a new pokemon!</h1>
+            <form onSubmit={(e) => handleSubmit(e)}>
+                <div>
+                    <label>Name: </label>
+                    <input type='text' value={input.name} name='name' onChange={handleChange} />
+                    {errors.name && (<p className='error'>{errors.name}</p>)}
+                </div>
+                <div>
+                    <label>Hp: </label>
+                    <input type='text' value={input.hp} name='hp' onChange={handleChange} />
+                    {errors.hp && (<p className='error'>{errors.hp}</p>)}
+                </div>
+                <div>
+                    <label>Attack: </label>
+                    <input type='text' value={input.attack} name='attack' onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Defense: </label>
+                    <input type='text' value={input.defense} name='defense' onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Speed: </label>
+                    <input type='text' value={input.speed} name='speed' onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Height: </label>
+                    <input type='text' value={input.height} name='height' onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Weight: </label>
+                    <input type='text' value={input.weight} name='weight' onChange={handleChange} />
+                </div>
+                <div>
+                    <label>Image: </label>
+                    <input type='text' value={input.img} name='img' onChange={handleChange} />
+                </div>
+                <div>
+                    <select onChange={(e) => handleSelect(e)}>
+                        {types.map((t) => (
+                            <option key={t.name} value={t.name}>{t.name}</option>
+                        ))}
+                    </select>
+                    {/* <ul><li>{input.types.map(el => el + " ,")}</li></ul>  */}
 
-                  <button type='submit'>Create Pokemon</button>
-              </div>
-          </form>
-          {input.types.map(el => 
-            <div>
-                <p>{el}</p>
-                <button key={el} className='buttonX' onClick={() => handleDelete(el)}>x</button>
-            </div>)}
-      </div>
+                    <button type='submit'>Create Pokemon</button>
+                </div>
+            </form>
+        </div>
+        {input.types.map(el => 
+        <div>
+            <p>{el}</p>
+            <button key={el} className='buttonX' onClick={() => handleDelete(el)}>x</button>
+        </div>)}
+    </div>
   )
 }
 
