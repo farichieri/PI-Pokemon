@@ -8,12 +8,4 @@ const getAllInfo = async () => {
     return allPokemonsInfo;
 }
 
-// Otra forma:
-// const getAllInfo = async () =>  {
-//     const apiInfo = await getApiInfo();
-//     const dbInfo = await getDbInfo();
-//     const infoTotal = apiInfo.concat(dbInfo);
-//     return infoTotal
-// }
-
 module.exports = {getAllInfo};

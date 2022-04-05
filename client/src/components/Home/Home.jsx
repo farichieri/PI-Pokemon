@@ -99,7 +99,7 @@ function Home() {
                     <option value='asc'>A - Z</option>
                     <option value='desc'>Z - A</option>
                 </select>
-                <select  className={styles.filterAttack} onChange={e => handleAttack(e)}>
+                <select className={styles.filterAttack} onChange={e => handleAttack(e)}>
                     <option value='more_attack'>+ Attack </option>
                     <option value='less_attack'>- Attack </option>
                 </select>

@@ -21,7 +21,7 @@ function SearchBar() {
 
   return (
     <div className={styles.searchBarContainer}>
-        <input className={styles.searchBarInput} type='text' placeholder='Search Pokemon...' onChange={(e) => handleInputChange(e)}/>
+        <input className={styles.searchBarInput} value={name} type='text' placeholder='Search Pokemon...' onChange={(e) => handleInputChange(e)}/>
         <button className={styles.searchBarButton} type='submit' onClick={(e) => handleSubmit(e)}>Search</button>
     </div>
   )

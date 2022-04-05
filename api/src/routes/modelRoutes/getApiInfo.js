@@ -5,13 +5,17 @@ const getApiInfo = async () => { // se instala e importa AXIOS para poder usarla
     const apiUrlRest = await axios.get(apiUrl.data.next);
     const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results) // ¿.RESULTS?
                         // Agarra nombres y url de pokemons // Agarra el resto 
-    
+
+    function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
     const apiInfo = await Promise.all (
         allPokemons.map(async el => {
             const pokemon = await axios.get(el.url);
             return {
                 id: pokemon.data.id,
-                name: pokemon.data.name,
+                name: capitalizeFirstLetter(pokemon.data.name),
                 hp: pokemon.data.stats[0].base_stat,
                 attack: pokemon.data.stats[1].base_stat,
                 defense: pokemon.data.stats[2].base_stat,
@@ -19,7 +23,7 @@ const getApiInfo = async () => { // se instala e importa AXIOS para poder usarla
                 height: pokemon.data.height,
                 weigth: pokemon.data.weight,
                 img: pokemon.data.sprites.other.home.front_default,
-                types: pokemon.data.types.map( pokeTypes => [pokeTypes.type.name])
+                types: pokemon.data.types.map(pokeTypes => [pokeTypes.type.name])
             }
         })
     )
