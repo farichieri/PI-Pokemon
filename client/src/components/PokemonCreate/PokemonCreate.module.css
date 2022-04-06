@@ -1,54 +1,53 @@
 .pokemonCreatePage {
-    background: url(./img/Beyond.jpg) black;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    min-height: 100vh;
-    min-width: 100vh;
-    font-size: 25px;
-    color: white;
+  background: url(./img/Beyond.jpg) black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  min-width: 100vh;
+  font-size: 25px;
+  color: white;
 }
 
 .exitSearchAndCreateNav {
-    width: 100%;
-    position: relative;
-    display: flex;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.55);
-    border-radius: 0px 0px 25px 25px;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    color: #EFFCD5;
-    font-size: 0.6em;
-    letter-spacing: .2rem;
-    text-decoration: none;
-  }
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 0px 0px 25px 25px;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: #EFFCD5;
+  font-size: 0.6em;
+  letter-spacing: .2rem;
+  text-decoration: none;
+}
 
-  .back {
-    color: #EFFCD5;
-    transition: .3s;
-  }
-  
-  .back:hover {
-    color: red;
-  }
+.back {
+  color: #EFFCD5;
+  transition: .3s;
+}
 
-  .pokemonCreateContainer {
-    font-size: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 600px;
-    max-width: 700px;
-    margin-top: 40px;
-    /* margin: 0 auto;; */
-    background-color: rgba(0, 0, 0, 0.531);
-    border-radius: 10%;
+.back:hover {
+  color: red;
+}
+
+.pokemonCreateContainer {
+  font-size: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 600px;
+  max-width: 900px;
+  margin-top: 40px;
+  background-color: rgba(0, 0, 0, 0.531);
+  border-radius: 10%;
 }
 
 .pokemonCreate {
@@ -56,11 +55,164 @@
 }
 
 .pokemonCreate h1 {
-  color: white;
-  font-size: 1.6em;
+  color: #CE2211;
+  font-size: 2em;
   margin: 50px 0 50px 0;
 }
 
 .pokemonCreate form {
+  max-height: 350px;
+}
+
+
+.pokemonCreate progress {
+  border-radius: 7px; 
+  width: 200px;
+  height: 12px;
+  margin: 1px;
+  animation: load 3s normal forwards;
+  flex-direction: row;
+  position: absolute;
+  left: 35%;
+}
+
+.pokemonCreate progress::-webkit-progress-bar {
+  background-color: rgba(0, 0, 0, 0.722);
+  border-radius: 7px;    
+}
+
+.pokemonCreate progress::-webkit-progress-value {
+  background: rgba(255, 255, 255, 0.779);
+  border-radius: 7px;
+}
+
+.pokemonCreate progress::-moz-progress-bar {
+  box-shadow: 0 10px 40px -10px #fff;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 50%; }
+}
+
+.pokemonCreate input {
+  width: 60px
+}
+
+.pokemonCreate label {
+  font-size: .9em;
+
+}
+
+.pokemonCreate .inputContainer {
+  display: flex;
+  margin: 15px;
+  height: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.pokemonCreate input {
+  display: flex;
+  position: absolute;
+  left: 25%;
+  background-color: rgba(255, 228, 196, 0.487);
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.pokemonCreate select {
+  display: flex;
+  position: absolute;
+  left: 25%;
+  background-color: rgba(255, 228, 196, 0.487);
+  border: 1px solid black;
+  border-radius: 2px;
+  width: 100px;
+}
+
+.pokemonCreate .inputName {
+  width: 100px;
+  position: absolute;
+  justify-content: center;
+}
+
+.createButton {
+  font-family: 'Press Start 2P', cursive;
+  background-color: rgb(0, 0, 0);
+  color: #EFFCD5;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: .8rem;
+  padding: 5px;
+  height: 25px;
+  padding: 5px;
+  width: 100;
+  text-align: center;
+  color: #CE2211;
+  transition: .3s;
+}
+
+.createButton:hover {
   background-color: red;
+  color: black;
+  cursor: pointer;
+}
+
+.createButton:active {
+  box-shadow: 0px 0px 25px 0px #e1e1e1;
+}
+
+.createButton:focus {
+  outline: 0;
+}
+
+.pokemonCreate .selectTypes {
+  font-family: 'Press Start 2P', cursive;
+  color: #EFFCD5;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: .6rem;
+  padding: 5px;
+  outline: 0px;
+  width: 100px;
+}
+
+.pokemonCreate .selectTypes  {
+  background-color: rgba(4, 2, 2, 0.794);
+}
+
+.optionsSelect {
+  position: absolute;
+  color: black;
+}
+
+.typeSelectedContainer {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  left: 37%;
+  /* background-color: yellow; */
+  margin-bottom: 10px;
+}
+
+.typeSelectedContainerIn {
+  color: black;
+  font-size: .8em;
+  background-color: #E6BC2F;
+  border-radius: 10px;
+  justify-content: space-between;
+  justify-content: center;
+  padding: 5px;
+  display: inline-flex;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.xButton {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  border: 1px solid black
 }

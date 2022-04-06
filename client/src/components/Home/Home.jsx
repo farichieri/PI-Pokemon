@@ -85,25 +85,25 @@ function Home() {
                 <button className={styles.filterBy}><h2>Filters <p className={styles.flechita}>&gt;</p> </h2></button>
                 <select className={styles.filter} onChange={e => handleFilterTypes(e)} value='disabled'>
                     <option value=''>Types</option>
-                    <option value='all'>All Types</option>
+                    <option className={styles.optionsSelect} value='all'>All Types</option>
                     {allPokemonsTypes?.map((t) => (
-                          <option key={t.name} value={t.name}>{t.name}</option>
+                          <option className={styles.optionsSelect} key={t.name} value={t.name}>{t.name}</option>
                        ))}
                 </select>
                 <select className={styles.filter} onChange={e => handleFilterCreated(e)} value='disabled'>
                     <option value=''>Origin</option>
-                    <option value='all'>All</option>
-                    <option value='created'>Created</option>
+                    <option className={styles.optionsSelect} value='all'>All</option>
+                    <option className={styles.optionsSelect} value='created'>Created</option>
                 </select>
                 <select className={styles.filter} onChange={e => handleSort(e)} value='disabled'>
                     <option value=''>Name</option>
-                    <option value='asc'>A - Z</option>
-                    <option value='desc'>Z - A</option>
+                    <option className={styles.optionsSelect} value='asc'>A - Z</option>
+                    <option className={styles.optionsSelect} value='desc'>Z - A</option>
                 </select>
                 <select className={styles.filter} onChange={e => handleAttack(e)} value='disabled'>
                     <option value=''>Attack</option>
-                    <option value='more_attack'>+ Attack </option>
-                    <option value='less_attack'>- Attack </option>
+                    <option className={styles.optionsSelect} value='more_attack'>+ Attack </option>
+                    <option className={styles.optionsSelect} value='less_attack'>- Attack </option>
                 </select>
                 <button className={styles.refreshButton} onClick={e => {handleClick(e)}}>
                     <h2>Refresh All</h2>

@@ -103,58 +103,70 @@ return (
             <div className={styles.pokemonCreate}>
                 <h1>Create a new pokemon!</h1>
                 <form onSubmit={(e) => handleSubmit(e)}>
-                    <div>
+                    <div className={styles.inputContainer}>
                         <label>Name: </label>
-                        <input type='text' value={input.name} name='name' onChange={handleChange} />
+                        <input type='text' value={input.name} name='name' onChange={handleChange} className={styles.inputName} />
                         {errors.name && (<p className='error'>{errors.name}</p>)}
                     </div>
-                    <div>
+                    <div className={styles.inputContainer}>
                         <label>Hp: </label>
                         <input type='text' value={input.hp} name='hp' onChange={handleChange} />
-                        <h3>Hp:</h3><progress max="250" value={input.hp}></progress>
+                        <progress max="250" value={input.hp}></progress>
                         {errors.hp && (<p className='error'>{errors.hp}</p>)}
                     </div>
-                    <div>
+                    <div className={styles.inputContainer}>
                         <label>Attack: </label>
                         <input type='text' value={input.attack} name='attack' onChange={handleChange} />
+                        <progress max="250" value={input.attack}></progress>
                     </div>
-                    <div>
+                    <div className={styles.inputContainer}>
                         <label>Defense: </label>
                         <input type='text' value={input.defense} name='defense' onChange={handleChange} />
+                        <progress max="250" value={input.defense}></progress>
+
                     </div>
-                    <div>
+                    <div className={styles.inputContainer}>
                         <label>Speed: </label>
                         <input type='text' value={input.speed} name='speed' onChange={handleChange} />
+                        <progress max="250" value={input.speed}></progress>
                     </div>
-                    <div>
+                    <div className={styles.inputContainer}>
                         <label>Height: </label>
                         <input type='text' value={input.height} name='height' onChange={handleChange} />
+                        <progress max="250" value={input.height}></progress>
                     </div>
-                    <div>
+                    <div className={styles.inputContainer}>
                         <label>Weight: </label>
                         <input type='text' value={input.weight} name='weight' onChange={handleChange} />
+                        <progress max="250" value={input.weight}></progress>
                     </div>
-                    <div>
+                    <div className={styles.inputContainer}>
                         <label>Image: </label>
                         <input type='text' value={input.img} name='img' onChange={handleChange} />
                     </div>
                     <div>
-                        <select onChange={(e) => handleSelect(e)}>
-                            {types.map((t) => (
-                                <option key={t.name} value={t.name}>{t.name}</option>
-                            ))}
+                    <div className={styles.inputContainer}>
+                        <label>Type:</label>
+                        <select onChange={(e) => handleSelect(e)} className={styles.selectTypes} value='disabled'>
+                            <option value=''>Select</option>
+                            {types.map((t) => (<option key={t.name} value={t.name} className={styles.optionsSelect}>{t.name}</option>))}
                         </select>
-                        {/* <ul><li>{input.types.map(el => el + " ,")}</li></ul>  */}
 
-                        <button type='submit'>Create Pokemon</button>
+                    <div className={styles.typeSelectedContainer}>
+                        {input.types.map(el => 
+                            <div >
+                                <div className={styles.typeSelectedContainerIn}>
+                                    <p className={styles.typeSelected}>{el}</p>
+                                    <button key={el} className={styles.xButton} onClick={() => handleDelete(el)}>x</button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                    </div>
+                        <button className={styles.createButton} type='submit'>Create</button>
                     </div>
                 </form>
             </div>
-            {input.types.map(el => 
-            <div>
-                <p>{el}</p>
-                <button key={el} className='buttonX' onClick={() => handleDelete(el)}>x</button>
-            </div>)}
         </div>
     </div>
   )
