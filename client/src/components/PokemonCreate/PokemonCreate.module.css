@@ -236,3 +236,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.pokemonCreate span {
+  position: absolute;
+  margin-top: 18px;
+  color: red;
+  font-size: .5em;
+}

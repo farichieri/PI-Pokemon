@@ -31,6 +31,7 @@
   .cardName {
     font-size: .6em;
     color: #CE2211;
+    text-shadow: 1px 1px 1px #DFDFDF;
     letter-spacing: .2rem;
     margin-bottom: 5px;
   }

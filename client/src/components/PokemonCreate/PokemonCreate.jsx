@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getTypes, postPokemon } from '../../actions';
+import { getPokemons, getTypes, postPokemon } from '../../actions';
 import { useDispatch, useSelector} from 'react-redux';
 import styles from './PokemonCreate.module.css'
 
@@ -10,9 +10,25 @@ function validate(input) { // input es mi estado local.
         errors.name = 'Name required'; 
     } else if (!input.hp) {
         errors.hp = 'Hp required';
+    } else if (!input.attack) {
+        errors.attack = 'Attack required';
+    } else if (!input.defense) {
+        errors.defense = 'Defense required';
+    } else if (!input.speed) {
+        errors.speed = 'Speed required';
+    } else if (!input.height) {
+        errors.height = 'Height required';
+    } else if (!input.weight) {
+        errors.weight = 'Weight required';
+    } else if (!input.img) {
+        errors.img = 'Image required';
+    } else if (input.types.length.length == []) {
+        console.log(input.types)
+        errors.types = 'Type required';
     }
     return errors;
 }
+
 
 function PokemonCreate() {
     const dispatch = useDispatch();
@@ -41,11 +57,9 @@ function PokemonCreate() {
             ...input,           // con el estado input
             [e.target.name]: e.target.value // y el e.target.name en el e.target.value.
         }));
-        console.log(input);
     }
 
     function handleSelect(e) {
-        console.log(e.target.value)
         setInput({
             ...input,
             types: [...input.types, e.target.value]
@@ -80,6 +94,7 @@ function PokemonCreate() {
 
     useEffect(() => {
         dispatch(getTypes())
+        // dispatch(getPokemons()) // evita duplicacion de pokemons
     }, [dispatch]);
 
 return (
@@ -103,37 +118,42 @@ return (
                         <label>Hp: </label>
                         <input type='number' value={input.hp} name='hp' onChange={handleChange} />
                         <progress max="250" value={input.hp}></progress>
-                        {errors.hp && (<p className='error'>{errors.hp}</p>)}
+                        <span>{errors.hp && (<p className='error'>{errors.hp}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Attack: </label>
                         <input type='number' value={input.attack} name='attack' onChange={handleChange} />
                         <progress max="250" value={input.attack}></progress>
+                        <span>{errors.attack && (<p className='error'>{errors.attack}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Defense: </label>
                         <input type='number' value={input.defense} name='defense' onChange={handleChange} />
                         <progress max="250" value={input.defense}></progress>
-
+                        <span>{errors.defense && (<p className='error'>{errors.defense}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Speed: </label>
                         <input type='number' value={input.speed} name='speed' onChange={handleChange} />
                         <progress max="250" value={input.speed}></progress>
+                        <span>{errors.speed && (<p className='error'>{errors.speed}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Height: </label>
                         <input type='number' value={input.height} name='height' onChange={handleChange} />
-                        <progress max="250" value={input.height}></progress>
+                        <progress max="25" value={input.height}></progress>
+                        <span>{errors.height && (<p className='error'>{errors.height}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Weight: </label>
                         <input type='number' value={input.weight} name='weight' onChange={handleChange} />
                         <progress max="250" value={input.weight}></progress>
+                        <span>{errors.weight && (<p className='error'>{errors.weight}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Image: </label>
                         <input type='text' value={input.img} name='img' onChange={handleChange} />
+                        <span>{errors.img && (<p className='error'>{errors.img}</p>)}</span>
                     </div>
                     <div>
                     <div className={styles.inputContainer}>
@@ -141,6 +161,7 @@ return (
                         <select onChange={(e) => handleSelect(e)} className={styles.selectTypes} value='disabled'>
                             <option value=''>Select</option>
                             {types.map((t) => (<option key={t.name} value={t.name} className={styles.optionsSelect}>{t.name}</option>))}
+                        <span>{errors.types && (<p className='error'>{errors.types}</p>)}</span>
                         </select>
 
                     <div className={styles.typeSelectedContainer}>
@@ -155,6 +176,7 @@ return (
                     </div>
                     </div>
                         <button className={styles.createButton} type='submit'>Create</button>
+                        {/* disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.img || errors.types ? false : true} */}
                     </div>
                 </form>
             </div>
