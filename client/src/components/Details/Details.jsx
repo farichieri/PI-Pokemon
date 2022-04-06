@@ -5,6 +5,7 @@ import { getDetail } from '../../actions';
 import { useEffect } from 'react';
 import styles from './Details.module.css'
 import Loader from '../Loader/Loader.jsx'
+import { cleanDetail } from '../../actions';
 
 function Details() {
     const dispatch = useDispatch();
@@ -15,11 +16,15 @@ function Details() {
     }, [dispatch])
     const myPokemon = useSelector((state) => state.detail);
     
+    function handleClick(e) {
+        dispatch(cleanDetail())
+    }
+
   return (
     <div className={styles.detailsPage}>
             <nav className={styles.exitSearchAndCreateNav}>
                 <div className={styles.backContainer}>
-                    <Link to="/home"><h1 className={styles.back}>Home</h1></Link>
+                    <Link to="/home"><h1 className={styles.back} onClick={() => handleClick()}>Home</h1></Link>
                 </div>
             </nav>
         {

@@ -92,3 +92,10 @@ export function getDetail(id) {
         }
     }
 }
+
+export function cleanDetail() {
+    return {
+        type: "CLEAN_DETAIL",
+        payload: {}
+    };
+}

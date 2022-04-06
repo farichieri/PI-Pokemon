@@ -6,25 +6,25 @@ import styles from './PokemonCreate.module.css'
 
 function validate(input) { // input es mi estado local.
     let errors = {};
-    if (!input.name) {
-        errors.name = 'Name required'; 
-    } else if (!input.hp) {
+    if (!input.name || !/^[a-z]+$/.test(input.name)) {
+        errors.name = 'Name required and must be letters'; 
+    } if (!input.hp) {
         errors.hp = 'Hp required';
-    } else if (!input.attack) {
+    } if (!input.attack) {
         errors.attack = 'Attack required';
-    } else if (!input.defense) {
+    } if (!input.defense) {
         errors.defense = 'Defense required';
-    } else if (!input.speed) {
+    } if (!input.speed) {
         errors.speed = 'Speed required';
-    } else if (!input.height) {
+    } if (!input.height) {
         errors.height = 'Height required';
-    } else if (!input.weight) {
+    } if (!input.weight) {
         errors.weight = 'Weight required';
-    } else if (!input.img) {
+    } if (!input.img) {
         errors.img = 'Image required';
-    } else if (input.types.length.length == []) {
-        console.log(input.types)
-        errors.types = 'Type required';
+    } if (input.types.length === 0 || input.types.length > 2) {
+        // console.log(input.types.length)
+        errors.types = 'Type required and must be max 2';
     }
     return errors;
 }
@@ -53,17 +53,28 @@ function PokemonCreate() {
             ...input,
             [e.target.name] : e.target.value
         })
-        setErrors(validate({    // Eeteame mi estado errores pasandole la función validate.
+        setErrors(validate({    // Seteame mi estado errores pasandole la función validate.
             ...input,           // con el estado input
             [e.target.name]: e.target.value // y el e.target.name en el e.target.value.
         }));
     }
 
     function handleSelect(e) {
-        setInput({
-            ...input,
-            types: [...input.types, e.target.value]
-        })
+        // setInput({
+        //     ...input,
+        //     types: [...input.types, e.target.value]
+        // })
+
+        setErrors(validate({    
+            ...input,          
+            types: [...input.types, e.target.value ]
+        }));
+        if (input.types.length < 2) {
+            setInput({
+                ...input,
+                types: [...input.types, e.target.value]
+            })
+        }
     }
 
     function handleSubmit(e) {
@@ -161,8 +172,8 @@ return (
                         <select onChange={(e) => handleSelect(e)} className={styles.selectTypes} value='disabled'>
                             <option value=''>Select</option>
                             {types.map((t) => (<option key={t.name} value={t.name} className={styles.optionsSelect}>{t.name}</option>))}
-                        <span>{errors.types && (<p className='error'>{errors.types}</p>)}</span>
                         </select>
+                        <span>{errors.types && (<p className='error'>{errors.types}</p>)}</span>
 
                     <div className={styles.typeSelectedContainer}>
                         {input.types.map(el => 
@@ -175,7 +186,7 @@ return (
                         )}
                     </div>
                     </div>
-                        <button className={styles.createButton} type='submit'>Create</button>
+                        <button className={styles.createButton} type='submit' disabled={errors.name || errors.types} >Create</button>
                         {/* disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.img || errors.types ? false : true} */}
                     </div>
                 </form>
