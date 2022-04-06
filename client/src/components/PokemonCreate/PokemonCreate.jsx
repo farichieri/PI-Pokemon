@@ -64,7 +64,7 @@ function PokemonCreate() {
     function handleSubmit(e) {
         e.preventDefault();
         dispatch(postPokemon(input))
-        alert('Pokemon created broodiii!!')
+        alert('Pokemon created!')
         setInput({
             name: '',
             hp: '',

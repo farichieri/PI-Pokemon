@@ -27,17 +27,30 @@ function Details() {
             <div className={styles.detailsContainer}>
                 <div className={styles.details}>
                     <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 8 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
-                    <h1 className={styles.detailsName}>Hi! I'm {myPokemon[0].name}</h1>
+                    <h1 className={styles.detailsName}>{myPokemon[0].name}</h1>
                     <img src={myPokemon[0].img} alt="" width="500px" height="500px" />
-                    <h2>My stats:</h2>
-                    <h2>Hp: {myPokemon[0].hp}</h2>
-                    <h2>Attack: {myPokemon[0].attack}</h2>
-                    <h2>Defense: {myPokemon[0].defense}</h2>
-                    <h2>Speed: {myPokemon[0].speed}</h2>
-                    <h2>Height: {myPokemon[0].height}</h2>
-                    <h2>Weight: {myPokemon[0].weigth}</h2>
-                    <h2>Types: {myPokemon[0].types[0] + " " + (myPokemon[0].types[1] ? myPokemon[0].types[1] : " ")}</h2>
-                    {/* <progress className={styles.hpProgress} max="100" value={myPokemon[0].hp}></progress><p>Hp: {myPokemon[0].hp}</p> */}
+                    <h4>My stats:</h4>
+                    <div className={styles.progressContainer}>
+                        <h3>Hp:</h3><progress className={styles.hpProgress} max="250" value={myPokemon[0].hp}></progress><p>{myPokemon[0].hp}</p>
+                    </div>
+                    <div className={styles.progressContainer}>
+                        <h3>Attack:</h3><progress className={styles.attackProgress} max="134" value={myPokemon[0].attack}></progress><p>{myPokemon[0].attack}</p>
+                    </div>
+                    <div className={styles.progressContainer}>
+                        <h3>Defense:</h3><progress className={styles.defenseProgress} max="180" value={myPokemon[0].defense}></progress><p>{myPokemon[0].defense}</p>
+                    </div>
+                    <div className={styles.progressContainer}>
+                        <h3>Speed:</h3><progress className={styles.speedProgress} max="140" value={myPokemon[0].speed}></progress><p>{myPokemon[0].speed}</p>
+                    </div>
+                        <div className={styles.progressContainer}>
+                    <h3>Height:</h3><progress className={styles.heightProgress} max="100" value={myPokemon[0].height}></progress><p>{myPokemon[0].height * 10}cm</p>
+                    </div>
+                    <div className={styles.progressContainer}>
+                        <h3>Weight:</h3><progress className={styles.weightProgress} max="1000" value={myPokemon[0].weigth}></progress><p>{myPokemon[0].weigth}kg</p>
+                    </div>
+                    <div className={styles.typesContainer}>
+                        <h2>Types: {myPokemon[0].types[0] + " " + (myPokemon[0].types[1] ? myPokemon[0].types[1] : " ")}</h2>
+                    </div>
                 </div>
             </div>
                 : <Loader />

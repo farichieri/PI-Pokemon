@@ -24,7 +24,7 @@
 
   .card:hover {
     filter: brightness(125%);
-    background-color: #ffcb05;
+    background-color: #d5a000b4;
     transform: scale(1.1);
   }
 
