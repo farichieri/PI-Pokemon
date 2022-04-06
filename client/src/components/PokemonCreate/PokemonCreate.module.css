@@ -67,9 +67,7 @@
 
 .pokemonCreate progress {
   border-radius: 7px; 
-  width: 200px;
-  height: 12px;
-  margin: 1px;
+  height: 13px;
   animation: load 3s normal forwards;
   flex-direction: row;
   position: absolute;
@@ -77,7 +75,7 @@
 }
 
 .pokemonCreate progress::-webkit-progress-bar {
-  background-color: rgba(0, 0, 0, 0.722);
+  background-color: rgba(0, 0, 0, 0.784);
   border-radius: 7px;    
 }
 
@@ -106,8 +104,7 @@
 
 .pokemonCreate .inputContainer {
   display: flex;
-  margin: 15px;
-  height: 20px;
+  margin: 20px;
   border-radius: 5px;
   text-align: center;
 }
@@ -119,6 +116,11 @@
   background-color: rgba(255, 228, 196, 0.487);
   border: 1px solid black;
   border-radius: 3px;
+  font-weight: bolder;
+}
+
+.pokemonCreate input:focus{
+  font-weight: lighter;
 }
 
 .pokemonCreate select {
@@ -128,29 +130,31 @@
   background-color: rgba(255, 228, 196, 0.487);
   border: 1px solid black;
   border-radius: 2px;
-  width: 100px;
 }
 
 .pokemonCreate .inputName {
-  width: 100px;
+  width: 200px;
   position: absolute;
   justify-content: center;
+  left: 39%;
 }
 
 .createButton {
+  /* position: absolute; */
   font-family: 'Press Start 2P', cursive;
   background-color: rgb(0, 0, 0);
   color: #EFFCD5;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid rgba(248, 248, 248, 0.259);
   font-size: .8rem;
   padding: 5px;
   height: 25px;
   padding: 5px;
-  width: 100;
   text-align: center;
   color: #CE2211;
   transition: .3s;
+  width: 50%;
+  margin-top: 10px;
 }
 
 .createButton:hover {
@@ -173,7 +177,7 @@
   border-radius: 5px;
   border: 1px solid black;
   font-size: .6rem;
-  padding: 5px;
+  height: 20px;
   outline: 0px;
   width: 100px;
 }
@@ -191,28 +195,44 @@
   display: flex;
   position: absolute;
   justify-content: center;
-  left: 37%;
-  /* background-color: yellow; */
+  left: 38%;
   margin-bottom: 10px;
 }
 
 .typeSelectedContainerIn {
   color: black;
-  font-size: .8em;
-  background-color: #E6BC2F;
+  font-size: .7em;
+  background-color: #e6bb2fbd;
+  border: 1px solid black;
   border-radius: 10px;
-  justify-content: space-between;
-  justify-content: center;
-  padding: 5px;
+  padding: 3px;
   display: inline-flex;
   margin-left: 5px;
   text-align: center;
+  justify-content: center;
+  width: 120px;
+  justify-content: space-between;
 }
 
+.typeSelected {
+  position:relative;
+  display: inline-flex;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+
 .xButton {
-  position: relative;
-  width: 15px;
-  height: 15px;
   border-radius: 10px;
-  border: 1px solid black
+  border: none;
+  color: white;
+  background-color: black;
+  width: 17px;
+  height: 17px;
+  font-size: .9em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

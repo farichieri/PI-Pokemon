@@ -1,5 +1,5 @@
 .detailsPage {
-    background: url(./img/Beyond.jpg) black;
+    background: url(./img/Beyond.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,7 +20,7 @@
     max-width: 700px;
     margin-top: 45px;
     /* margin: 0 auto;; */
-    background-color: rgba(0, 0, 0, 0.531);
+    background-color: rgba(0, 0, 0, 0.768);
     border-radius: 10%;
 }
 
@@ -39,7 +39,7 @@
     font-size: 1.5em;
     color: #CE2211;
     letter-spacing: .2rem;
-
+    margin-bottom: 5%;
 }
 
 .detailsId {
@@ -164,7 +164,8 @@ progress::-moz-progress-bar {
 
 .details h4 {
   font-size: 1.3em;
-  margin: 10px;
+  margin: 15px;
+  color: #DFDFDF;
 }
 
 .typesContainer {

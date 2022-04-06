@@ -44,15 +44,6 @@ function PokemonCreate() {
         console.log(input);
     }
 
-    // function handleCheck(e) { // Para ejecutar checkboxes
-    //     if(e.target.checked) {
-    //         setInput({
-    //             ...input,
-    //             status: e.target.value
-    //         })
-    //     }
-    // }
-
     function handleSelect(e) {
         console.log(e.target.value)
         setInput({
@@ -106,38 +97,38 @@ return (
                     <div className={styles.inputContainer}>
                         <label>Name: </label>
                         <input type='text' value={input.name} name='name' onChange={handleChange} className={styles.inputName} />
-                        {errors.name && (<p className='error'>{errors.name}</p>)}
+                        <span>{errors.name && (<p className='error'>{errors.name}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Hp: </label>
-                        <input type='text' value={input.hp} name='hp' onChange={handleChange} />
+                        <input type='number' value={input.hp} name='hp' onChange={handleChange} />
                         <progress max="250" value={input.hp}></progress>
                         {errors.hp && (<p className='error'>{errors.hp}</p>)}
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Attack: </label>
-                        <input type='text' value={input.attack} name='attack' onChange={handleChange} />
+                        <input type='number' value={input.attack} name='attack' onChange={handleChange} />
                         <progress max="250" value={input.attack}></progress>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Defense: </label>
-                        <input type='text' value={input.defense} name='defense' onChange={handleChange} />
+                        <input type='number' value={input.defense} name='defense' onChange={handleChange} />
                         <progress max="250" value={input.defense}></progress>
 
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Speed: </label>
-                        <input type='text' value={input.speed} name='speed' onChange={handleChange} />
+                        <input type='number' value={input.speed} name='speed' onChange={handleChange} />
                         <progress max="250" value={input.speed}></progress>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Height: </label>
-                        <input type='text' value={input.height} name='height' onChange={handleChange} />
+                        <input type='number' value={input.height} name='height' onChange={handleChange} />
                         <progress max="250" value={input.height}></progress>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Weight: </label>
-                        <input type='text' value={input.weight} name='weight' onChange={handleChange} />
+                        <input type='number' value={input.weight} name='weight' onChange={handleChange} />
                         <progress max="250" value={input.weight}></progress>
                     </div>
                     <div className={styles.inputContainer}>
