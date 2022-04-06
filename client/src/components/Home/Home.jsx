@@ -77,8 +77,8 @@ function Home() {
                 <div className={styles.searchBarContainer}>
                     <SearchBar />
                 </div>
-                <div className={styles.createContainer}>
-                    <Link to="/pokemons"><h1 className={styles.create}>Create</h1></Link>
+                <div className={styles.createContainer} >
+                    <Link to="/pokemons"><h1 className={styles.create} >Create</h1></Link>
                 </div>
             </nav>
             <div className={styles.filtersAndRefresh}>

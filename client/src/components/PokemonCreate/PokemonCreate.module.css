@@ -50,3 +50,17 @@
     background-color: rgba(0, 0, 0, 0.531);
     border-radius: 10%;
 }
+
+.pokemonCreate {
+  margin: 10%;
+}
+
+.pokemonCreate h1 {
+  color: white;
+  font-size: 1.6em;
+  margin: 50px 0 50px 0;
+}
+
+.pokemonCreate form {
+  background-color: red;
+}
