@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getPokemons, getTypes, postPokemon } from '../../actions';
 import { useDispatch, useSelector} from 'react-redux';
 import styles from './PokemonCreate.module.css'
+import { cleanPokemons } from '../../actions';
 
 function validate(input) { // input es mi estado local.
     let errors = {};
@@ -88,6 +89,7 @@ function PokemonCreate() {
             img: '',
             types: []
         })
+        dispatch(cleanPokemons())
         navigate('/home') // Redirije. Ya se creó el Pk. Llevame al home a ver si está.
     }
 

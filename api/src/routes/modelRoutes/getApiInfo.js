@@ -3,7 +3,9 @@ const axios = require('axios');
 const getApiInfo = async () => { // se instala e importa AXIOS para poder usarla. (Si se usa fetch no es necesario)
     const apiUrl = await axios.get('https://pokeapi.co/api/v2/pokemon') // Se usa AWAIT porque uno nunca sabe cuanto va a demorar la respuesta, entonces le aviso que tienen que esperar a la respuesta antes de cargar la información a la variable apiUrl (de manera asíncrona).-
     const apiUrlRest = await axios.get(apiUrl.data.next);
-    const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results) // ¿.RESULTS?
+    // const apiUrlRest2 = await axios.get(apiUrlRest.data.next)
+    // const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results).concat(apiUrlRest2.data.results) // ¿.RESULTS?
+    const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results)// ¿.RESULTS?
                         // Agarra nombres y url de pokemons // Agarra el resto 
 
     function capitalizeFirstLetter(str) {
