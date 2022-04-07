@@ -265,3 +265,15 @@ input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
   opacity: 1;
 }
+
+.pokemonCreate img {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: 50px;
+  border-radius: 10px;
+}
+
+.pokemonCreate img[src=""] {
+  display: none;
+}

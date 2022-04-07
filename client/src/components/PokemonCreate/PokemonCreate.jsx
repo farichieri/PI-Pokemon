@@ -6,24 +6,23 @@ import styles from './PokemonCreate.module.css'
 
 function validate(input) { // input es mi estado local.
     let errors = {};
-    if (!input.name || !/^[a-z]+$/.test(input.name)) {
-        errors.name = 'Name required and must be letters'; 
-    } if (!input.hp) {
-        errors.hp = 'Hp required';
-    } if (!input.attack) {
-        errors.attack = 'Attack required';
-    } if (!input.defense) {
-        errors.defense = 'Defense required';
-    } if (!input.speed) {
-        errors.speed = 'Speed required';
-    } if (!input.height) {
-        errors.height = 'Height required';
-    } if (!input.weight) {
-        errors.weight = 'Weight required';
-    } if (!input.img) {
-        errors.img = 'Image required';
+    if (!input.name || !/^[a-zA-Z]+$/.test(input.name)) {
+        errors.name = 'Name required and only letters are accepted'; 
+    } if (!input.hp || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.hp)) {
+        errors.hp = 'Hp required (250 max)';
+    } if (!input.attack || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.attack)) {
+        errors.attack = 'Attack required (250 max)';
+    } if (!input.defense || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.defense)) {
+        errors.defense = 'Defense required (250 max)';
+    } if (!input.speed || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.speed)) {
+        errors.speed = 'Speed required (250 max)';
+    } if (!input.height || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.height)) {
+        errors.height = 'Height required (250 max)';
+    } if (!input.weight || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.weight)) {
+        errors.weight = 'Weight required (250 max)';
+    } if (!input.img || !/https?:\/\/.*\.(?:png|jpg)/.test(input.img)) {
+        errors.img = 'Link Image required';
     } if (input.types.length === 0 || input.types.length > 2) {
-        // console.log(input.types.length)
         errors.types = 'Type required and must be max 2';
     }
     return errors;
@@ -60,11 +59,6 @@ function PokemonCreate() {
     }
 
     function handleSelect(e) {
-        // setInput({
-        //     ...input,
-        //     types: [...input.types, e.target.value]
-        // })
-
         setErrors(validate({    
             ...input,          
             types: [...input.types, e.target.value ]
@@ -101,7 +95,6 @@ function PokemonCreate() {
             types: input.types.filter(type => type !== el)
         })
     }
-
 
     useEffect(() => {
         dispatch(getTypes())
@@ -163,7 +156,8 @@ return (
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Image: </label>
-                        <input type='text' value={input.img} name='img' placeholder='Image' onChange={handleChange} />
+                        <input type='text' value={input.img} name='img' placeholder='Image' onChange={handleChange} oninput="pic.src=window.URL.createObjectURL(this.files[0])"/>
+                        <img src={input.img} />
                         <span>{errors.img && (<p className='error'>{errors.img}</p>)}</span>
                     </div>
                     <div>
@@ -186,7 +180,7 @@ return (
                         )}
                     </div>
                     </div>
-                        <button className={styles.createButton} type='submit' disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.img || errors.types ? true : false } >Create</button>
+                        <button className={styles.createButton} type='submit' disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.img || errors.types || input.name === '' ? true : false } >Create</button>
                     </div>
                 </form>
             </div>
