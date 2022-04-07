@@ -51,13 +51,13 @@
 }
 
 .pokemonCreate {
-  margin: 10%;
+  margin: 0% 10% 10% 10%;
 }
 
 .pokemonCreate h1 {
   color: #CE2211;
   font-size: 2em;
-  margin: 50px 0 50px 0;
+  margin: 50px 0 25px 0;
 }
 
 .pokemonCreate form {
@@ -75,12 +75,12 @@
 }
 
 .pokemonCreate progress::-webkit-progress-bar {
-  background-color: rgba(0, 0, 0, 0.784);
+  background-color: rgba(162, 162, 162, 0.784);
   border-radius: 7px;    
 }
 
 .pokemonCreate progress::-webkit-progress-value {
-  background: rgba(255, 255, 255, 0.779);
+  background: rgba(68, 255, 0, 0.779);
   border-radius: 7px;
 }
 
@@ -90,7 +90,7 @@
 
 @keyframes load {
   0% { width: 0; }
-  100% { width: 50%; }
+  100% { width: 40%; }
 }
 
 .pokemonCreate input {
@@ -155,7 +155,7 @@
   color: #CE2211;
   transition: .3s;
   width: 50%;
-  margin-top: 10px;
+  margin-top: 100px;
 }
 
 .createButton:hover {
@@ -170,6 +170,11 @@
 
 .createButton:focus {
   outline: 0;
+}
+
+.createButton:disabled {
+  background-color: gray;
+  color: black;
 }
 
 .pokemonCreate .selectTypes {
@@ -268,10 +273,11 @@ input::-webkit-outer-spin-button {
 
 .pokemonCreate img {
   position: absolute;
-  width: 150px;
-  height: 150px;
-  right: 50px;
+  width: 125px;
+  height: 125px;
   border-radius: 10px;
+  bottom: 16%;
+  left: 43%;
 }
 
 .pokemonCreate img[src=""] {

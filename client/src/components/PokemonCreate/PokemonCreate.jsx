@@ -20,7 +20,7 @@ function validate(input) { // input es mi estado local.
         errors.height = 'Height required (250 max)';
     } if (!input.weight || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.weight)) {
         errors.weight = 'Weight required (250 max)';
-    } if (!input.img || !/https?:\/\/.*\.(?:png|jpg)/.test(input.img)) {
+    } if (!input.img || !/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/.test(input.img)) {
         errors.img = 'Link Image required';
     } if (input.types.length === 0 || input.types.length > 2) {
         errors.types = 'Type required and must be max 2';
@@ -115,7 +115,7 @@ return (
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div className={styles.inputContainer}>
                         <label>Name: </label>
-                        <input type='text' value={input.name} name='name' placeholder='Name' onChange={handleChange} className={styles.inputName} />
+                        <input type='text' value={input.name} name='name' placeholder='Name' onChange={handleChange} className={styles.inputName} required />
                         <span>{errors.name && (<p className='error'>{errors.name}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
@@ -144,23 +144,16 @@ return (
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Height: </label>
-                        <input type='number' value={input.height} name='height' placeholder='0-250cm' max="250" min="0" onChange={handleChange} />
+                        <input type='number' value={input.height} name='height' placeholder='Height' max="250" min="0" onChange={handleChange} />
                         <progress max="250" value={input.height}></progress>
                         <span>{errors.height && (<p className='error'>{errors.height}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Weight: </label>
-                        <input type='number' value={input.weight} name='weight'  placeholder='0-250kgs'  max="250" min="0" onChange={handleChange} />
+                        <input type='number' value={input.weight} name='weight'  placeholder='Weight'  max="250" min="0" onChange={handleChange} />
                         <progress max="250" value={input.weight}></progress>
                         <span>{errors.weight && (<p className='error'>{errors.weight}</p>)}</span>
                     </div>
-                    <div className={styles.inputContainer}>
-                        <label>Image: </label>
-                        <input type='text' value={input.img} name='img' placeholder='Image' onChange={handleChange} oninput="pic.src=window.URL.createObjectURL(this.files[0])"/>
-                        <img src={input.img} />
-                        <span>{errors.img && (<p className='error'>{errors.img}</p>)}</span>
-                    </div>
-                    <div>
                     <div className={styles.inputContainer}>
                         <label>Type:</label>
                         <select onChange={(e) => handleSelect(e)} className={styles.selectTypes} value='disabled'>
@@ -180,8 +173,13 @@ return (
                         )}
                     </div>
                     </div>
-                        <button className={styles.createButton} type='submit' disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.img || errors.types || input.name === '' ? true : false } >Create</button>
+                    <div className={styles.inputContainer}>
+                        <label>Image: </label>
+                        <input type='text' value={input.img} name='img' placeholder='Link' onChange={handleChange} oninput="pic.src=window.URL.createObjectURL(this.files[0])"/>
+                        <img src={input.img} />
+                        <span>{errors.img && (<p className='error'>{errors.img}</p>)}</span>
                     </div>
+                        <button className={styles.createButton} type='submit' disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.img || errors.types || input.name === '' ? true : false } >Create</button>
                 </form>
             </div>
         </div>
