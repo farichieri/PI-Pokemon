@@ -9,8 +9,9 @@ router.get('/pokemons', async (req, res, next)  => { // FUNCIONA -> Ver por que 
     const { name } = req.query;  // Funciona con name /pokemons?name=pikachu
     const totalPokemons = await getAllInfo(); // Funciona con todos los pokemons + DB
     if (name) {
-        const pokemonName = totalPokemons.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
-        pokemonName.length ? res.status(200).send(pokemonName) : res.status(404).send({error: 'Pokemon not found'})
+        const pokemonName = totalPokemons.filter(el => el.name.toLowerCase() === name.toLowerCase());
+        // pokemonName.length ? res.status(200).send(pokemonName) : res.status(404).send({error: 'Pokemon not found'})
+        res.status(200).send(pokemonName);
     } else { // Si no hay un query name:
         try {
             res.status(200).send(totalPokemons);
