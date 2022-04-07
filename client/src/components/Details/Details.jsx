@@ -39,19 +39,19 @@ function Details() {
                         <h3>Hp:</h3><progress className={styles.hpProgress} max="250" value={myPokemon[0].hp}></progress><p>{myPokemon[0].hp}</p>
                     </div>
                     <div className={styles.progressContainer}>
-                        <h3>Attack:</h3><progress className={styles.attackProgress} max="134" value={myPokemon[0].attack}></progress><p>{myPokemon[0].attack}</p>
+                        <h3>Attack:</h3><progress className={styles.attackProgress} max="250" value={myPokemon[0].attack}></progress><p>{myPokemon[0].attack}</p>
                     </div>
                     <div className={styles.progressContainer}>
-                        <h3>Defense:</h3><progress className={styles.defenseProgress} max="180" value={myPokemon[0].defense}></progress><p>{myPokemon[0].defense}</p>
+                        <h3>Defense:</h3><progress className={styles.defenseProgress} max="250" value={myPokemon[0].defense}></progress><p>{myPokemon[0].defense}</p>
                     </div>
                     <div className={styles.progressContainer}>
-                        <h3>Speed:</h3><progress className={styles.speedProgress} max="140" value={myPokemon[0].speed}></progress><p>{myPokemon[0].speed}</p>
+                        <h3>Speed:</h3><progress className={styles.speedProgress} max="250" value={myPokemon[0].speed}></progress><p>{myPokemon[0].speed}</p>
                     </div>
                         <div className={styles.progressContainer}>
-                    <h3>Height:</h3><progress className={styles.heightProgress} max="100" value={myPokemon[0].height}></progress><p>{myPokemon[0].height * 10}cm</p>
+                    <h3>Height:</h3><progress className={styles.heightProgress} max="250" value={myPokemon[0].height}></progress><p>{myPokemon[0].height}cms</p>
                     </div>
                     <div className={styles.progressContainer}>
-                        <h3>Weight:</h3><progress className={styles.weightProgress} max="1000" value={myPokemon[0].weight}></progress><p>{myPokemon[0].weight}kg</p>
+                        <h3>Weight:</h3><progress className={styles.weightProgress} max="250" value={myPokemon[0].weight}></progress><p>{myPokemon[0].weight}kgs</p>
                     </div>
                     <div className={styles.typesContainer}>
                         <h2>Types: {myPokemon[0].types[0] + " " + (myPokemon[0].types[1] ? myPokemon[0].types[1] : " ")}</h2>

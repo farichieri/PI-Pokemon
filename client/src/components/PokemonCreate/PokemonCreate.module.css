@@ -1,5 +1,5 @@
 .pokemonCreatePage {
-  background: url(./img/Beyond.jpg) black;
+  background: url(./img/Beyond.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -46,7 +46,7 @@
   height: 600px;
   max-width: 900px;
   margin-top: 40px;
-  background-color: rgba(0, 0, 0, 0.531);
+  background-color: rgba(0, 0, 0, 0.92);
   border-radius: 10%;
 }
 
@@ -117,6 +117,7 @@
   border: 1px solid black;
   border-radius: 3px;
   font-weight: bolder;
+  width: 80px;
 }
 
 .pokemonCreate input:focus{
@@ -242,4 +243,25 @@
   margin-top: 18px;
   color: red;
   font-size: .5em;
+}
+
+.pokemonCreate input::placeholder {
+  color: rgba(0, 0, 0, 0.544);
+  font-size: .8em;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pokemonCreate input:focus::placeholder {
+  color: transparent;
+}
+
+.pokemonCreate input:focus {
+  outline: 0;
+}
+
+input::-webkit-inner-spin-button, 
+input::-webkit-outer-spin-button {
+  opacity: 1;
 }
