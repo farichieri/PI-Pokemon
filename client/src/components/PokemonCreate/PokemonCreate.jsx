@@ -22,7 +22,7 @@ function validate(input) { // input es mi estado local.
         errors.weight = 'Weight required (250 max)';
     } if (!input.img || !/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/.test(input.img)) {
         errors.img = 'Link Image required';
-    } if (input.types.length === 0 || input.types.length > 2) {
+    } if (input.types.length === 0) {
         errors.types = 'Type required and must be max 2';
     }
     return errors;
@@ -68,6 +68,8 @@ function PokemonCreate() {
                 ...input,
                 types: [...input.types, e.target.value]
             })
+        } else {
+            alert("2 types max")
         }
     }
 
@@ -175,7 +177,7 @@ return (
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Image: </label>
-                        <input type='text' value={input.img} name='img' placeholder='Link' onChange={handleChange} oninput="pic.src=window.URL.createObjectURL(this.files[0])"/>
+                        <input type='text' value={input.img} name='img' placeholder='Link' onChange={handleChange} />
                         <img src={input.img} />
                         <span>{errors.img && (<p className='error'>{errors.img}</p>)}</span>
                     </div>

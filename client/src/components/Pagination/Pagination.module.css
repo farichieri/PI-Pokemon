@@ -1,4 +1,4 @@
-.paginationContainer {
+.paginationUlContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,12 @@
     width: 100px;
     margin: 5px auto;
     border-radius: 10px;
-    height: 20px;
+    position: relative;
+  }
+
+  .paginatorContainer {
+    background-color: red;
+    display: inline;
   }
   
   .paginationNumber {

@@ -41,7 +41,8 @@ function Home() {
 
     function handleClick(e) { // Siempre hay que crear los handles de las cosas que usemos abajo
         e.preventDefault(); // preventDefault es para que no se recargue la página y no se me rompan las cosas. (Porque al recargar los estados de redux, vuelven a cargarse si tenemos useEffect )
-        dispatch(getPokemons()) // Resetea los pokemons
+        dispatch(cleanPokemons());
+        dispatch(getPokemons()); // Resetea los pokemons
     }
 
     function handleFilterTypes(e) {
@@ -69,7 +70,7 @@ function Home() {
         setOrder(`Ordered ${e.target.value}`) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
     }
 
-    // function handleClick() {
+    // function handleRefresh() {
     //     dispatch(cleanPokemons())
     // }
 
@@ -110,9 +111,11 @@ function Home() {
                     <option className={styles.optionsSelect} value='more_attack'>+ Attack </option>
                     <option className={styles.optionsSelect} value='less_attack'>- Attack </option>
                 </select>
+
                 <button className={styles.refreshButton} onClick={e => {handleClick(e)}}>
                     <h2>Refresh All</h2>
                 </button>
+     
             </div>
                 <div className={styles.cardsContainer}>
                     {

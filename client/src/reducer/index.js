@@ -64,7 +64,8 @@ function rootReducer (state = initialState, action) {
         case 'GET_NAME_POKEMONS':
             return {
                 ...state,
-                pokemons: action.payload // pokemons = arreglo que estoy renderizando.
+                pokemons: action.payload, // pokemons = arreglo que estoy renderizando.
+                isLoading: false
             }
             case 'GET_TYPES':
                 return {
@@ -88,7 +89,7 @@ function rootReducer (state = initialState, action) {
             case "CLEAN_POKEMONS":
                 return {
                     ...state,
-                    pokemons: {}
+                    isLoading : true
                 };
         default:
             return state;

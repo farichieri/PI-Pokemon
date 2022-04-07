@@ -3,6 +3,7 @@ import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {getNamePokemons} from '../../actions'
 import styles from './SearchBar.module.css'
+import { cleanPokemons } from '../../actions';
 
 function SearchBar() {
     const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function SearchBar() {
 
     function handleSubmit(e) {
         e.preventDefault();
+        dispatch(cleanPokemons());
         dispatch(getNamePokemons(name)) // Este name va a ser mi estado local (que va tipeando el usuario)
         setName(''); // Seteo el state a '' luego del click en el button
     }
