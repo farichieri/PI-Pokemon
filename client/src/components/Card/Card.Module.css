@@ -4,9 +4,8 @@
     overflow: hidden;
     height: 250px;
     width: 200px;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 .9rem rgba(247, 241, 241, 0.084);
     border-radius: 40px;
-    /* background-color: rgba(239, 239, 239, 0.116); */
     opacity: 1;
     transition: .3s;
    }
