@@ -4,7 +4,7 @@
     overflow: hidden;
     height: 250px;
     width: 200px;
-    box-shadow: 0 0 .9rem rgba(247, 241, 241, 0.084);
+    box-shadow: 0 0 .9rem rgb(0, 0, 0);
     border-radius: 40px;
     opacity: 1;
     transition: .3s;
@@ -46,6 +46,7 @@
     margin: 0;
     width: 150px;
     height: 150px;
+    border-radius: 10px;
   }
 
   .cardContainer {

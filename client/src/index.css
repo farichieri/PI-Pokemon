@@ -12,7 +12,9 @@ html {
   font-family: 'Press Start 2P', cursive;
   /* font-family: "Pokemon"; */
   scroll-behavior: smooth;
+
 }
+
 
 * {
   padding: 0;

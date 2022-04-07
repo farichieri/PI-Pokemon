@@ -85,6 +85,11 @@ function rootReducer (state = initialState, action) {
                     ...state,
                     detail: {}
                 };
+            case "CLEAN_POKEMONS":
+                return {
+                    ...state,
+                    pokemons: {}
+                };
         default:
             return state;
     }

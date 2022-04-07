@@ -1,14 +1,14 @@
-.home {
+body {
   background: url(./Beyond.jpg) black;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  min-height: 100vw;
+  min-height: 100%;
   min-width: 100vh;
   font-size: 25px;
-  /* height: 100%; */
-  margin: 0;
+  height: 100%;
+  margin: 0 auto;
   text-transform: none;
   text-decoration: inherit;
   color: #EFFCD5;
@@ -24,7 +24,7 @@
   flex-direction: column;
   max-width: 1300px;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.92);
+  background-color: rgba(0, 0, 0, 0.603);
   border-radius: 50px;
   height: 80vh;
 }

@@ -13,6 +13,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import styles from './Home.module.css'
 import Loader from '../Loader/Loader.jsx'
 import NotFound from '../NotFound/NotFound.jsx'
+import { cleanPokemons } from '../../actions';
 
 // Siempre que voy a trabajar con algo que funcione solo en este componente (HOME), lo establezco acá. Para no perder tiempo haciendo toda esta lógica en un estado global, genero estado local en este componente. 
 function Home() {
@@ -68,6 +69,10 @@ function Home() {
         setOrder(`Ordered ${e.target.value}`) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
     }
 
+    // function handleClick() {
+    //     dispatch(cleanPokemons())
+    // }
+
     return (
         <div className={styles.home}>
             <nav className={styles.exitSearchAndCreateNav}>
@@ -78,7 +83,7 @@ function Home() {
                     <SearchBar />
                 </div>
                 <div className={styles.createContainer} >
-                    <Link to="/pokemons"><h1 className={styles.create} >Create</h1></Link>
+                    <Link to="/pokemons"><h1 className={styles.create}>Create</h1></Link>
                 </div>
             </nav>
             <div className={styles.filtersAndRefresh}>

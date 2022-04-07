@@ -16,7 +16,7 @@ function Details() {
     }, [dispatch])
     const myPokemon = useSelector((state) => state.detail);
     
-    function handleClick(e) {
+    function handleClick() {
         dispatch(cleanDetail())
     }
 

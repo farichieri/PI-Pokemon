@@ -57,7 +57,7 @@
 .pokemonCreate h1 {
   color: #CE2211;
   font-size: 2em;
-  margin: 50px 0 25px 0;
+  margin: 50px 0 50px 0;
 }
 
 .pokemonCreate form {
@@ -66,7 +66,7 @@
 
 
 .pokemonCreate progress {
-  border-radius: 7px; 
+  border-radius: 50px; 
   height: 13px;
   animation: load 3s normal forwards;
   flex-direction: row;
@@ -76,12 +76,11 @@
 
 .pokemonCreate progress::-webkit-progress-bar {
   background-color: rgba(162, 162, 162, 0.784);
-  border-radius: 7px;    
 }
 
 .pokemonCreate progress::-webkit-progress-value {
   background: rgba(68, 255, 0, 0.779);
-  border-radius: 7px;
+  box-shadow: 0px 0px 15px 0px #e1e1e1;
 }
 
 .pokemonCreate progress::-moz-progress-bar {
@@ -90,7 +89,7 @@
 
 @keyframes load {
   0% { width: 0; }
-  100% { width: 40%; }
+  100% { width: 52%; }
 }
 
 .pokemonCreate input {
@@ -141,9 +140,8 @@
 }
 
 .createButton {
-  /* position: absolute; */
   font-family: 'Press Start 2P', cursive;
-  background-color: rgb(0, 0, 0);
+  background-color: #00f200;
   color: #EFFCD5;
   border-radius: 5px;
   border: 1px solid rgba(248, 248, 248, 0.259);
@@ -152,20 +150,20 @@
   height: 25px;
   padding: 5px;
   text-align: center;
-  color: #CE2211;
+  color: black;
   transition: .3s;
   width: 50%;
   margin-top: 100px;
 }
 
 .createButton:hover {
-  background-color: red;
+  background-color: #006200;
   color: black;
   cursor: pointer;
 }
 
 .createButton:active {
-  box-shadow: 0px 0px 25px 0px #e1e1e1;
+  box-shadow: 0px 0px 15px 0px #e1e1e1;
 }
 
 .createButton:focus {
@@ -276,8 +274,8 @@ input::-webkit-outer-spin-button {
   width: 125px;
   height: 125px;
   border-radius: 10px;
-  bottom: 16%;
-  left: 43%;
+  bottom: 12%;
+  left: 42.5%;
 }
 
 .pokemonCreate img[src=""] {

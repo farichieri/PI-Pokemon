@@ -99,3 +99,10 @@ export function cleanDetail() {
         payload: {}
     };
 }
+
+export function cleanPokemons() {
+    return {
+        type: "CLEAN_POKEMONS",
+        payload: {}
+    };
+}

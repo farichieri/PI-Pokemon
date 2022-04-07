@@ -133,7 +133,7 @@ return (
                     <div className={styles.inputContainer}>
                         <label>Defense: </label>
                         <input type='number' value={input.defense} name='defense' placeholder='Defense' max="250" min="0" onChange={handleChange} />
-                        <progress max="250" value={input.defense}></progress>
+                        <progress max="250" value={input.defense} ></progress>
                         <span>{errors.defense && (<p className='error'>{errors.defense}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
