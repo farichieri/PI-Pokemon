@@ -5,12 +5,17 @@
     transform: translate(-50%, -50%);
     width: 500px;
     height: 500px;
-    font-size: 20px;
     color: #DFDFDF;
 }
 
 .loading img {
-    margin-top: 30px;
-    width: 300px;
-    height: 300px;
+    margin-top: 90px;
+    width: 350px;
+    height: auto;
+}
+
+.loading h1 {
+    color: whitesmoke;
+    font-size: 1.2em;
+
 }

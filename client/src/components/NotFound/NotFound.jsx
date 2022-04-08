@@ -2,7 +2,6 @@ import React from "react";
 import styles from './NotFound.module.css'
 import notFound from './img/notFound.gif'
 
-
 export default function NotFound(){
     return(
         <div className={styles.notFound}>

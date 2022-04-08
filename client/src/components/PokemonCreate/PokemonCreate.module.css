@@ -249,7 +249,7 @@
 }
 
 .pokemonCreate input::placeholder {
-  color: rgba(0, 0, 0, 0.544);
+  color: rgba(0, 0, 0, 0.317);
   font-size: .8em;
   justify-content: center;
   margin: 0 auto;
@@ -275,7 +275,7 @@ input::-webkit-outer-spin-button {
   height: 125px;
   border-radius: 10px;
   bottom: 12%;
-  left: 42.5%;
+  left: 43%;
 }
 
 .pokemonCreate img[src=""] {

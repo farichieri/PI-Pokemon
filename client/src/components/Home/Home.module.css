@@ -14,20 +14,25 @@ body {
   color: #EFFCD5;
 }
 
+/* .home {
+  height: 100%;
+} */
+
+
+/* CARDS */
 .cardsContainer {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  position: relative;
+  grid-row-gap: 5px; 
   flex-direction: column;
   max-width: 1300px;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.603);
   border-radius: 50px;
   height: 80vh;
 }
+/* CARDS END */
 
 /*  NAVBAR */
 .exitSearchAndCreateNav {
@@ -110,7 +115,7 @@ body {
 }
 
 .refreshButton:hover {
-  background-color: red;
+  background-color: #CE2211;
   cursor: pointer;
 }
 

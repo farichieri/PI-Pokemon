@@ -1,4 +1,4 @@
-.notFound{
+/* .notFound{
     position: absolute;
     top: 55%;
     left: 50%;
@@ -6,10 +6,31 @@
     width: 100%;
     height: 500px;
     font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.47);
+    border-radius: 50px;
+    width: 80%;
+    color: whitesmoke;
+} */
+
+.notFound{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.47);
+    border-radius: 50px;
 }
 
 .notFound img {
-    margin-top: 30px;
-    width: 300px;
-    height: 300px;
+    margin-right: 15%;
+    margin-top: 15%;
+    width: 500px;
+    height: auto;
+}
+
+.notFound h1 {
+    color: whitesmoke;
+    font-size: 1.2em;
 }

@@ -132,11 +132,7 @@ function Home() {
                         })
                     }
                 </div>
-                    <Pagination
-                        pokemonsPerPage={pokemonsPerPage}
-                        allPokemons={allPokemons.length}
-                        pagination={pagination}
-                    />
+                    <Pagination pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} pagination={pagination} />
         </div>
     )
 }
