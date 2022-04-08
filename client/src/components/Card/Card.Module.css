@@ -53,5 +53,14 @@
     border-radius: 10px;
   }
 
+  .card .logoTypes {
+    height: 30px;
+    width: 30px;
+  }
 
+  .card .logoTypes2 {
+    margin-left: 50px;
+    height: 30px;
+    width: 30px;
+  }
   

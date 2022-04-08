@@ -31,7 +31,6 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   border-radius: 50px;
-  display: grid;
 }
 /* CARDS END */
 
@@ -186,7 +185,6 @@ body {
 
 /* PAGINATION */
 .pagination {
-  position: fixed;
   bottom: 10px;
   width: 100%;
 }

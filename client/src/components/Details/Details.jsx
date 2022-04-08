@@ -31,7 +31,7 @@ function Details() {
             myPokemon.length > 0 ? // Osea, ¿Tiene algo?
             <div className={styles.detailsContainer}>
                 <div className={styles.details}>
-                    <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 8 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
+                    <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 5 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
                     <h1 className={styles.detailsName}>{myPokemon[0].name}</h1>
                     <img src={myPokemon[0].img} alt="" width="500px" height="500px" />
                     <h4>Stats:</h4>

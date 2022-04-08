@@ -133,9 +133,11 @@ function Home() {
                         })
                     }
                 </div>
+            {load ? (<Loader />) :
                 <div className={styles.pagination}>
                     <Pagination pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} pagination={pagination} />
                 </div>
+            }
         </div>
     )
 }

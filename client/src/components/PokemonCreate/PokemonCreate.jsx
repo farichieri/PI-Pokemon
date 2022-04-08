@@ -94,9 +94,13 @@ function PokemonCreate() {
     }
 
     function handleDelete(el) {
+        setErrors(validate({    
+            ...input,          
+            types: input.types.filter((e) => e !== el)
+        }));
         setInput({
             ...input,
-            types: input.types.filter(type => type !== el)
+            types: input.types.filter(type => type !== el),
         })
     }
 
@@ -166,16 +170,16 @@ return (
                         </select>
                         <span>{errors.types && (<p className='error'>{errors.types}</p>)}</span>
 
-                    <div className={styles.typeSelectedContainer}>
-                        {input.types.map(el => 
-                            <div >
-                                <div className={styles.typeSelectedContainerIn}>
-                                    <p className={styles.typeSelected}>{el}</p>
-                                    <button key={el} className={styles.xButton} onClick={() => handleDelete(el)}>x</button>
+                        <div className={styles.typeSelectedContainer}>
+                            {input.types.map(el => 
+                                <div >
+                                    <div className={styles.typeSelectedContainerIn}>
+                                        <p className={styles.typeSelected}>{el}</p>
+                                        <button key={el} className={styles.xButton} onClick={() => handleDelete(el)}>x</button>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
-                    </div>
+                            )}
+                        </div>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Image: </label>
