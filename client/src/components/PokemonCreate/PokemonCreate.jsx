@@ -23,7 +23,7 @@ function validate(input) { // input es mi estado local.
         errors.weight = 'Weight required (250 max)';
     } if (!input.img || !/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/.test(input.img)) {
         errors.img = 'Link Image required';
-    } if (input.types.length === 0) {
+    } if (input.types.length === 0 || input.types === undefined) {
         errors.types = 'Type required and must be max 2';
     }
     return errors;
@@ -100,12 +100,6 @@ function PokemonCreate() {
         })
     }
 
-    const handleKeypress = e => {
-      if (e.keyCode === 13) {
-        handleSubmit();
-      }
-    };
-
     useEffect(() => {
         dispatch(getTypes())
         // dispatch(getPokemons()) // evita duplicacion de pokemons
@@ -166,7 +160,7 @@ return (
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Type:</label>
-                        <select onChange={(e) => handleSelect(e)} className={styles.selectTypes} value='disabled' required>
+                        <select onChange={(e) => handleSelect(e)} className={styles.selectTypes} value='disabled'>
                             <option value=''>Select</option>
                             {types.map((t) => (<option key={t.name} value={t.name} className={styles.optionsSelect}>{t.name}</option>))}
                         </select>
