@@ -43,6 +43,7 @@ function Home() {
         e.preventDefault(); // preventDefault es para que no se recargue la página y no se me rompan las cosas. (Porque al recargar los estados de redux, vuelven a cargarse si tenemos useEffect )
         dispatch(cleanPokemons());
         dispatch(getPokemons()); // Resetea los pokemons
+        setCurrentPage(1);
     }
 
     function handleFilterTypes(e) {
@@ -132,7 +133,9 @@ function Home() {
                         })
                     }
                 </div>
+                <div className={styles.pagination}>
                     <Pagination pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} pagination={pagination} />
+                </div>
         </div>
     )
 }

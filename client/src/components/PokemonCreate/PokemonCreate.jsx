@@ -100,6 +100,12 @@ function PokemonCreate() {
         })
     }
 
+    const handleKeypress = e => {
+      if (e.keyCode === 13) {
+        handleSubmit();
+      }
+    };
+
     useEffect(() => {
         dispatch(getTypes())
         // dispatch(getPokemons()) // evita duplicacion de pokemons
@@ -124,43 +130,43 @@ return (
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Hp: </label>
-                        <input type='number' value={input.hp} name='hp' placeholder='Hp'max="250" min="0" onChange={handleChange} />
+                        <input type='number' value={input.hp} name='hp' placeholder='Hp'max="250" min="0" onChange={handleChange} required/>
                         <progress max="250" value={input.hp}></progress>
                         <span>{errors.hp && (<p className='error'>{errors.hp}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Attack: </label>
-                        <input type='number' value={input.attack} name='attack' placeholder='Attack' max="250" min="0" onChange={handleChange} />
+                        <input type='number' value={input.attack} name='attack' placeholder='Attack' max="250" min="0" onChange={handleChange} required/>
                         <progress max="250" value={input.attack}></progress>
                         <span>{errors.attack && (<p className='error'>{errors.attack}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Defense: </label>
-                        <input type='number' value={input.defense} name='defense' placeholder='Defense' max="250" min="0" onChange={handleChange} />
+                        <input type='number' value={input.defense} name='defense' placeholder='Defense' max="250" min="0" onChange={handleChange} required/>
                         <progress max="250" value={input.defense} ></progress>
                         <span>{errors.defense && (<p className='error'>{errors.defense}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Speed: </label>
-                        <input type='number' value={input.speed} name='speed' placeholder='Speed' max="250" min="0" onChange={handleChange} />
+                        <input type='number' value={input.speed} name='speed' placeholder='Speed' max="250" min="0" onChange={handleChange} required/>
                         <progress max="250" value={input.speed}></progress>
                         <span>{errors.speed && (<p className='error'>{errors.speed}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Height: </label>
-                        <input type='number' value={input.height} name='height' placeholder='Height' max="250" min="0" onChange={handleChange} />
+                        <input type='number' value={input.height} name='height' placeholder='Height' max="250" min="0" onChange={handleChange} required/>
                         <progress max="250" value={input.height}></progress>
                         <span>{errors.height && (<p className='error'>{errors.height}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Weight: </label>
-                        <input type='number' value={input.weight} name='weight'  placeholder='Weight'  max="250" min="0" onChange={handleChange} />
+                        <input type='number' value={input.weight} name='weight'  placeholder='Weight'  max="250" min="0" onChange={handleChange} required/>
                         <progress max="250" value={input.weight}></progress>
                         <span>{errors.weight && (<p className='error'>{errors.weight}</p>)}</span>
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Type:</label>
-                        <select onChange={(e) => handleSelect(e)} className={styles.selectTypes} value='disabled'>
+                        <select onChange={(e) => handleSelect(e)} className={styles.selectTypes} value='disabled' required>
                             <option value=''>Select</option>
                             {types.map((t) => (<option key={t.name} value={t.name} className={styles.optionsSelect}>{t.name}</option>))}
                         </select>

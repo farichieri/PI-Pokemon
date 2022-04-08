@@ -9,11 +9,6 @@
     border-radius: 10px;
     position: relative;
   }
-
-  .paginatorContainer {
-    background-color: red;
-    display: inline;
-  }
   
   .paginationNumber {
     justify-content: space-between;

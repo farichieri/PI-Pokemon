@@ -14,9 +14,10 @@ body {
   color: #EFFCD5;
 }
 
-/* .home {
-  height: 100%;
-} */
+.home {
+  height: 100vh;
+  /* background-color: red; */
+}
 
 
 /* CARDS */
@@ -30,7 +31,7 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   border-radius: 50px;
-  height: 80vh;
+  display: grid;
 }
 /* CARDS END */
 
@@ -176,6 +177,22 @@ body {
 
 /* END FILTERS */
 
+
+.home .optionsSelect {
+  position: absolute;
+  color: black;
+  background-color: #e1e1e1;
+}
+
+/* PAGINATION */
+.pagination {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+}
+/* END PAGINATION */
+
+/* RESPONSIVE */
 @media only screen and (max-width: 1300px) {
   .cardsContainer {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -194,9 +211,4 @@ body {
   }
 }
 
-.home .optionsSelect {
-  position: absolute;
-  color: black;
-  background-color: #e1e1e1;
-}
-
+/* RESPONSIVE */
