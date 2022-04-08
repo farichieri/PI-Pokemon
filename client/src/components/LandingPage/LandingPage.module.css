@@ -91,9 +91,9 @@
 
 .pokemon {
     position: absolute;
-    right: 12%;
-    top: 11%;
-    width: 400px;
+    right: 15%;
+    top: 16%;
+    width: 300px;
     height: auto;
     background-size: contain;
     background-repeat: no-repeat;

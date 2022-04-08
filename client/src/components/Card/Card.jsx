@@ -18,6 +18,8 @@ import poison from '../img/logos/poison.png'
 import rock from '../img/logos/rock.png'
 import steel from '../img/logos/steel.png'
 import water from '../img/logos/water.png'
+import unknown from '../img/logos/unknown.png'
+import shadow from '../img/logos/shadow.jpg'
 
 function Card( { name, img, types }) {
   function getLogoType(type) {
@@ -59,6 +61,10 @@ function Card( { name, img, types }) {
         return steel;
       case 'water':
         return water
+      case 'shadow':
+        return shadow;
+      case 'unknown':
+        return unknown;
       case undefined: 
         break
     }

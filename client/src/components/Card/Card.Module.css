@@ -11,7 +11,7 @@
    }
 
      .cardContainer {
-    margin: 30px auto;
+    margin: 20px auto;
   }
 
    .card::before {
@@ -43,7 +43,7 @@
     font-size: .4em;
     color: #EFFCD5;
     letter-spacing: .2rem;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   .cardImg {
@@ -54,11 +54,13 @@
   }
 
   .card .logoTypes {
+    margin: 5px;
     height: 30px;
     width: 30px;
   }
 
   .card .logoTypes2 {
+    margin: 5px;
     margin-left: 50px;
     height: 30px;
     width: 30px;

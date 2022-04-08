@@ -7,8 +7,10 @@ import { cleanPokemons } from '../../actions';
 
 function validate(input) { // input es mi estado local.
     let errors = {};
-    if (!input.name || !/^[a-zA-Z]+$/.test(input.name)) {
+    if (!input.name || !/^[a-zA-Z]+$/.test(input.name) || input.name.length > 20) {
         errors.name = 'Name required and only letters are accepted'; 
+    } if (input.name.length > 20) {
+        errors.name = 'Max 20 characters'; 
     } if (!input.hp || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.hp)) {
         errors.hp = 'Hp required (250 max)';
     } if (!input.attack || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.attack)) {
@@ -70,7 +72,7 @@ function PokemonCreate() {
                 types: [...input.types, e.target.value]
             })
         } else {
-            alert("2 types max")
+            alert("Max 2 types")
         }
     }
 

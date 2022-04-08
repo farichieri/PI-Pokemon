@@ -55,6 +55,7 @@ function Home() {
     function handleFilterCreated(e) {
         dispatch(filterPokemonsCreated(e.target.value)) // e.target.value accede al valor a c/u de las opciones (el payload)
         e.preventDefault()
+        setCurrentPage(1);
     }
     
     function handleSort(e) {
@@ -89,7 +90,7 @@ function Home() {
                 </div>
             </nav>
             <div className={styles.filtersAndRefresh}>
-                <button className={styles.filterBy}><h2>Filters <p className={styles.flechita}>&gt;</p> </h2></button>
+                <button className={styles.filterBy}><h2>Filter by <p className={styles.flechita}>&gt;</p> </h2></button>
                 <select className={styles.filter} onChange={e => handleFilterTypes(e)} value='disabled'>
                     <option value=''>Types</option>
                     <option className={styles.optionsSelect} value='all'>All Types</option>
@@ -100,6 +101,7 @@ function Home() {
                 <select className={styles.filter} onChange={e => handleFilterCreated(e)} value='disabled'>
                     <option value=''>Origin</option>
                     <option className={styles.optionsSelect} value='all'>All</option>
+                    <option className={styles.optionsSelect} value='api'>API</option>
                     <option className={styles.optionsSelect} value='created'>Created</option>
                 </select>
                 <select className={styles.filter} onChange={e => handleSort(e)} value='disabled'>

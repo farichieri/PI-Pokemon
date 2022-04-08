@@ -25,11 +25,12 @@ function rootReducer (state = initialState, action) {
             }
         case 'FILTER_CREATED':
             const allPokemons = state.allPokemons;
-            const createdFilter = action.payload === 'created' ? allPokemons.filter(el => el.createdInDb) : allPokemons.filter( el => !el.createdInDb)
+            const createdFilter = action.payload === 'created' ? allPokemons.filter(el => el.createdInDb) : null;
+            const apiFilter = action.payload === 'api' ? allPokemons.filter(el => !el.createdInDb) : null;
             // Si mi payload es All, traeme todo y sino filtramelo por el payload que me pasen (original o created)
             return {
                 ...state,
-                pokemons: action.payload === 'all' ? allPokemons : createdFilter
+                pokemons: action.payload === 'all' ? allPokemons : action.payload === 'created' ? createdFilter : action.payload === 'api' ? apiFilter : null
             }
         case 'ORDER_BY_NAME':
             let sortedArr = action.payload === 'asc' 
@@ -70,7 +71,7 @@ function rootReducer (state = initialState, action) {
             case 'GET_TYPES':
                 return {
                     ...state,
-                    types: action.payload
+                    types: action.payload,
                 }
             case 'POST_POKEMON':
                 return {
