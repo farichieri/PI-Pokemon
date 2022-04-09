@@ -27,13 +27,13 @@ import unknown from '../../images/logos/unknown.png'
 import shadow from '../../images/logos/shadow.jpg'
 
 function Details() {
+    const myPokemon = useSelector((state) => state.detail);
     const dispatch = useDispatch();
-
     const {id} = useParams();
+
     useEffect(() => {
         dispatch(getDetail(id)) // props.match.params.id es para ingresar al id de ese detail.
     }, [dispatch])
-    const myPokemon = useSelector((state) => state.detail);
     
     function handleClick() {
         dispatch(cleanDetail())

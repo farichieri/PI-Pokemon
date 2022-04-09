@@ -27,7 +27,9 @@ import shadow from '../../images/logos/shadow.jpg'
 
 function validate(input) { // input es mi estado local.
     let errors = {};
-    if (!input.name || !/^[a-zA-Z]+$/.test(input.name) ) {
+    if (!/^[A-Z]/.test(input.name)) {
+        errors.name = 'First letter must be uppercase'
+    } if (!input.name || !/^[a-zA-Z]+$/.test(input.name) ) {
         errors.name = 'Name required and only letters are accepted'; 
     } if (input.name.length > 15) {
         errors.name = 'Max 15 characters'; 
@@ -43,12 +45,12 @@ function validate(input) { // input es mi estado local.
         errors.height = 'Height required (250 max)';
     } if (!input.weight || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.weight)) {
         errors.weight = 'Weight required (250 max)';
-    } if (input.img === null) {
+    } if (!input.img.length) {
         errors.img = 'Link image required';
-    } if (!input.img || !/[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_.~#?&//=]*)/.test(input.img)) {
-        errors.img = 'Try with another link';
+    } if (!/[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_.~#?&//=]*)/.test(input.img)) {
+        errors.img = 'Image Link required';
     } if (input.types.length === 0 || input.types === undefined) {
-        errors.types = 'Type required and must be max 2';
+        errors.types = 'Select 1 or 2 types';
     }
     return errors;
 }
@@ -131,11 +133,16 @@ function PokemonCreate() {
     }
 
     function handleSelect(e) {
+        console.log(e.target.value);
+        console.log(input.types[0])
         setErrors(validate({    
             ...input,          
             types: [...input.types, e.target.value ]
         }));
-        if (input.types.length < 2) {
+        if (e.target.value === input.types[0] && input.types.length < 2) {
+            alert("You can't select the same type 2 times")
+        } 
+        else if (input.types.length < 2) {
             setInput({
                 ...input,
                 types: [...input.types, e.target.value]
@@ -191,7 +198,7 @@ return (
         <div className={styles.pokemonCreateContainer}>
             <div className={styles.pokemonCreate}>
                 <h1>Create a new pokemon!</h1>
-                <form onSubmit={(e) => handleSubmit(e)}>
+                <form onSubmit={(e) => handleSubmit(e)} autoComplete="off">
                     <div className={styles.inputContainer}>
                         <label>Name: </label>
                         <input type='text' value={input.name} name='name' placeholder='Name' onChange={handleChange} className={styles.inputName} required />
@@ -243,7 +250,7 @@ return (
 
                         <div className={styles.typeSelectedContainer}>
                             {input.types.map(el => 
-                                <div >
+                                <div key={el}>
                                     <div className={styles.typeSelectedContainerIn}>
                                         <img className={styles.typeLogoSelected} src={getLogoType(el)} alt="" />
                                         <p className={styles.typeSelected}>{el}</p>

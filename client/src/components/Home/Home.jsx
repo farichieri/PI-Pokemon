@@ -126,9 +126,9 @@ function Home() {
                         !allPokemons.length? (<NotFound />) :
                         currentPokemons?.map((el) => {
                             return (
-                                <div>
+                                <div key={el.id}>
                                     <Link to={'/home/' + el.id}>
-                                        <Card key={el.id} name={el.name} img={el.img} types={el.types} />
+                                        <Card name={el.name} img={el.img} types={el.types} />
                                     </Link>
                                 </div>
                             );
