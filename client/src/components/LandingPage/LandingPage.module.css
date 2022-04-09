@@ -57,12 +57,12 @@
     box-shadow: 0px 3px 25px 20px #00ffff;
     cursor: pointer;
     animation: none;
-
 }
 
 .enter {
     font-size: .25em;
     color: rgb(0, 0, 0);
+    opacity: .5;
     position: absolute;
     display: flex;
     z-index: 1;
@@ -73,7 +73,6 @@
     font-weight: 400;
     pointer-events: none;
 }
-
 
 .image {
     background: url(./img/pokeBall.png);

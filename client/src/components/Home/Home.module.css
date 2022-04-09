@@ -22,20 +22,21 @@ body {
 
 /* CARDS */
 .cardsContainer {
-  /* background-color: red; */
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  /* grid-template-columns: repeat(6, 1fr); */
+  grid-template-columns: auto auto auto auto auto auto;
+  /* grid-template-rows: repeat(3, 1fr); */
+  grid-template-rows: auto auto auto auto;
   grid-column-gap: 5px;
   grid-row-gap: 5px; 
-  flex-direction: column;
-  align-items: center;
-  max-width: 1300px;
+  max-width: 1500px;
   margin: 0 auto;
   border-radius: 50px;
-  align-items: center;
+  height: 80vh;
   justify-content: center;
+  align-content: center;
 }
+
 /* CARDS END */
 
 /*  NAVBAR */
