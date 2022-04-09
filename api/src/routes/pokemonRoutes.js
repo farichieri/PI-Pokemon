@@ -48,4 +48,18 @@ router.get('/pokemons/:idPokemon', async (req, res, next)  => { // FUNCIONA con 
     }
 })
 
+router.delete('/delete/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        if (id) {
+            await Pokemon.destroy({
+                where: {id: id },
+            });
+        }
+        return res.send({msg: 'Pokemon deleted' });
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 module.exports = router;

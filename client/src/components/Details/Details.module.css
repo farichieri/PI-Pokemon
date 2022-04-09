@@ -37,8 +37,8 @@
     color: #D5A100;
     margin: 5px;
     position:absolute;
-    top: -40px;
-    right: 40px;
+    top: 30px;
+    right: 30px;
 }
 
 .exitSearchAndCreateNav {
@@ -181,3 +181,27 @@ progress::-moz-progress-bar {
   width: 30px;
 }
 
+.pokemonDelete {
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: .5em;
+  border-radius: 50px;
+  padding: 6px;
+  background-color: rgba(90, 12, 12, 0.684);
+  color: rgba(255, 255, 255, 0.505);
+  /* color: black; */
+  border: none;
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  transition: .3s;
+}
+
+.pokemonDelete:hover {
+  background-color: red;
+  color: black;
+}
+
+window {
+  font-size: 50px;
+}

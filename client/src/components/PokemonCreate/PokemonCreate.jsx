@@ -149,8 +149,6 @@ function PokemonCreate() {
     }
 
     function handleSelect(e) {
-        console.log(e.target.value);
-        console.log(input.types[0])
         setErrors(validate({    
             ...input,          
             types: [...input.types, e.target.value ]

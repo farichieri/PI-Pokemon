@@ -92,6 +92,10 @@ function rootReducer (state = initialState, action) {
                     ...state,
                     isLoading : true
                 };
+            case "DELETE_POKEMON": 
+                return {
+                    ...state,
+                }
         default:
             return state;
     }

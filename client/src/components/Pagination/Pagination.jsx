@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from './Pagination.module.css'
 
-function Pagination({ pokemonsPerPage, allPokemons, pagination }) { // Renderizamos los numeritos del pagination
+function Pagination({ pokemonsPerPage, allPokemons, pagination }) { 
     const pageNumbers = [];
     
     for (let i = 1; i <= Math.ceil(allPokemons/pokemonsPerPage); i++) {
         pageNumbers.push(i)
     }
 
-  return ( // Acá renderizamos el nav de los números de páginas.-
+  return (
     <nav className={styles.paginatorContainer}> 
         <ul className={styles.paginationUlContainer}>
             { pageNumbers && pageNumbers.map(number => (
