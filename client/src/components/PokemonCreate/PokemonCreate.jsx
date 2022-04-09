@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getPokemons, getTypes, postPokemon, cleanPokemons } from '../../actions';
+import { getTypes, postPokemon, cleanPokemons } from '../../actions';
 import { useDispatch, useSelector} from 'react-redux';
 import styles from './PokemonCreate.module.css'
 
@@ -27,10 +27,10 @@ import shadow from '../../images/logos/shadow.jpg'
 
 function validate(input) { // input es mi estado local.
     let errors = {};
-    if (!input.name || !/^[a-zA-Z]+$/.test(input.name) || input.name.length > 20) {
+    if (!input.name || !/^[a-zA-Z]+$/.test(input.name) ) {
         errors.name = 'Name required and only letters are accepted'; 
-    } if (input.name.length > 20) {
-        errors.name = 'Max 20 characters'; 
+    } if (input.name.length > 15) {
+        errors.name = 'Max 15 characters'; 
     } if (!input.hp || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.hp)) {
         errors.hp = 'Hp required (250 max)';
     } if (!input.attack || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.attack)) {
@@ -43,8 +43,10 @@ function validate(input) { // input es mi estado local.
         errors.height = 'Height required (250 max)';
     } if (!input.weight || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.weight)) {
         errors.weight = 'Weight required (250 max)';
-    } if (!input.img || !/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/.test(input.img)) {
-        errors.img = 'Link Image required';
+    } if (input.img === null) {
+        errors.img = 'Link image required';
+    } if (!input.img || !/[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_.~#?&//=]*)/.test(input.img)) {
+        errors.img = 'Try with another link';
     } if (input.types.length === 0 || input.types === undefined) {
         errors.types = 'Type required and must be max 2';
     }
@@ -93,7 +95,7 @@ function getLogoType(type) {
         return shadow;
       case 'unknown':
         return unknown;
-      case undefined: 
+      default: 
         break
     }
   }
@@ -243,7 +245,7 @@ return (
                             {input.types.map(el => 
                                 <div >
                                     <div className={styles.typeSelectedContainerIn}>
-                                        <img className={styles.typeLogoSelected} src={getLogoType(el)}/>
+                                        <img className={styles.typeLogoSelected} src={getLogoType(el)} alt="" />
                                         <p className={styles.typeSelected}>{el}</p>
                                         <button key={el} className={styles.xButton} onClick={() => handleDelete(el)}>x</button>
                                     </div>
@@ -254,7 +256,7 @@ return (
                     <div className={styles.inputContainer}>
                         <label>Image: </label>
                         <input type='text' value={input.img} name='img' placeholder='Link' onChange={handleChange} />
-                        <img src={input.img} />
+                        <img src={input.img} alt=""/>
                         <span>{errors.img && (<p className='error'>{errors.img}</p>)}</span>
                     </div>
                         <button className={styles.createButton} type='submit' disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.img || errors.types || input.name === '' ? true : false } >Create</button>

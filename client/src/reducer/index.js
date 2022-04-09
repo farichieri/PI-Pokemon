@@ -17,8 +17,8 @@ function rootReducer (state = initialState, action) {
                 isLoading: false
             }
         case 'FILTER_BY_TYPES':
-            const allPokemons1 = state.allPokemons
-            const typesFilter = action.payload  === 'all' ? allPokemons1 : allPokemons1.filter(pok => pok.types.find(type => type[0] === action.payload));
+            // const allPokemons1 = state.allPokemons
+            const typesFilter = action.payload  === 'all' ? state.allPokemons : state.allPokemons.filter(pok => pok.types.find(type => type[0] === action.payload));
             return {
                 ...state,
                 pokemons: typesFilter

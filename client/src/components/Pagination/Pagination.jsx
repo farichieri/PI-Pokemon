@@ -12,8 +12,8 @@ function Pagination({ pokemonsPerPage, allPokemons, pagination }) { // Renderiza
     <nav className={styles.paginatorContainer}> 
         <ul className={styles.paginationUlContainer}>
             { pageNumbers && pageNumbers.map(number => (
-                <li className={styles.paginationNumber} key={number}>
-                    <a onClick={() => pagination(number)}>{number}</a>
+                <li className={styles.paginationNumber} key={number} onClick={() => pagination(number)}>
+                    {number}
                 </li>
             )) }
         </ul>

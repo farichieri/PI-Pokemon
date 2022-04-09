@@ -64,7 +64,7 @@ function Card({ name, img, types }) {
         return shadow;
       case 'unknown':
         return unknown;
-      case undefined: 
+      default: 
         break
     }
   }
@@ -77,13 +77,13 @@ function Card({ name, img, types }) {
         <div className={styles.cardTypesContainer}>
           <div className={styles.typesContainer}>
             <h5>{types[0]}</h5> 
-            <img className={styles.logoTypes} src={getLogoType(types[0][0])} />
+            <img className={styles.logoTypes} src={getLogoType(types[0][0])} alt="" />
           </div>
           
           <div className={styles.typesContainer}>
             <h5>{types[1]}</h5>
             { types.length > 1 ?
-            <img className={styles.logoTypes2} src={getLogoType(types[1][0])} />
+            <img className={styles.logoTypes2} src={getLogoType(types[1][0])} alt=""/>
               : null
             }
           </div>

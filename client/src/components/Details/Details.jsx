@@ -81,7 +81,7 @@ function Details() {
             return shadow;
           case 'unknown':
             return unknown;
-          case undefined: 
+          default: 
             break
         }
       }
@@ -123,13 +123,13 @@ function Details() {
                     <div className={styles.superTypesContainer}>
                         <div className={styles.typesContainer}>
                             <h5>{myPokemon[0].types[0]}</h5> 
-                            <img className={styles.logoTypes} src={getLogoType(myPokemon[0].types[0][0])} />
+                            <img className={styles.logoTypes} src={getLogoType(myPokemon[0].types[0][0])} alt="" />
                         </div>
 
                         <div className={styles.typesContainer}>
                             <h5>{myPokemon[0].types[1]}</h5>
                             { myPokemon[0].types[1] ?
-                            <img className={styles.logoTypes2} src={getLogoType(myPokemon[0].types[1][0])} />
+                            <img className={styles.logoTypes2} src={getLogoType(myPokemon[0].types[1][0])} alt="" />
                             : null
                             }
                         </div>

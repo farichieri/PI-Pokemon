@@ -6,7 +6,7 @@ import imge from './img/pokemon.png'
 export default function LandingPage() {
     return (
         <div className={styles.landingPage}>
-            <img src={imge} className={styles.pokemon} />
+            <img src={imge} className={styles.pokemon} alt=""/>
                 <div className={styles.welcome}>
                 <div className={styles.image} />
                 <Link to='/home'> 

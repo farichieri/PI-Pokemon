@@ -235,14 +235,14 @@
 
 
 .xButton {
-  border-radius: 10px;
+  border-radius: 100%;
   border: none;
   color: white;
   margin: 0 auto;
   background-color: black;
-  width: 10px;
-  height: 10px;
-  font-size: .9em;
+  width: 12px;
+  height: 12px;
+  font-size: .7em;
   margin-top: 3px;
   margin-right: 3px;
   display: flex;
@@ -250,6 +250,7 @@
   justify-content: center;
   cursor: pointer;
 }
+
 
 .pokemonCreate span {
   position: absolute;
