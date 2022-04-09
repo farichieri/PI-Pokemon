@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDetail, cleanDetail } from '../../actions';
+import { getDetail, cleanDetail, cleanPokemons} from '../../actions';
 import styles from './Details.module.css'
 import Loader from '../Loader/Loader.jsx'
 
@@ -36,7 +36,8 @@ function Details() {
     }, [dispatch])
     
     function handleClick() {
-        dispatch(cleanDetail())
+        dispatch(cleanDetail());
+        dispatch(cleanPokemons());
     }
 
     function getLogoType(type) {

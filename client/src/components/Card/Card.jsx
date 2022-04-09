@@ -88,7 +88,6 @@ function Card({ name, img, types }) {
             }
           </div>
         </div>
-
       </div>
     </div>
   )

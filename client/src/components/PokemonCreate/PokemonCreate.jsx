@@ -27,30 +27,46 @@ import shadow from '../../images/logos/shadow.jpg'
 
 function validate(input) { // input es mi estado local.
     let errors = {};
-    if (!/^[A-Z]/.test(input.name)) {
-        errors.name = 'First letter must be uppercase'
-    } if (!input.name || !/^[a-zA-Z]+$/.test(input.name) ) {
-        errors.name = 'Name required and only letters are accepted'; 
+     if (!/^[A-Z]/.test(input.name)) {
+        errors.name = 'First letter must be uppercase';
+    } if (!/^[a-zA-Z]+$/.test(input.name) ) {
+        errors.name = 'Only letters are accepted'; 
     } if (input.name.length > 15) {
         errors.name = 'Max 15 characters'; 
+    } if (!input.name) {
+        errors.name = 'Name required';
     } if (!input.hp || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.hp)) {
-        errors.hp = 'Hp required (250 max)';
+        errors.hp = '250 max';
+    } if (!input.hp) {
+        errors.hp = 'Hp required';
     } if (!input.attack || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.attack)) {
-        errors.attack = 'Attack required (250 max)';
+        errors.attack = '250 max';
+    } if (!input.attack) {
+        errors.attack = 'Attack required';
     } if (!input.defense || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.defense)) {
-        errors.defense = 'Defense required (250 max)';
+        errors.defense = '250 max';
+    } if (!input.defense) {
+        errors.defense = 'Defense required';
     } if (!input.speed || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.speed)) {
-        errors.speed = 'Speed required (250 max)';
+        errors.speed = '250 max';
+    } if (!input.speed) {
+        errors.speed = 'Speed required';
     } if (!input.height || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.height)) {
-        errors.height = 'Height required (250 max)';
+        errors.height = '250 max';
+    } if (!input.height) {
+        errors.height = 'Height required';
     } if (!input.weight || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.weight)) {
-        errors.weight = 'Weight required (250 max)';
+        errors.weight = '250 max';
+    } if (!input.weight) {
+        errors.weight = 'Weight required';
     } if (!input.img.length) {
         errors.img = 'Link image required';
     } if (!/[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_.~#?&//=]*)/.test(input.img)) {
-        errors.img = 'Image Link required';
+        errors.img = 'Try with other link';
+    } if (!input.img) {
+        errors.img = 'Image required'
     } if (input.types.length === 0 || input.types === undefined) {
-        errors.types = 'Select 1 or 2 types';
+        errors.types = 'Type required';
     }
     return errors;
 }

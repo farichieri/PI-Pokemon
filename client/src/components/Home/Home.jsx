@@ -31,7 +31,7 @@ function Home() {
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber)
     }
-    
+    console.log(allPokemons.length)
     const load = useSelector((state) => state.isLoading);
     // Ahora tratamos de traernos del estado los pokemons cuando el componente se monta:
     useEffect (() => {
@@ -137,7 +137,10 @@ function Home() {
                 </div>
             {load ? (<Loader />) :
                 <div className={styles.pagination}>
+                    { allPokemons.length >= 12 ? 
                     <Pagination pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} pagination={pagination} />
+                    : null
+                    }
                 </div>
             }
         </div>

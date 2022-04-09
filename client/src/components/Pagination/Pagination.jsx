@@ -16,7 +16,7 @@ function Pagination({ pokemonsPerPage, allPokemons, pagination }) { // Renderiza
                     {number}
                 </li>
             )) }
-        </ul>
+        </ul> 
     </nav>
   )
 }
