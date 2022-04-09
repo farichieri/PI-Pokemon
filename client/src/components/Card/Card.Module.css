@@ -53,16 +53,23 @@
     border-radius: 10px;
   }
 
-  .card .logoTypes {
+  .card .typesContainer img {
     margin: 5px;
     height: 30px;
     width: 30px;
   }
 
-  .card .logoTypes2 {
+  .cardTypesContainer {
+    color: white;
+    font-size: .5em;
     margin: 5px;
-    margin-left: 50px;
-    height: 30px;
-    width: 30px;
+    display: flex;
+    justify-content: center;
   }
+
+  .typesContainer {
+    margin: 5px;
+
+  }
+
   

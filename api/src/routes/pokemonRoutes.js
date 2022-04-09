@@ -4,7 +4,7 @@ const { Pokemon, Type } = require('../db');
 const {getAllInfo} = require("./modelRoutes/getAllInfo");
 const router = Router();
 
-router.get('/pokemons', async (req, res, next)  => { // FUNCIONA -> Ver por que solo devuelve unos pocos
+router.get('/pokemons', async (req, res)  => { // FUNCIONA -> Ver por que solo devuelve unos pocos
     // El query se pasa por URL y el body se pasa para coompletar un post con info. (ej formulario)
     const { name } = req.query;  // Funciona con name /pokemons?name=pikachu
     const totalPokemons = await getAllInfo(); // Funciona con todos los pokemons + DB

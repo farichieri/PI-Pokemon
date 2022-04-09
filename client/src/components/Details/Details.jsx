@@ -1,11 +1,30 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDetail } from '../../actions';
-import { useEffect } from 'react';
+import { getDetail, cleanDetail } from '../../actions';
 import styles from './Details.module.css'
 import Loader from '../Loader/Loader.jsx'
-import { cleanDetail } from '../../actions';
+
+import bug from '../../images/logos/bug.png'
+import dark from '../../images/logos/dark.png'
+import dragon from '../../images/logos/dragon.png'
+import electric from '../../images/logos/electric.png'
+import fairy from '../../images/logos/fairy.png'
+import fighting from '../../images/logos/fighting.png'
+import fire from '../../images/logos/fire.png'
+import flying from '../../images/logos/flying.png'
+import ghost from '../../images/logos/ghost.png'
+import grass from '../../images/logos/grass.png'
+import ground from '../../images/logos/ground.png'
+import ice from '../../images/logos/ice.png'
+import normal from '../../images/logos/normal.png'
+import psychic from '../../images/logos/psychic.png'
+import poison from '../../images/logos/poison.png'
+import rock from '../../images/logos/rock.png'
+import steel from '../../images/logos/steel.png'
+import water from '../../images/logos/water.png'
+import unknown from '../../images/logos/unknown.png'
+import shadow from '../../images/logos/shadow.jpg'
 
 function Details() {
     const dispatch = useDispatch();
@@ -20,6 +39,53 @@ function Details() {
         dispatch(cleanDetail())
     }
 
+    function getLogoType(type) {
+        switch(type) {
+          case 'bug':
+            return bug;
+          case 'dark':
+            return dark;
+          case 'dragon':
+            return dragon
+          case 'electric':
+            return electric;
+          case 'fairy':
+            return fairy;
+          case 'fighting':
+            return fighting
+          case 'fire':
+            return fire;
+          case 'flying':
+            return flying;
+          case 'ghost':
+            return ghost
+          case 'grass':
+            return grass;
+          case 'ground':
+            return ground;
+          case 'ice':
+            return ice;
+          case 'normal':
+            return normal;
+          case 'psychic':
+            return psychic;
+          case 'poison':
+            return poison
+          case 'rock':
+            return rock;
+          case 'steel':
+            return steel;
+          case 'water':
+            return water
+          case 'shadow':
+            return shadow;
+          case 'unknown':
+            return unknown;
+          case undefined: 
+            break
+        }
+      }
+
   return (
     <div className={styles.detailsPage}>
             <nav className={styles.exitSearchAndCreateNav}>
@@ -33,7 +99,7 @@ function Details() {
                 <div className={styles.details}>
                     <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 5 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
                     <h1 className={styles.detailsName}>{myPokemon[0].name}</h1>
-                    <img src={myPokemon[0].img} alt="" width="500px" height="500px" />
+                    <img className={styles.pokemonDetailImg} src={myPokemon[0].img} alt="" />
                     <h4>Stats:</h4>
                     <div className={styles.progressContainer}>
                         <h3>Hp:</h3><progress className={styles.hpProgress} max="250" value={myPokemon[0].hp}></progress><p>{myPokemon[0].hp}</p>
@@ -53,8 +119,20 @@ function Details() {
                     <div className={styles.progressContainer}>
                         <h3>Weight:</h3><progress className={styles.weightProgress} max="250" value={myPokemon[0].weight}></progress><p>{myPokemon[0].weight}kgs</p>
                     </div>
-                    <div className={styles.typesContainer}>
-                        <h2>Types: {myPokemon[0].types[0] + " " + (myPokemon[0].types[1] ? myPokemon[0].types[1] : " ")}</h2>
+
+                    <div className={styles.superTypesContainer}>
+                        <div className={styles.typesContainer}>
+                            <h5>{myPokemon[0].types[0]}</h5> 
+                            <img className={styles.logoTypes} src={getLogoType(myPokemon[0].types[0][0])} />
+                        </div>
+
+                        <div className={styles.typesContainer}>
+                            <h5>{myPokemon[0].types[1]}</h5>
+                            { myPokemon[0].types[1] ?
+                            <img className={styles.logoTypes2} src={getLogoType(myPokemon[0].types[1][0])} />
+                            : null
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

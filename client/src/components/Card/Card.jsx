@@ -1,29 +1,28 @@
 import React from 'react'
 import styles from './Card.module.css'
-import bug from '../img/logos/bug.png'
-import dark from '../img/logos/dark.png'
-import dragon from '../img/logos/dragon.png'
-import electric from '../img/logos/electric.png'
-import fairy from '../img/logos/fairy.png'
-import fighting from '../img/logos/fighting.png'
-import fire from '../img/logos/fire.png'
-import flying from '../img/logos/flying.png'
-import ghost from '../img/logos/ghost.png'
-import grass from '../img/logos/grass.png'
-import ground from '../img/logos/ground.png'
-import ice from '../img/logos/ice.png'
-import normal from '../img/logos/normal.png'
-import physics from '../img/logos/physics.png'
-import poison from '../img/logos/poison.png'
-import rock from '../img/logos/rock.png'
-import steel from '../img/logos/steel.png'
-import water from '../img/logos/water.png'
-import unknown from '../img/logos/unknown.png'
-import shadow from '../img/logos/shadow.jpg'
+import bug from '../../images/logos/bug.png'
+import dark from '../../images/logos/dark.png'
+import dragon from '../../images/logos/dragon.png'
+import electric from '../../images/logos/electric.png'
+import fairy from '../../images/logos/fairy.png'
+import fighting from '../../images/logos/fighting.png'
+import fire from '../../images/logos/fire.png'
+import flying from '../../images/logos/flying.png'
+import ghost from '../../images/logos/ghost.png'
+import grass from '../../images/logos/grass.png'
+import ground from '../../images/logos/ground.png'
+import ice from '../../images/logos/ice.png'
+import normal from '../../images/logos/normal.png'
+import psychic from '../../images/logos/psychic.png'
+import poison from '../../images/logos/poison.png'
+import rock from '../../images/logos/rock.png'
+import steel from '../../images/logos/steel.png'
+import water from '../../images/logos/water.png'
+import unknown from '../../images/logos/unknown.png'
+import shadow from '../../images/logos/shadow.jpg'
 
-function Card( { name, img, types }) {
+function Card({ name, img, types }) {
   function getLogoType(type) {
-    console.log(type);
     switch(type) {
       case 'bug':
         return bug;
@@ -48,11 +47,11 @@ function Card( { name, img, types }) {
       case 'ground':
         return ground;
       case 'ice':
-        return ice
+        return ice;
       case 'normal':
         return normal;
-      case 'physics':
-        return physics;
+      case 'psychic':
+        return psychic;
       case 'poison':
         return poison
       case 'rock':
@@ -74,13 +73,22 @@ function Card( { name, img, types }) {
       <div className={styles.cardContainer}>
         <h3 className={styles.cardName}>{name}</h3>
         <img className={styles.cardImg} src={img} alt="img not found" width="200px" height="200px" />
-        <h5 className={styles.cardTypes}>{types[0]} {types[1]}</h5> 
-        <img className={styles.logoTypes} src={getLogoType(types[0][0])} />
         
-        { types.length > 1 ?
-        <img className={styles.logoTypes2} src={getLogoType(types[1][0])} />
-          : null
-        }
+        <div className={styles.cardTypesContainer}>
+          <div className={styles.typesContainer}>
+            <h5>{types[0]}</h5> 
+            <img className={styles.logoTypes} src={getLogoType(types[0][0])} />
+          </div>
+          
+          <div className={styles.typesContainer}>
+            <h5>{types[1]}</h5>
+            { types.length > 1 ?
+            <img className={styles.logoTypes2} src={getLogoType(types[1][0])} />
+              : null
+            }
+          </div>
+        </div>
+
       </div>
     </div>
   )

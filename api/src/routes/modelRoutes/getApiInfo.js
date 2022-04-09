@@ -7,7 +7,6 @@ const getApiInfo = async () => { // se instala e importa AXIOS para poder usarla
     // const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results).concat(apiUrlRest2.data.results) // ¿.RESULTS?
     const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results)// ¿.RESULTS?
                         // Agarra nombres y url de pokemons // Agarra el resto 
-
     function capitalizeFirstLetter(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
         }

@@ -20,13 +20,13 @@ function Home() {
     const dispatch = useDispatch(); // Para usar la constante e ir dispatchando mis acciones. 
     const allPokemons = useSelector ((state) => state.pokemons); // Esto se hace con hooks. Con useSelector traeme en esa constante, 
                                             // todo lo que está en el estado de pokemons. Ahorra el map, state, to props
-    const allPokemonsTypes = useSelector ((state) => state.types) // guardado en estado del reducer
+    const allPokemonsTypes = useSelector ((state) => state.types); // guardado en estado del reducer
     const [currentPage, setCurrentPage] = useState(1);  // Creamos estados locales. Uno con la página actual y otro que me setee la página actual. ponemos 1 porque arranca en la primer página.                                     
-    const [pokemonsPerPage, setPokemonsPerPage] = useState(12); // Cuántos pokemons quiero por página. (cuantas Cards)
+    const pokemonsPerPage = 12; // Cuántos pokemons quiero por página. (cuantas Cards)
     const indexOfLastPokemon = currentPage * pokemonsPerPage; // 6
     const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // 0
     const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); // De más arriba.- // Slice toma una porción de un arreglo // Me dice que pokemons vamos a renderizar dependiendo de la página.-
-    const [order, setOrder] = useState('')
+    const [order, setOrder] = useState('');
 
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber)
@@ -62,14 +62,14 @@ function Home() {
         e.preventDefault();
         dispatch(orderByName(e.target.value));
         setCurrentPage(1); // Seteo la página a la 1.
-        setOrder(`Ordered ${e.target.value}`) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
+        setOrder(e.target.value) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
     }
 
     function handleAttack(e) {
         e.preventDefault();
         dispatch(orderByAttack(e.target.value));
         setCurrentPage(1); // Seteo la página a la 1.
-        setOrder(`Ordered ${e.target.value}`) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
+        setOrder(e.target.value) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
     }
 
     // function handleRefresh() {

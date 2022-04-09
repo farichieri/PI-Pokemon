@@ -124,6 +124,7 @@
 }
 
 .pokemonCreate select {
+  cursor: pointer;
   display: flex;
   position: absolute;
   left: 25%;
@@ -200,31 +201,36 @@
   position: absolute;
   justify-content: center;
   left: 38%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .typeSelectedContainerIn {
-  color: black;
+  color: #D5A100;
   font-size: .7em;
-  background-color: #e6bb2fbd;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 3px;
+  background-color: #e6bb2f34;
+  border-radius: 20px 5px 40px 20px;
+  padding: 0;
   display: inline-flex;
   margin-left: 5px;
   text-align: center;
   justify-content: center;
-  width: 120px;
+  width: 140px;
   justify-content: space-between;
 }
 
 .typeSelected {
   position:relative;
   display: inline-flex;
-  /* background-color: red; */
   align-items: center;
   justify-content: center;
   margin-left: 5px;
+}
+
+.typeSelectedContainer .typeSelectedContainerIn img {
+  width: 30px;
+  position: relative;
+  height: 30px;
+  left: 0;
 }
 
 
@@ -232,13 +238,17 @@
   border-radius: 10px;
   border: none;
   color: white;
+  margin: 0 auto;
   background-color: black;
-  width: 17px;
-  height: 17px;
+  width: 10px;
+  height: 10px;
   font-size: .9em;
+  margin-top: 3px;
+  margin-right: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .pokemonCreate span {
