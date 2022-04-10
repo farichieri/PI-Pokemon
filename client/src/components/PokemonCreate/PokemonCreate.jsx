@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getTypes, postPokemon, cleanPokemons } from '../../actions';
+import { getTypes, postPokemon, cleanPokemons, cleanDetail } from '../../actions';
 import { useDispatch, useSelector} from 'react-redux';
 import styles from './PokemonCreate.module.css'
 
@@ -166,23 +166,28 @@ function PokemonCreate() {
         }
     }
 
+    const myPassowrd = "frichieri"
+
     function handleSubmit(e) {
-        e.preventDefault();
-        dispatch(postPokemon(input))
-        alert('Pokemon created!')
-        setInput({
-            name: '',
-            hp: '',
-            attack: '',
-            defense: '',
-            speed: '',
-            height: '',
-            weight: '',
-            img: '',
-            types: []
-        })
-        dispatch(cleanPokemons())
-        navigate('/home') // Redirije. Ya se creó el Pk. Llevame al home a ver si está.
+        if(window.prompt('Password:') === myPassowrd) {
+            e.preventDefault();
+            dispatch(postPokemon(input))
+            alert('Pokemon created!')
+            setInput({
+                name: '',
+                hp: '',
+                attack: '',
+                defense: '',
+                speed: '',
+                height: '',
+                weight: '',
+                img: '',
+                types: []
+            })
+            dispatch(cleanPokemons())
+            dispatch(cleanDetail())
+            navigate('/home') // Redirije. Ya se creó el Pk. Llevame al home a ver si está.
+        } else alert('Password incorrect')
     }
 
     function handleDelete(el) {

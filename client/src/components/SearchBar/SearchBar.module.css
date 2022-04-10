@@ -50,6 +50,7 @@
   }
   
   .searchBarContainer button:hover {
+    color: black;
     background: #CE2211;
     border-color: #CE2211;
   }

@@ -1,0 +1,101 @@
+.landingPage {
+    background: url(./img/ash-pokeball.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    border-style: none;
+}
+
+.welcome {
+    position: absolute;
+    top: 82.5%;
+    left: 27.5%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.enterButton {
+    color: transparent;
+    padding: 11px;
+    transition: 1s;
+    border: none;
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0px 15px #00ffff;
+    filter: blur(20px) brightness(200%) ;
+    animation: mymove 1s ease infinite;
+
+}
+
+@keyframes mymove {
+    from {
+        transform: translate(-50%, -50%) scale(1)
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(.75);
+    }
+    
+    to {
+        transform: translate(-50%, -50%) scale(.5);
+    }
+}
+
+.enterButton:hover {
+    background-color: #00ffff;
+    filter: blur(15px);
+    box-shadow: 0px 3px 25px 20px #00ffff;
+    cursor: pointer;
+    animation: none;
+}
+
+.enter {
+    font-size: .25em;
+    color: rgb(0, 0, 0);
+    opacity: .5;
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    top: 53%;
+    left: 29%;
+    font-weight: 400;
+    pointer-events: none;
+}
+
+/* .image {
+    background: url(./img/pokePixelpng.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    display: flex;
+    width: 250px;
+    height: 250px; 
+    filter: contrast(125%);
+} */
+
+@media only screen and (max-width: 768px) {
+    body {
+        background-size: cover;
+        background-attachment: fixed;
+
+    }
+
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+}
+

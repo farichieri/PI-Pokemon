@@ -63,7 +63,7 @@ body {
 }
 
 .exit:hover {
-  color: red;
+  color: #CE2211;
 }
 
 .create {
@@ -72,12 +72,13 @@ body {
 }
 
 .create:hover {
-  color: red;
+  color: #CE2211;
 }
 
 .create:active {
-  filter: blur(50px);
+  filter: blur(20px);
 }
+
 
 .exitContainer{
   position: absolute;
@@ -117,9 +118,11 @@ body {
   padding: 5px;
   width: 150px;
   text-align: center;
+  transition: .3s;
 }
 
 .refreshButton:hover {
+  color: black;
   background-color: #CE2211;
   cursor: pointer;
 }
@@ -171,7 +174,7 @@ body {
 }
 
 .filterBy:hover .flechita {
-  color: red;
+  color: #CE2211;
 }
 
 .filter:hover {
@@ -199,6 +202,8 @@ body {
 @media only screen and (max-width: 1300px) {
   .cardsContainer {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  height: auto;
+  width: 100vh;
   }
 }
 

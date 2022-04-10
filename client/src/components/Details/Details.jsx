@@ -41,8 +41,7 @@ function Details() {
         dispatch(cleanDetail());
         dispatch(cleanPokemons());
     }
-
-
+    
     const myPassowrd = "frichieri"
 
     function handleDelete() {

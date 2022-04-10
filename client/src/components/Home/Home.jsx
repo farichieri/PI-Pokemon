@@ -66,17 +66,21 @@ function Home() {
         setOrder(e.target.value) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
     }
 
+    function handleClean() {
+        dispatch(cleanPokemons());
+    }
+
     return (
         <div className={styles.home}>
             <nav className={styles.exitSearchAndCreateNav}>
                 <div className={styles.exitContainer}>
-                    <Link to="/"><i src="./exit.png" ></i><h1 className={styles.exit}>Exit</h1></Link>
+                    <Link to="/"><i src="./exit.png" ></i><h1 className={styles.exit} onClick={handleClean}>Exit</h1></Link>
                 </div>
                 <div className={styles.searchBarContainer}>
                     <SearchBar />
                 </div>
                 <div className={styles.createContainer} >
-                    <Link to="/pokemons"><h1 className={styles.create}>Create</h1></Link>
+                    <Link to="/pokemons"><h1 className={styles.create} onClick={handleClean}>Create</h1></Link>
                 </div>
             </nav>
             <div className={styles.filtersAndRefresh}>
