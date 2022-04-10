@@ -21,7 +21,7 @@
 .enterButton {
     color: transparent;
     padding: 11px;
-    transition: 2s;
+    transition: 1.5s;
     border: none;
     position: absolute;
     display: flex;
@@ -32,7 +32,7 @@
     font-size: 2.5rem;
     border-radius: 100%;
     box-shadow: 0px 0px 0px 15px #00ffff;
-    filter: blur(20px) brightness(200%) ;
+    filter: blur(30px) brightness(2) ;
     animation: mymove 1s ease infinite;
 }
 
@@ -52,8 +52,8 @@
 
 .enterButton:hover{
     background-color: #00ffff;
-    filter: blur(15px);
-    box-shadow: 0px 0px 200px 150px #00ffff;
+    filter: blur(20px);
+    box-shadow: 0px 0px 75px 60px #00ffff;
     cursor: pointer;
     animation: none;
 }
@@ -85,6 +85,7 @@
     position: absolute;
     color: rgba(0, 0, 0, 0.809);
 }
+
 
 
 @media only screen and (max-width: 768px) {

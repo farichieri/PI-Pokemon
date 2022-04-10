@@ -132,7 +132,7 @@ function Home() {
             {load ? (<Loader />) :
                 <div className={styles.pagination}>
                     { allPokemons.length >= 12 ? 
-                    <Pagination pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} pagination={pagination} />
+                    <Pagination pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} pagination={pagination} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
                     : null
                     }
                 </div>
