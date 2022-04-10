@@ -82,7 +82,7 @@ function Home() {
             <div className={styles.filtersAndRefresh}>
                 <button className={styles.filterBy}><h2>Filter by <p className={styles.flechita}>&gt;</p> </h2></button>
                 <select className={styles.filter} onChange={e => handleFilterTypes(e)} value='disabled'>
-                    <option value=''>Types</option>
+                    <option value=''>Type</option>
                     <option className={styles.optionsSelect} value='all'>All Types</option>
                     {allPokemonsTypes?.map((t) => (
                           <option className={styles.optionsSelect} key={t.name} value={t.name}>{t.name}</option>
