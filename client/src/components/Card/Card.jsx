@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../Card/Card.module.scss"
+import styles from './Card.module.css'
 import bug from '../../images/logos/bug.png'
 import dark from '../../images/logos/dark.png'
 import dragon from '../../images/logos/dragon.png'
