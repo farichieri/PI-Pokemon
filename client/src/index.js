@@ -5,6 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import dotenv from "dotenv";
+import axios from 'axios';
+dotenv.config();
+
+axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001"
+// Seteo a axios en su propiedad defaults, la propiedad baseURL. 
+// Creo un archivo de variable de entorno local en donde estaría el localhost.
+// En este caso, pregunto si existe la variable de entorno REACT_APP_API y sino hay nada, defino la variable "https...."
+
 
 ReactDOM.render(
   // Si no envuelvo mi archivo raíz en un PROVIDER, Redux no va a dar bolilla.
