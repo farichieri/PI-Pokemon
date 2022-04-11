@@ -8,16 +8,16 @@ router.get('/pokemons', async (req, res)  => { // FUNCIONA -> Ver por que solo d
     // El query se pasa por URL y el body se pasa para coompletar un post con info. (ej formulario)
     const { name } = req.query;  // Funciona con name /pokemons?name=pikachu
     const totalPokemons = await getAllInfo(); // Funciona con todos los pokemons + DB
-    if (name) {
-        const pokemonName = totalPokemons.filter(el => el.name.toLowerCase() === name.toLowerCase());
-        // pokemonName.length ? res.status(200).send(pokemonName) : res.status(404).send({error: 'Pokemon not found'})
-        res.status(200).send(pokemonName);
-    } else { // Si no hay un query name:
-        try {
+    try {
+        if (name) {
+            const pokemonName = totalPokemons.filter(el => el.name.toLowerCase() === name.toLowerCase());
+            // pokemonName.length ? res.status(200).send(pokemonName) : res.status(404).send({error: 'Pokemon not found'})
+            res.status(200).send(pokemonName);
+        } else { // Si no hay un query name:
             res.status(200).send(totalPokemons);
-        } catch(error) { 
-            res.send(error)
         }
+    } catch(error) { 
+        console.log(error)
     }
 })
 
@@ -35,28 +35,33 @@ router.post('/pokemons', async (req, res) => {
                                     // A el nuevo Pokemon, agregale el type que le pase por body.
         res.send("Pokemon created successfully!");
     } catch (error){
-        res.send(error);
+        console.log(error);
     } 
 })
 
 router.get('/pokemons/:idPokemon', async (req, res, next)  => { // FUNCIONA con id 
     const { idPokemon } = req.params;
-    const totalPokemons = await getAllInfo(); // Me traigo TODO.-
-    if (idPokemon) {
-        const pokemonId = await totalPokemons.filter(pokeId => pokeId.id == idPokemon); // Filtro al que matchea.-
-        pokemonId.length ? res.status(200).send(pokemonId) : res.status(404).send("Pokemon not found");    
+    try {
+        const totalPokemons = await getAllInfo(); // Me traigo TODO.-
+        if (idPokemon) {
+            const pokemonId = await totalPokemons.filter(pokeId => pokeId.id == idPokemon); // Filtro al que matchea.-
+            pokemonId.length ? res.status(200).send(pokemonId) : res.status(404).send("Pokemon not found");    
+        }    
+    } catch (error) {
+        console.log(error);
     }
 })
 
-router.delete('/delete/:id', async (req, res) => {
-    const { id } = req.params;
+router.delete('/delete/:id', (req,res) => { // Saco async
+    const { id } = req.params; 
     try {
         if (id) {
-            await Pokemon.destroy({
-                where: {id: id },
-            });
+            return Pokemon.destroy({ // saco await. pongo return
+                where: { id: id },
+            }).then(() => { // Devuelvo .then(() => con la resupuesta)
+                res.send({msg: 'Pokemon deleted'}) // y saco el return obvio
+            })
         }
-        return res.send({msg: 'Pokemon deleted' });
     } catch (error) {
         console.log(error);
     }

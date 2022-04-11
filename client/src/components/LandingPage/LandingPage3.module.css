@@ -1,5 +1,6 @@
 .landingPage {
-    background: url(./img/ash-pokeball.jpg);
+    /* background: black; */
+    background: url(./img/charmanderGif.gif);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -10,11 +11,19 @@
 }
 
 .welcome {
+    font-size: .8em;
     position: absolute;
-    top: 82.5%;
-    left: 27.5%;
+    top: 55%;
+    left: 70%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+.landingPage h1 {
+    font-size: 2.2em;
+    position: absolute;
+    top: 7%;
+    right: 13%;
 }
 
 .enterButton {
@@ -73,18 +82,18 @@
     pointer-events: none;
 }
 
-/* .image {
-    background: url(./img/pokePixelpng.png);
+.image {
+    background: url(./img/pokeImgTransparent.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     position: relative;
     display: flex;
-    width: 250px;
-    height: 250px; 
+    width: 300px;
+    height: 300px; 
     filter: contrast(125%);
-} */
+}
 
 @media only screen and (max-width: 768px) {
     body {

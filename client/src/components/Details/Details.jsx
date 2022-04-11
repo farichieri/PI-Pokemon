@@ -35,7 +35,7 @@ function Details() {
 
     useEffect(() => {
         dispatch(getDetail(id)) // props.match.params.id es para ingresar al id de ese detail.
-    }, [dispatch])
+    }, [dispatch, id])
     
     function handleClick() {
         dispatch(cleanDetail());

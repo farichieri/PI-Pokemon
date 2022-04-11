@@ -69,7 +69,7 @@ function Home() {
     function handleClean() {
         dispatch(cleanPokemons());
     }
-
+    
     return (
         <div className={styles.home}>
             <nav className={styles.exitSearchAndCreateNav}>

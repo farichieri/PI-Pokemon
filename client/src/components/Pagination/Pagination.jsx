@@ -11,7 +11,6 @@ function Pagination({ pokemonsPerPage, allPokemons, pagination, currentPage, set
         pageNumbers.push(i)
     }
 
-    
     function nextPage() {
         setCurrentPage(currentPage + 1);
         setInput(input - 1 );
