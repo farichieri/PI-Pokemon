@@ -31,6 +31,7 @@ function Home() {
     useEffect (() => { // -> Permite realizar efectos secundarios como traer data, manipular el DOM o suscribir o desuscribirse a eventos.
         dispatch(getPokemons()) // Este dispatch es lo mismo que hacer el map dispatch to props
         dispatch(getTypes())
+        dispatch(cleanPokemons())
     }, [dispatch]) // Lo que se incluye en el arreglo, es de lo que depende el component didMount (useEffect)
 
     function handleClick(e) { // Siempre hay que crear los handles de las cosas que usemos abajo

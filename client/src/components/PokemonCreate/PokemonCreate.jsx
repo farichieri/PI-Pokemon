@@ -203,6 +203,7 @@ function PokemonCreate() {
 
     useEffect(() => {
         dispatch(getTypes())
+        dispatch(cleanPokemons())
         // dispatch(getPokemons()) // evita duplicacion de pokemons
     }, [dispatch]);
 
