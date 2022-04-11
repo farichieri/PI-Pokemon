@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName, orderByAttack, getTypes } from '../../actions';
+import { getPokemons, filterPokemonsByTypes, filterPokemonsCreated, orderByName, orderByAttack, getTypes, cleanDetail } from '../../actions';
 import Card from '../Card/Card'
 import Pagination from '../Pagination/Pagination';
 import SearchBar from '../SearchBar/SearchBar';
@@ -31,7 +31,7 @@ function Home() {
     useEffect (() => { // -> Permite realizar efectos secundarios como traer data, manipular el DOM o suscribir o desuscribirse a eventos.
         dispatch(getPokemons()) // Este dispatch es lo mismo que hacer el map dispatch to props
         dispatch(getTypes())
-        dispatch(cleanPokemons())
+        dispatch(cleanDetail())
     }, [dispatch]) // Lo que se incluye en el arreglo, es de lo que depende el component didMount (useEffect)
 
     function handleClick(e) { // Siempre hay que crear los handles de las cosas que usemos abajo
