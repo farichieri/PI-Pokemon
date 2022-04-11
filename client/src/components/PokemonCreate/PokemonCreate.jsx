@@ -281,7 +281,7 @@ return (
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Image: </label>
-                        <input type='file' value={input.img} name='img' placeholder='Link' onChange={handleChange} />
+                        <input type='text' value={input.img} name='img' placeholder='Link' onChange={handleChange} />
                         <img src={input.img} alt=""/>
                         <span>{errors.img && (<p className='error'>{errors.img}</p>)}</span>
                     </div>

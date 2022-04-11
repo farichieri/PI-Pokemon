@@ -11,32 +11,26 @@
     position: relative;
   }
   
-  
-  .paginationContainer li:hover {
-    background-color: white;
-    cursor: pointer;
-  }
-  
-  .paginationNumber:active {
-    box-shadow: 0px 0px 25px 0px #e1e1e1;
-  }
-  
-  .desactiveNumber {
-    background-image: url('./icons/pokeBallClosed.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    justify-content: center;
-    font-size: 0.35em;
-    text-align: center;
-    height: 20px;
-    width: 20px;
-    padding: 5px  ;
-    color: transparent;
-    transition: .5s;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.paginationContainer li:hover {
+  cursor: pointer;
+}
+
+.desactiveNumber {
+  background-image: url('./icons/pokeBallClosed.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  justify-content: center;
+  font-size: 0.35em;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  padding: 5px  ;
+  color: transparent;
+  transition: .5s;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 
 .activeNumber {
@@ -70,46 +64,46 @@
 }
 
 .paginationUlContainer button {
-  margin: 0 5px 0 5px;
+  margin: 0 0px 0 0px;
   border-radius: 100%;
-  padding: 5px;
   font-weight: bolder;
   justify-content: space-between;
-  font-size: 0.35em;
   text-align: center;
   color: transparent;
   border: none;
   transition: .5s;
   cursor: pointer;
-  background-color: red;
 }
 
 .paginationUlContainer button:disabled {
-  margin: 0 5px 0 5px;
+  background-image: none;
+  margin: 0 0px 0 0px;
   border-radius: 100%;
   justify-content: space-between;
-  font-size: 0.35em;
   text-align: center;
-  padding: 5px;
-  border: none;
+  padding: 0px;
   color: transparent;
   transition: .5s;
-  cursor: pointer;
-  background-color: white;
+  cursor:default;
+  background-color: transparent;
 }
 
 .prev {
-  background-image: url('./icons/left.png');
-  width: 20px;
-  height: 20px;
+  background-image: url('./icons/prevIcon.png');
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  border: none;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   justify-content: space-between;
+
 }
 
 .right {
-  background-image: url('./icons/right.png');
+  background-image: url('./icons/nextIcon.png');
+  background-color: transparent;
   width: 20px;
   height: 20px;
   background-size: contain;
@@ -118,7 +112,4 @@
   justify-content: space-between;
 }
 
-.closed {
-  width: 20px;
-  height: 20px;
-}
+
