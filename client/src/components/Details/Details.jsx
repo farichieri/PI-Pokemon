@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDetail, cleanDetail, cleanPokemons } from '../../actions';
+import { getDetail, cleanDetail, cleanPokemons, deletePokemon } from '../../actions';
 import styles from './Details.module.css'
 import Loader from '../Loader/Loader.jsx'
 
@@ -29,6 +29,7 @@ import shadow from '../../images/logos/shadow.jpg'
 function Details() {
     const myPokemon = useSelector((state) => state.detail);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {id} = useParams();
 
     useEffect(() => {
@@ -39,6 +40,29 @@ function Details() {
         dispatch(cleanDetail());
         dispatch(cleanPokemons());
     }
+
+    const myPassword = "frichieri delete"
+
+    function handleDelete() {
+      if (myPokemon[0].createdInDb) {
+        const confirm = window.confirm('Are you sure?');
+          if (confirm) {
+            if(window.prompt('Password:') === myPassword) {
+              dispatch(deletePokemon(id));
+              dispatch(cleanDetail());
+              dispatch(cleanPokemons());
+              alert('Pokemon deleted');
+              navigate('/home')
+          }
+          else alert("Password incorrect.")
+        }
+      }
+      else alert("You can't delete an original pokemon.")
+    }
+
+    // function handleChange() {
+    //   dispatch(update())
+    // }
 
     function getLogoType(type) {
         switch(type) {
@@ -97,6 +121,8 @@ function Details() {
         {
             myPokemon.length > 0 ?
             <div className={styles.detailsContainer}>
+              <button className={styles.pokemonDelete} onClick={() => handleDelete()}>Delete</button>
+              {/* <button onClick={() => handleChange()}>Change</button> */}
                 <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 5 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
                 <div className={styles.details}>
                     <h1 className={styles.detailsName}>{myPokemon[0].name}</h1>
