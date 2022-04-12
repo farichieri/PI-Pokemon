@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { getTypes, postPokemon, cleanPokemons, cleanDetail } from '../../actions';
+import { getTypes, postPokemon, cleanPokemons, cleanDetail, getPokemons } from '../../actions';
 import { useDispatch, useSelector} from 'react-redux';
 import styles from './PokemonCreate.module.css'
 
@@ -24,52 +24,6 @@ import steel from '../../images/logos/steel.png'
 import water from '../../images/logos/water.png'
 import unknown from '../../images/logos/unknown.png'
 import shadow from '../../images/logos/shadow.jpg'
-
-function validate(input) {
-    let errors = {};
-     if (!/^[A-Z]/.test(input.name)) {
-        errors.name = 'First letter must be uppercase';
-    } if (!/^[a-zA-Z]+$/.test(input.name) ) {
-        errors.name = 'Only letters are accepted'; 
-    } if (input.name.length > 12) {
-        errors.name = 'Max 12 characters'; 
-    } if (!input.name) {
-        errors.name = 'Name required';
-    } if (!input.hp || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.hp)) {
-        errors.hp = '250 max';
-    } if (!input.hp) {
-        errors.hp = 'Hp required';
-    } if (!input.attack || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.attack)) {
-        errors.attack = '250 max';
-    } if (!input.attack) {
-        errors.attack = 'Attack required';
-    } if (!input.defense || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.defense)) {
-        errors.defense = '250 max';
-    } if (!input.defense) {
-        errors.defense = 'Defense required';
-    } if (!input.speed || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.speed)) {
-        errors.speed = '250 max';
-    } if (!input.speed) {
-        errors.speed = 'Speed required';
-    } if (!input.height || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.height)) {
-        errors.height = '250 max';
-    } if (!input.height) {
-        errors.height = 'Height required';
-    } if (!input.weight || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.weight)) {
-        errors.weight = '250 max';
-    } if (!input.weight) {
-        errors.weight = 'Weight required';
-    } if (!input.img.length) {
-        errors.img = 'Link image required';
-    } if (!/[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_.~#?&//=]*)/.test(input.img)) {
-        errors.img = 'Try with other link';
-    } if (!input.img) {
-        errors.img = 'Image required'
-    } if (input.types.length === 0 || input.types === undefined) {
-        errors.types = 'Type required';
-    }
-    return errors;
-}
 
 function getLogoType(type) {
     switch(type) {
@@ -124,6 +78,7 @@ function PokemonCreate() {
     const navigate = useNavigate();
     const types = useSelector((state) => state.types);
     const [errors, setErrors] = useState({});
+    const allPokemonsCheck = useSelector((state) => state.allPokemons);
 
     const [input, setInput] = useState({
         name: '',
@@ -202,9 +157,60 @@ function PokemonCreate() {
     }
 
     useEffect(() => {
+        dispatch(getPokemons());
         dispatch(getTypes());
         dispatch(cleanPokemons());
     }, [dispatch]);
+
+    function validate(input) {
+        let errors = {};
+        let existent = false;
+        allPokemonsCheck.map(p => p.name === input.name ? existent = true: null);
+        if (existent) {
+            errors.name = 'That pokemon already exists.'
+        } if (!/^[A-Z]/.test(input.name)) {
+            errors.name = 'First letter must be uppercase';
+        } if (!/^[a-zA-Z]+$/.test(input.name) ) {
+            errors.name = 'Only letters are accepted'; 
+        } if (input.name.length > 12) {
+            errors.name = 'Max 12 characters'; 
+        } if (!input.name) {
+            errors.name = 'Name required';
+        } if (!input.hp || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.hp)) {
+            errors.hp = '250 max';
+        } if (!input.hp) {
+            errors.hp = 'Hp required';
+        } if (!input.attack || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.attack)) {
+            errors.attack = '250 max';
+        } if (!input.attack) {
+            errors.attack = 'Attack required';
+        } if (!input.defense || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.defense)) {
+            errors.defense = '250 max';
+        } if (!input.defense) {
+            errors.defense = 'Defense required';
+        } if (!input.speed || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.speed)) {
+            errors.speed = '250 max';
+        } if (!input.speed) {
+            errors.speed = 'Speed required';
+        } if (!input.height || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.height)) {
+            errors.height = '250 max';
+        } if (!input.height) {
+            errors.height = 'Height required';
+        } if (!input.weight || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.weight)) {
+            errors.weight = '250 max';
+        } if (!input.weight) {
+            errors.weight = 'Weight required';
+        } if (!input.img.length) {
+            errors.img = 'Link image required';
+        } if (!/[-a-zA-Z0-9@:%._~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_.~#?&//=]*)/.test(input.img)) {
+            errors.img = 'Try with other link';
+        } if (!input.img) {
+            errors.img = 'Image required'
+        } if (input.types.length === 0 || input.types === undefined) {
+            errors.types = 'Type required';
+        }
+        return errors;
+    }
 
 return (
     <div className={styles.pokemonCreatePage}>
