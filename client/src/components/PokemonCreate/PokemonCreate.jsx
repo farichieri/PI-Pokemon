@@ -31,8 +31,8 @@ function validate(input) { // input es mi estado local.
         errors.name = 'First letter must be uppercase';
     } if (!/^[a-zA-Z]+$/.test(input.name) ) {
         errors.name = 'Only letters are accepted'; 
-    } if (input.name.length > 15) {
-        errors.name = 'Max 15 characters'; 
+    } if (input.name.length > 12) {
+        errors.name = 'Max 12 characters'; 
     } if (!input.name) {
         errors.name = 'Name required';
     } if (!input.hp || !/^0*([0-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/.test(input.hp)) {
@@ -217,7 +217,7 @@ return (
         
         <div className={styles.pokemonCreateContainer}>
             <div className={styles.pokemonCreate}>
-                <h1>Create a new pokemon!</h1>
+                <h1>Create a new pokemon</h1>
                 <form onSubmit={(e) => handleSubmit(e)} autoComplete="off">
                     <div className={styles.inputContainer}>
                         <label>Name: </label>

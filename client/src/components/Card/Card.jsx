@@ -70,9 +70,9 @@ function Card({ name, img, types }) {
   }
   return (
     <div className={styles.card}>
+        <img className={styles.cardImg} src={img} alt="img not found" width="200px" height="200px" />
       <div className={styles.cardContainer}>
         <h3 className={styles.cardName}>{name}</h3>
-        <img className={styles.cardImg} src={img} alt="img not found" width="200px" height="200px" />
         
         <div className={styles.cardTypesContainer}>
           <div className={styles.typesContainer}>

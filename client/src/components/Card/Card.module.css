@@ -1,14 +1,14 @@
 .card {
     position: relative;
     overflow: hidden;
-    height: 250px;
-    width: 200px;
-    background-color: rgba(0, 0, 0, 0.593);
+    height: 260px;
+    width: 210px;
+    background-color: rgba(0, 0, 0, 0.799);
     box-shadow: 0 0 .9rem rgb(0, 0, 0);
     border-radius: 40px;
     opacity: 1;
-    transition: .3s;
-    margin: 10px;
+    transition: .5s;
+    margin: 5px;
    }
 
      .cardContainer {
@@ -28,14 +28,16 @@
 
   .card:hover {
     filter: brightness(125%);
-    background-color: #d5a000b4;
-    transform: scale(1.1);
+    box-shadow: 0 0 10px 1px aqua;    
+    transform: scale(1.075);
   }
 
+
   .cardName {
-    font-size: .6em;
-    color: #CE2211;
-    text-shadow: 1px 1px 1px #DFDFDF;
+    font-size: .55em;
+    color: aqua;
+    filter: brightness(150%);
+    text-shadow: 3px 3px 3px #000000;
     letter-spacing: .2rem;
     margin-bottom: 5px;
   }
@@ -48,10 +50,10 @@
   }
 
   .cardImg {
-    margin: 0;
+    margin-top: 5px;
     width: 150px;
     height: 150px;
-    border-radius: 10px;
+    border-radius: 30px;
   }
 
   .card .typesContainer img {

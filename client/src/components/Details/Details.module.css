@@ -1,3 +1,8 @@
+.detailsPage {
+  background-color: rgba(0, 0, 0, 0.46);
+  height: 100vh;
+}
+
 .detailsContainer {
     font-size: 1rem;
     position: absolute;
@@ -10,7 +15,7 @@
     margin-top: 45px;
     background-color: rgba(0, 0, 0, 0.755);
     border-radius: 10%;
-    box-shadow: 0 0 .9rem rgb(0, 0, 0)
+    box-shadow: 0 0 10px 1px aqua;    
 }
 
 .details {
@@ -27,8 +32,8 @@
 .detailsName {
     margin-top: 10%;
     font-size: 1.5em;
-    color: #CE2211;
-    text-shadow: 1px 1px 1px #DFDFDF;
+    color: aqua;
+    text-shadow: 3px 3px 3px #000000;
     letter-spacing: .2rem;
     margin-bottom: 5%;
 }
@@ -64,7 +69,7 @@
   }
   
   .back:hover {
-    color: red;
+    color: #CE2211;
   }
 
   .animated-progress {
@@ -187,8 +192,8 @@ progress::-moz-progress-bar {
   font-size: .5em;
   border-radius: 50px;
   padding: 6px;
-  background-color: rgba(90, 12, 12, 0.684);
-  color: rgba(255, 255, 255, 0.505);
+  background-color: rgba(126, 7, 7, 0.684);
+  color: rgba(255, 255, 255, 0.676);
   /* color: black; */
   border: none;
   position: absolute;

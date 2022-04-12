@@ -1,13 +1,9 @@
 .pokemonCreatePage {
-  background: url(./img/Beyond.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
   min-height: 100vh;
   min-width: 100vh;
   font-size: 25px;
   color: white;
+  background-color: rgba(0, 0, 0, 0.46);
 }
 
 .exitSearchAndCreateNav {
@@ -33,7 +29,7 @@
 }
 
 .back:hover {
-  color: red;
+  color: #CE2211;
 }
 
 .pokemonCreateContainer {
@@ -46,8 +42,9 @@
   height: 600px;
   max-width: 900px;
   margin-top: 40px;
-  background-color: rgba(0, 0, 0, 0.92);
-  border-radius: 10%;
+  background-color: rgba(0, 0, 0, 0.755);
+  border-radius: 70px;
+  box-shadow: 0 0 10px 1px aqua;    
 }
 
 .pokemonCreate {

@@ -7,7 +7,7 @@
     height: 100vh;
     width: 100vw;
     border-style: none;
-    /* filter: brightness(80%); */
+    filter: brightness(80%);
 }
 
 .welcome {
@@ -18,9 +18,7 @@
     transform: translate(-50%, -50%);
 }
 
-.landingPage h1 {
-    font-size: 2.5em;
-}
+
 
 
 .enterButton {
@@ -83,26 +81,19 @@
 }
 
 .welcomAfterHover {
-    position: absolute;
+    font-size: 1.5em;
+    position: relative;
     top: 5%;
     left: 50%;
     transform: translate(-50%, 0);
-    position: absolute;
     color: rgba(0, 0, 0, 0.809);
 }
-
-
 
 @media only screen and (max-width: 768px) {
     body {
         background-size: cover;
         background-attachment: fixed;
 
-    }
-
-    .image {
-        width: 200px;
-        height: 200px;
     }
 }
 

@@ -5,9 +5,11 @@ import charizardLoader from './img/loader.gif'
 
 export default function Loader(){
     return(
-        <div className={styles.loading}>
-            <img src={charizardLoader} alt="gif" />
-            <h1>Loading...</h1>
+        <div className={styles.loadingContainer}>
+            <div className={styles.loading}>
+                <img src={charizardLoader} alt="gif" />
+                <h1>Loading...</h1>
+            </div>
         </div>
     );
 }

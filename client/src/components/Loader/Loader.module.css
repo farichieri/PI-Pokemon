@@ -1,16 +1,17 @@
+/* .loadingContainer {
+    height: 80vw;
+} */
+
 .loading {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
     color: #DFDFDF;
 }
 
 .loading img {
-    margin-top: 25%;
-    width: 250px;
+    width: 275px;
     height: auto;
 }
 
