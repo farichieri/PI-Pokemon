@@ -1,78 +1,78 @@
 .searchBarContainer {
-    margin: 0 auto;
-    display: flex;
-    font-family: 'Press Start 2P', cursive;
-    width: 400px;
-    height: 30px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.202);
-  }
-  .searchBarContainer input {
-    font-family: 'Press Start 2P', cursive;
-    width: 100%;
-    float: left;
-    color: #ff0000;
-    border: 0;
-    background: transparent;
-    border-radius: 20px 0 0 20px;
-    font-size: 0.6em;
-    letter-spacing: .1rem;
-    background-image: url('./searching.png');
-    background-size: 20px;
-    background-repeat: no-repeat;
-    margin: 5px auto;
-    margin-left: 20px;
-  }
+  margin: 0 auto;
+  display: flex;
+  font-family: 'Press Start 2P', cursive;
+  width: 400px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.202);
+}
+
+.searchBarContainer input {
+  font-family: 'Press Start 2P', cursive;
+  width: 100%;
+  float: left;
+  color: #ff0000;
+  border: 0;
+  background: transparent;
+  border-radius: 20px 0 0 20px;
+  font-size: 0.6em;
+  letter-spacing: .1rem;
+  background-image: url('./searching.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  margin: 5px auto;
+  margin-left: 20px;
+}
   
-  .searchBarContainer input:focus {
-    outline: 0;
-    background: transparent;
+.searchBarContainer input:focus {
+  outline: 0;
+  background: transparent;
+}
+
+.searchBarContainer button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: .8em;
+  letter-spacing: .1rem;
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 30px;
+  width: 150px;
+  color: #EFFCD5;
+  background: transparent;
+  border-left: 1px solid rgba(255, 255, 255, 0.202);
+  border-radius: 0 20px 20px 0;
+  transition: .5s;
+}
+  
+.searchBarContainer button:hover {
+  color: black;
+  background: #CE2211;
+  border-color: #CE2211;
+}
+
+.searchBarContainer button:active {
+  box-shadow: 0px 0px 50px 0px #e1e1e1;
+}
+
+.searchBarContainer button:focus {
+  outline: 0;
+}
+
+.searchBarInput:focus::placeholder {
+  color: transparent;
+}
+
+@media only screen and (max-width: 700px) {
+  .searchBarContainer input {
+    width: 100px;
   }
 
   .searchBarContainer button {
-    font-family: 'Press Start 2P', cursive;
-    /* font-family: "Pokemon"; */
-    font-size: .8em;
-    letter-spacing: .1rem;
-    position: relative;
-    float: right;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    height: 30px;
-    width: 150px;
-    color: #EFFCD5;
-    background: transparent;
-    border-left: 1px solid rgba(255, 255, 255, 0.202);
-    border-radius: 0 20px 20px 0;
-    transition: .5s;
+    width: 25px;
   }
-  
-  .searchBarContainer button:hover {
-    color: black;
-    background: #CE2211;
-    border-color: #CE2211;
-  }
-
-  .searchBarContainer button:active {
-    box-shadow: 0px 0px 50px 0px #e1e1e1;
-  }
-
-  .searchBarContainer button:focus {
-    outline: 0;
-  }
-
-  .searchBarInput:focus::placeholder {
-    color: transparent;
-  }
-
-  @media only screen and (max-width: 700px) {
-    .searchBarContainer input {
-      width: 100px;
-    }
-
-    .searchBarContainer button {
-      width: 25px;
-    }
-  }
+}

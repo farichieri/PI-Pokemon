@@ -4,7 +4,6 @@ import styles from './Pagination.module.css'
 function Pagination({ pokemonsPerPage, allPokemons, pagination, currentPage, setCurrentPage }) { 
     const pageNumbers = [];
     const [input, setInput] = useState(currentPage)
-
     const max = allPokemons / pokemonsPerPage
     
     for (let i = 1; i <= Math.ceil(max); i++) {

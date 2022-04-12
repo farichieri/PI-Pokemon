@@ -65,7 +65,7 @@
 .pokemonCreate progress {
   border-radius: 50px; 
   height: 13px;
-  animation: load 3s normal forwards;
+  animation: load 3s ease-out forwards;
   flex-direction: row;
   position: absolute;
   left: 35%;
@@ -76,7 +76,7 @@
 }
 
 .pokemonCreate progress::-webkit-progress-value {
-  background: rgba(68, 255, 0, 0.779);
+  background:#04ff04;
   box-shadow: 0px 0px 15px 0px #e1e1e1;
 }
 
@@ -229,7 +229,6 @@
   height: 30px;
   left: 0;
 }
-
 
 .xButton {
   border-radius: 100%;

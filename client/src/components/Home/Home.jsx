@@ -11,60 +11,59 @@ import Loader from '../Loader/Loader.jsx'
 import NotFound from '../NotFound/NotFound.jsx'
 import { cleanPokemons } from '../../actions';
 
-// Siempre que voy a trabajar con algo que funcione solo en este componente (HOME), lo establezco acá. Para no perder tiempo haciendo toda esta lógica en un estado global, genero estado local en este componente. 
 function Home() {
-    const dispatch = useDispatch(); // Para usar la constante e ir dispatchando mis acciones. 
-    const allPokemons = useSelector ((state) => state.pokemons); // Esto se hace con hooks. Con useSelector traeme en esa constante, // todo lo que está en el estado de pokemons. Ahorra el map, state, to props                                            
-    const allPokemonsTypes = useSelector ((state) => state.types); // guardado en estado del reducer
-    const [currentPage, setCurrentPage] = useState(1);  // Creamos estados locales. Uno con la página actual y otro que me setee la página actual. ponemos 1 porque arranca en la primer página.                                     
-    const pokemonsPerPage = 12; // Cuántos pokemons quiero por página. (cuantas Cards)
-    const indexOfLastPokemon = currentPage * pokemonsPerPage; // 6
-    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // 0
-    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon); // De más arriba.- // Slice toma una porción de un arreglo // Me dice que pokemons vamos a renderizar dependiendo de la página.-
+    const dispatch = useDispatch();
+    const allPokemons = useSelector ((state) => state.pokemons);
+    const allPokemonsTypes = useSelector ((state) => state.types);
+    const [currentPage, setCurrentPage] = useState(1);
+    const pokemonsPerPage = 12;
+    const indexOfLastPokemon = currentPage * pokemonsPerPage;
+    const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
+    const currentPokemons = allPokemons.slice(indexOfFirstPokemon, indexOfLastPokemon);
     const [order, setOrder] = useState('');
 
     const pagination = (pageNumber) => {
-        setCurrentPage(pageNumber)
+        setCurrentPage(pageNumber);
     }
     const load = useSelector((state) => state.isLoading);
-    // Ahora tratamos de traernos del estado los pokemons cuando el componente se monta:
-    useEffect (() => { // -> Permite realizar efectos secundarios como traer data, manipular el DOM o suscribir o desuscribirse a eventos.
-        dispatch(getPokemons()) // Este dispatch es lo mismo que hacer el map dispatch to props
-        dispatch(getTypes())
-        dispatch(cleanDetail())
-    }, [dispatch]) // Lo que se incluye en el arreglo, es de lo que depende el component didMount (useEffect)
 
-    function handleClick(e) { // Siempre hay que crear los handles de las cosas que usemos abajo
-        e.preventDefault(); // preventDefault es para que no se recargue la página y no se me rompan las cosas. (Porque al recargar los estados de redux, vuelven a cargarse si tenemos useEffect )
+    useEffect (() => {
+        dispatch(getPokemons());
+        dispatch(getTypes());
+        dispatch(cleanDetail());
+    }, [dispatch]);
+
+    function handleClick(e) {
+        e.preventDefault();
         dispatch(cleanPokemons());
-        dispatch(getPokemons()); // Resetea los pokemons
+        dispatch(getPokemons());
         setCurrentPage(1);
     }
 
     function handleFilterTypes(e) {
         e.preventDefault();
-        dispatch(filterPokemonsByTypes(e.target.value)) // e.target.value accede al valor a c/u de las opciones
+        dispatch(filterPokemonsByTypes(e.target.value));
         setCurrentPage(1);
     }
 
     function handleFilterCreated(e) {
-        dispatch(filterPokemonsCreated(e.target.value)) // e.target.value accede al valor a c/u de las opciones (el payload)
-        e.preventDefault()
+        dispatch(filterPokemonsCreated(e.target.value))
+        e.preventDefault();
         setCurrentPage(1);
     }
     
     function handleSort(e) {
         e.preventDefault();
         dispatch(orderByName(e.target.value));
-        setCurrentPage(1); // Seteo la página a la 1.
-        setOrder(e.target.value) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
+        setCurrentPage(1);
+        setOrder(e.target.value);
     }
 
     function handleAttack(e) {
         e.preventDefault();
         dispatch(orderByAttack(e.target.value));
-        setCurrentPage(1); // Seteo la página a la 1.
-        setOrder(e.target.value) // Con este estado creado (más arriba), modificamelo para que desde el front me haga el ordenamiento.
+        setCurrentPage(1);
+        setOrder(e.target.value);
     }
 
     function handleClean() {
@@ -130,7 +129,8 @@ function Home() {
                         })
                     }
                 </div>
-            {load ? (<Loader />) :
+                {
+            load ? (<Loader />) :
                 <div className={styles.pagination}>
                     { allPokemons.length >= 12 ? 
                     <Pagination pokemonsPerPage={pokemonsPerPage} allPokemons={allPokemons.length} pagination={pagination} currentPage={currentPage} setCurrentPage={setCurrentPage}/>

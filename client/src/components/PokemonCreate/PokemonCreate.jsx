@@ -25,7 +25,7 @@ import water from '../../images/logos/water.png'
 import unknown from '../../images/logos/unknown.png'
 import shadow from '../../images/logos/shadow.jpg'
 
-function validate(input) { // input es mi estado local.
+function validate(input) {
     let errors = {};
      if (!/^[A-Z]/.test(input.name)) {
         errors.name = 'First letter must be uppercase';
@@ -121,9 +121,9 @@ function getLogoType(type) {
 
 function PokemonCreate() {
     const dispatch = useDispatch();
-    const navigate = useNavigate(); // Llamo a useHistory igual que al useDispatch.
+    const navigate = useNavigate();
     const types = useSelector((state) => state.types);
-    const [errors, setErrors] = useState({}); // Genero un estado local para los errores (validate(input))
+    const [errors, setErrors] = useState({});
 
     const [input, setInput] = useState({
         name: '',
@@ -138,13 +138,13 @@ function PokemonCreate() {
     })
 
     function handleChange(e) { 
-        setInput({              // Va a ir cambiando cada vez que modifico mis inputs del formulario.
+        setInput({
             ...input,
             [e.target.name] : e.target.value
         })
-        setErrors(validate({    // Seteame mi estado errores pasandole la función validate.
-            ...input,           // con el estado input
-            [e.target.name]: e.target.value // y el e.target.name en el e.target.value.
+        setErrors(validate({
+            ...input,
+            [e.target.name]: e.target.value
         }));
     }
 
@@ -166,7 +166,7 @@ function PokemonCreate() {
         }
     }
 
-    const myPassowrd = "frichieri"
+    const myPassowrd = "frichieri";
 
     function handleSubmit(e) {
         if(window.prompt('Password:') === myPassowrd) {
@@ -184,10 +184,10 @@ function PokemonCreate() {
                 img: '',
                 types: []
             })
-            dispatch(cleanPokemons())
-            dispatch(cleanDetail())
-            navigate('/home') // Redirije. Ya se creó el Pk. Llevame al home a ver si está.
-        } else alert('Password incorrect')
+            dispatch(cleanPokemons());
+            dispatch(cleanDetail());
+            navigate('/home');
+        } else alert('Password incorrect');
     }
 
     function handleDelete(el) {
@@ -202,9 +202,8 @@ function PokemonCreate() {
     }
 
     useEffect(() => {
-        dispatch(getTypes())
-        dispatch(cleanPokemons())
-        // dispatch(getPokemons()) // evita duplicacion de pokemons
+        dispatch(getTypes());
+        dispatch(cleanPokemons());
     }, [dispatch]);
 
 return (

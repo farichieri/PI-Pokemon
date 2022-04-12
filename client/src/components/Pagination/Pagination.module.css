@@ -7,7 +7,6 @@
   margin: 0 auto;
   bottom: 13px;
   position: relative;
-  /* background-color: red; */
   bottom: 5px;
   filter: brightness(90%)
  }
@@ -109,7 +108,6 @@
   background-repeat: no-repeat;
   background-position: center;
   justify-content: space-between;
-
 }
 
 .right {

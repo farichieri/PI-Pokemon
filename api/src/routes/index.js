@@ -4,7 +4,7 @@ const typeRoute = require('./typeRoutes');
 
 const router = Router();
 
-router.use('/', pokemonRoute); // Nos devuelve en /pokemon/* -> *=todo lo que haya adentro
-router.use('/', typeRoute);       // =^^
+router.use('/', pokemonRoute);
+router.use('/', typeRoute);
 
 module.exports = router;

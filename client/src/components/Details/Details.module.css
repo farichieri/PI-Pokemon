@@ -47,64 +47,64 @@
 }
 
 .exitSearchAndCreateNav {
-    width: 100%;
-    position: relative;
-    display: flex;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.55);
-    border-radius: 0px 0px 25px 25px;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    color: #EFFCD5;
-    font-size: 0.6em;
-    letter-spacing: .2rem;
-    text-decoration: none;
-  }
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 0px 0px 25px 25px;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: #EFFCD5;
+  font-size: 0.6em;
+  letter-spacing: .2rem;
+  text-decoration: none;
+}
 
-  .back {
-    color: #EFFCD5;
-    transition: .3s;
-  }
+.back {
+  color: #EFFCD5;
+  transition: .3s;
+}
   
-  .back:hover {
-    color: #CE2211;
-  }
+.back:hover {
+  color: #CE2211;
+}
 
-  .animated-progress {
-    width: 300px;
-    height: 30px;
-    border-radius: 5px;
-    margin: 20px 10px;
-    border: 1px solid rgb(189, 113, 113);
-    overflow: hidden;
-    position: relative;
-  }
+.animated-progress {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 20px 10px;
+  border: 1px solid rgb(189, 113, 113);
+  overflow: hidden;
+  position: relative;
+}
   
-  .animated-progress span {
-    height: 100%;
-    display: block;
-    width: 0;
-    color: rgb(255, 251, 251);
-    line-height: 30px;
-    position: absolute;
-    text-align: end;
-    padding-right: 5px;
-  }
+.animated-progress span {
+  height: 100%;
+  display: block;
+  width: 0;
+  color: rgb(255, 251, 251);
+  line-height: 30px;
+  position: absolute;
+  text-align: end;
+  padding-right: 5px;
+}
   
-  .progress-blue span {
-    background-color: blue;
-  }
-  .progress-green span {
-    background-color: green;
-  }
-  .progress-purple span {
-    background-color: indigo;
-  }
-  .progress-red span {
-    background-color: red;
-  }
+.progress-blue span {
+  background-color: blue;
+}
+.progress-green span {
+  background-color: green;
+}
+.progress-purple span {
+  background-color: indigo;
+}
+.progress-red span {
+  background-color: red;
+}
   
 .progressContainer {
   display: flex;
@@ -117,9 +117,8 @@ progress {
   border-radius: 7px; 
   width: 200px;
   height: 12px;
-  /* box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 ); */
   margin: 1px;
-  animation: load 3s normal forwards;
+  animation: load 3s ease-out forwards;
   flex-direction: row;
   position: absolute;
   left: 22%;
@@ -131,7 +130,7 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background: rgba(68, 255, 0, 0.779);
+  background:#04ff04;
   box-shadow: 0px 0px 15px 0px #e1e1e1;
   border-radius: 1px 10px 10px 1px;
 }
@@ -194,7 +193,6 @@ progress::-moz-progress-bar {
   padding: 6px;
   background-color: rgba(126, 7, 7, 0.684);
   color: rgba(255, 255, 255, 0.676);
-  /* color: black; */
   border: none;
   position: absolute;
   top: 35px;

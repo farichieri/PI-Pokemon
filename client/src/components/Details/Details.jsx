@@ -1,7 +1,7 @@
 import { React, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDetail, cleanDetail, cleanPokemons, deletePokemon} from '../../actions';
+import { getDetail, cleanDetail, cleanPokemons, deletePokemon } from '../../actions';
 import styles from './Details.module.css'
 import Loader from '../Loader/Loader.jsx'
 
@@ -26,7 +26,6 @@ import water from '../../images/logos/water.png'
 import unknown from '../../images/logos/unknown.png'
 import shadow from '../../images/logos/shadow.jpg'
 
-
 function Details() {
     const navigate = useNavigate()
     const myPokemon = useSelector((state) => state.detail);
@@ -34,7 +33,7 @@ function Details() {
     const {id} = useParams();
 
     useEffect(() => {
-        dispatch(getDetail(id)) // props.match.params.id es para ingresar al id de ese detail.
+        dispatch(getDetail(id))
     }, [dispatch, id])
     
     function handleClick() {
@@ -107,7 +106,7 @@ function Details() {
             break
         }
       }
-
+      
   return (
     <div className={styles.detailsPage}>
             <nav className={styles.exitSearchAndCreateNav}>
@@ -116,10 +115,10 @@ function Details() {
                 </div>
             </nav>
         {
-            myPokemon.length > 0 ? // Osea, ¿Tiene algo?
+            myPokemon.length > 0 ?
             <div className={styles.detailsContainer}>
                 <button className={styles.pokemonDelete} onClick={() => handleDelete()}>Delete</button>
-                    <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 5 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
+                <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 5 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
                 <div className={styles.details}>
                     <h1 className={styles.detailsName}>{myPokemon[0].name}</h1>
                     <img className={styles.pokemonDetailImg} src={myPokemon[0].img} alt="" />
@@ -142,13 +141,11 @@ function Details() {
                     <div className={styles.progressContainer}>
                         <h3>Weight:</h3><progress className={styles.weightProgress} max="250" value={myPokemon[0].weight}></progress><p>{myPokemon[0].weight}kgs</p>
                     </div>
-
                     <div className={styles.superTypesContainer}>
                         <div className={styles.typesContainer}>
                             <h5>{myPokemon[0].types[0]}</h5> 
                             <img className={styles.logoTypes} src={getLogoType(myPokemon[0].types[0][0])} alt="" />
                         </div>
-
                         <div className={styles.typesContainer}>
                             <h5>{myPokemon[0].types[1]}</h5>
                             { myPokemon[0].types[1] ?
@@ -159,7 +156,7 @@ function Details() {
                     </div>
                 </div>
             </div>
-                : <Loader />
+            : <Loader />
         }
     </div>
   )

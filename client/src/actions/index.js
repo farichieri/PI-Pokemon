@@ -1,10 +1,7 @@
 import axios from 'axios';
-// El redux thunk sirve para trabajar la llamadaa asíncrona.
 
 export function getPokemons() {
     return async function(dispatch) {
-        // La ruta que me cree en el back que me trae todos los Poks
-        // Si no es axios.get es con fetch y hay que usar promesas con .then y con axios devuelve rta en un data.
         var json = await axios.get("/pokemons");
         return dispatch({
             type: 'GET_POKEMONS',
@@ -12,17 +9,15 @@ export function getPokemons() {
         })
     }
 }
-// function para los filtros (ver Home)
-export function filterPokemonsByTypes(payload) { // El payload será el value que me va a llegar.
+
+export function filterPokemonsByTypes(payload) {
     return {
         type: 'FILTER_BY_TYPES',
         payload
     }
 }
-// Ya creada la acción, hay que dejar la menor cantidad de lógica en ella.
-// La acción es solamente despachar un tipo. Se recomienda hacerlo en reducer o Component.-
 
-export function filterPokemonsCreated(payload) { // Este payload va a ser el value que fue creado.
+export function filterPokemonsCreated(payload) {
     return {
         type: 'FILTER_CREATED',
         payload
@@ -43,8 +38,7 @@ export function orderByAttack(payload) {
     }
 }
 
-//Vamos a trabajar con el el search.
-export function getNamePokemons(name) { // A este payload le llamamos name. (Es lo mismo)
+export function getNamePokemons(name) {
     return async function(dispatch) {
         try {
             var json = await axios.get("/pokemons?name=" + name);
@@ -74,7 +68,7 @@ export function getTypes() {
 
 export function postPokemon (payload) {
     return async function(dispatch) {
-        const response = await axios.post("/pokemons", payload); // En esta ruta le hago un post del payload (el payload me llega del front) y se pone después de la ,
+        const response = await axios.post("/pokemons", payload);
         return response;
     }
 }

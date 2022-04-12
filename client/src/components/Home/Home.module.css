@@ -89,7 +89,6 @@ body {
   position: absolute;
   right: 10%;
 }
-
 /* END NAVBAR */
 
 
@@ -172,9 +171,7 @@ body {
 .filter:hover {
   cursor: pointer;
 }
-
 /* END FILTERS */
-
 
 .home .optionsSelect {
   position: absolute;
@@ -210,4 +207,4 @@ body {
   }
 }
 
-/* RESPONSIVE */
+/* END RESPONSIVE */

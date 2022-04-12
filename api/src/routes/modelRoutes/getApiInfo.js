@@ -1,19 +1,11 @@
 const axios = require('axios');
-// Función que me trae la información de la API:
-const getApiInfo = async () => { // se instala e importa AXIOS para poder usarla. (Si se usa fetch no es necesario)
+
+const getApiInfo = async () => { 
     try {
-        const apiUrl = await axios.get('https://pokeapi.co/api/v2/pokemon') // Se usa AWAIT porque uno nunca sabe cuanto va a demorar la respuesta, entonces le aviso que tienen que esperar a la respuesta antes de cargar la información a la variable apiUrl (de manera asíncrona).-
+        const apiUrl = await axios.get('https://pokeapi.co/api/v2/pokemon') 
         const apiUrlRest = await axios.get(apiUrl.data.next);
-        const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results)
-    
-        // const apiUrlRest2 = await axios.get(apiUrlRest.data.next)
-        // const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results).concat(apiUrlRest2.data.results)
-    
-        // let firstApiUrl = apiUrl.data.results // Agarro los 20 pokes de la 1ra hoja 
-        // let secondApiUrl = await axios.get(apiUrl.data.next) // paso a la 2da hoja
-        // let thirdApiUrl = await axios.get(secondApiUrl.data.next) // paso a la 3er hoja 
-        // const allPokemons = firstApiUrl.concat(secondApiUrl.data.results).concat(thirdApiUrl.data.results) // 1ros 20 + 2dos 20 + 3ros 20
-    
+        const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results);
+        
         function capitalizeFirstLetter(str) {
             return str.charAt(0).toUpperCase() + str.slice(1);
             }
@@ -33,13 +25,11 @@ const getApiInfo = async () => { // se instala e importa AXIOS para poder usarla
                     types: pokemon.data.types.map(pokeTypes => [pokeTypes.type.name])
                 }
             })
-        )
+        );
         return apiInfo;
-        
     } catch (error) {
         console.log(error);
-    }
-    
+    } 
 }
 
 module.exports = getApiInfo;
