@@ -61,4 +61,20 @@ router.delete('/delete/:id', async(req,res) => {
     }
 })
 
+// router.put('/pokemons', async (req, res) => {
+//     const { img, name, types, hp, attack, defense, speed, weight, height, createdInDb } = req.body;
+//     try {
+//         let newPokemon = await Pokemon.create({ 
+//             img, name, hp, attack, defense, speed, weight, height, createdInDb
+//         }); 
+//         let typeDb = await Type.findAll({ 
+//             where: { name: types }
+//         });
+//         newPokemon.addType(typeDb);
+//         res.send("Pokemon created successfully!");
+//     } catch (error){
+//         console.log(error);
+//     } 
+// })
+
 module.exports = router;

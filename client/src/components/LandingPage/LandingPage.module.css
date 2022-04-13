@@ -1,5 +1,5 @@
 .landingPage {
-    background: url(./img/charmanderGif.gif);
+    background: url(./img/pokeLandingImg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -7,37 +7,32 @@
     height: 100vh;
     width: 100vw;
     border-style: none;
+    filter: brightness(80%);
 }
 
 .welcome {
     position: absolute;
-    top: 60%;
-    left: 70%;
+    top: 49.8%;
+    left: 49.8%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-}
-
-.landingPage h1 {
-    position: absolute;
-    top: -26%;
-    right: -20%;
 }
 
 .enterButton {
     color: transparent;
     padding: 11px;
-    transition: 1s;
+    transition: 1.5s;
     border: none;
     position: absolute;
     display: flex;
-    top: 52.5%;
-    left: 29.5%;
+    top: 50%;
+    left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     font-size: 2.5rem;
     border-radius: 100%;
     box-shadow: 0px 0px 0px 15px #00ffff;
-    filter: blur(20px) brightness(200%) ;
+    filter: blur(30px) brightness(2) ;
     animation: mymove 1s ease infinite;
 }
 
@@ -55,10 +50,10 @@
     }
 }
 
-.enterButton:hover {
+.enterButton:hover{
     background-color: #00ffff;
-    filter: blur(15px);
-    box-shadow: 0px 3px 25px 20px #00ffff;
+    filter: blur(20px);
+    box-shadow: 0px 0px 75px 60px #00ffff;
     cursor: pointer;
     animation: none;
 }
@@ -78,41 +73,42 @@
     pointer-events: none;
 }
 
-.image {
-    background: url(./img/pokeBall.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+.welcomeText {
+    font-size: 1.5em;
     position: relative;
-    display: flex;
-    width: 250px;
-    height: 250px; 
-    filter: contrast(125%);
-    opacity: 0.8;
-}
-
-.pokemon {
-    position: absolute;
-    right: 15%;
-    top: 16%;
-    width: 300px;
-    height: auto;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: rgba(0, 0, 0, 0.809);
 }
 
 @media only screen and (max-width: 768px) {
     body {
-        background-size: cover;
-        background-attachment: fixed;
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+      
+        min-width: 100%;
+        min-height: 100%;
+      
     }
-
-    .image {
-        width: 200px;
-        height: 200px;
+    .landingPage {
+        position: absolute;
+        background: url(./img/pokeLandingImg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    .welcomeText {
+        font-size: 1em;
+        position: relative;
+        top: 18%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: rgba(0, 0, 0, 0.809);
     }
 }
 

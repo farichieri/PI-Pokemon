@@ -66,7 +66,7 @@ export function getTypes() {
     }
 }
 
-export function postPokemon (payload) {
+export function postPokemon(payload) {
     return async function(dispatch) {
         const response = await axios.post("/pokemons", payload);
         return response;
@@ -115,10 +115,10 @@ export function deletePokemon(id) {
     }
 }
 
-// export function update(id) {
+// export function update(id, payload) {
 //     return async function (dispatch) {
 //         try {
-//             var json = await axios.put("/update/" + id, {})
+//             var json = await axios.put("/update/" + id, payload)
 //             return dispatch({
 //                 type: "UPDATE",
 //                 payload: json.data

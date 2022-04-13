@@ -60,8 +60,8 @@ function Details() {
       else alert("You can't delete an original pokemon.")
     }
 
-    // function handleChange() {
-    //   dispatch(update())
+    // function handleUpdate() {
+    //   // dispatch(update())
     // }
 
     function getLogoType(type) {
@@ -122,7 +122,7 @@ function Details() {
             myPokemon.length > 0 ?
             <div className={styles.detailsContainer}>
               <button className={styles.pokemonDelete} onClick={() => handleDelete()}>Delete</button>
-              {/* <button onClick={() => handleChange()}>Change</button> */}
+              {/* <button onClick={() => handleUpdate()}>Update</button> */}
                 <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 5 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
                 <div className={styles.details}>
                     <h1 className={styles.detailsName}>{myPokemon[0].name}</h1>
