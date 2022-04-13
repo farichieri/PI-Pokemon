@@ -93,7 +93,6 @@
       
     }
     .landingPage {
-        position: absolute;
         background: url(./img/pokeLandingImg.jpg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -104,18 +103,16 @@
     }
     .welcomeText {
         font-size: 1em;
-        position: relative;
+        position: absolute;
         top: 18%;
         left: 50%;
         transform: translate(-50%, 0);
         color: rgba(0, 0, 0, 0.809);
     }
     .welcome, .enterButton {
-        position: relative;
-        top: 49.8%;
-        left: 49.8%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
 }
 
