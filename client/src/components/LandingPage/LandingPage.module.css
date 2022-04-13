@@ -104,14 +104,14 @@
     }
     .welcomeText {
         font-size: 1em;
-        position: absolute;
+        position: relative;
         top: 18%;
         left: 50%;
         transform: translate(-50%, 0);
         color: rgba(0, 0, 0, 0.809);
     }
     .welcome, .enterButton {
-        position: absolute;
+        position: relative;
         top: 49.8%;
         left: 49.8%;
         margin-right: -50%;
