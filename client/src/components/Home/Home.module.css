@@ -1,5 +1,5 @@
 body {
-  background: url(../../images/background/Beyond.jpg);
+  background-image:url(../../images/background/Beyond.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -189,13 +189,42 @@ body {
 /* RESPONSIVE */
 @media only screen and (max-width: 1300px) {
   .cardsContainer {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  height: auto;
-  width: 100vh;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    height: auto;
+    width: 100vh;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 768px) {
+  body {
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; */
+    position: absolute;
+    background-size: 1200px 800px;
+    background-position: top;
+    background-attachment:fixed;
+    height: 100vh; 
+    top: 0;
+    left: 0; 
+    min-width: 100%;
+    width: 100vw;
+    min-height: 100%;
+}
+
+  .home {
+    width: 100vw;
+    height: 100%;
+  }
+
+  .cardsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
   .exitSearchAndCreateNav {
     height: 40px;
   }
