@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getDetail, cleanDetail, cleanPokemons, deletePokemon } from '../../actions';
 import styles from './Details.module.css'
 import Loader from '../Loader/Loader.jsx'
+import Update from '../Update/Update';
 
 import bug from '../../images/logos/bug.png'
 import dark from '../../images/logos/dark.png'
@@ -59,10 +60,6 @@ function Details() {
       }
       else alert("You can't delete an original pokemon.")
     }
-
-    // function handleUpdate() {
-    //   // dispatch(update())
-    // }
 
     function getLogoType(type) {
         switch(type) {
@@ -122,7 +119,9 @@ function Details() {
             myPokemon.length > 0 ?
             <div className={styles.detailsContainer}>
               <button className={styles.pokemonDelete} onClick={() => handleDelete()}>Delete</button>
-              {/* <button onClick={() => handleUpdate()}>Update</button> */}
+              <Link to={'/update/' + id}>
+                <Update />
+              </Link>
                 <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 5 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
                 <div className={styles.details}>
                     <h1 className={styles.detailsName}>{myPokemon[0].name}</h1>

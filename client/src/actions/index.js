@@ -115,16 +115,16 @@ export function deletePokemon(id) {
     }
 }
 
-// export function update(id, payload) {
-//     return async function (dispatch) {
-//         try {
-//             var json = await axios.put("/update/" + id, payload)
-//             return dispatch({
-//                 type: "UPDATE",
-//                 payload: json.data
-//             })
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     }
-// }
+export function update(id, payload) {
+    return async function (dispatch) {
+        try {
+            var json = await axios.put("/update/" + id, payload)
+            return dispatch({
+                type: "UPDATE",
+                payload: json.data
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}

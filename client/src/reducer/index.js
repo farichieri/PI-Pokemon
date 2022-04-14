@@ -93,11 +93,11 @@ function rootReducer (state = initialState, action) {
                 return {
                     ...state
                 }
-            // case "UPDATE": {
-            //     return {
-            //         ...state
-            //     }
-            // }
+            case "UPDATE": {
+                return {
+                    ...state
+                }
+            }
         default:
             return state;
     }
