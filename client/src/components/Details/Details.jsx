@@ -120,7 +120,7 @@ function Details() {
             <div className={styles.detailsContainer}>
               <button className={styles.pokemonDelete} onClick={() => handleDelete()}>Delete</button>
               <Link to={'/update/' + id}>
-                <Update />
+                <button>Updateame bb</button>
               </Link>
                 <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 5 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>
                 <div className={styles.details}>
