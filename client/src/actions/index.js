@@ -115,7 +115,7 @@ export function deletePokemon(id) {
     }
 }
 
-export function update(id, payload) {
+export function updatePokemon(id, payload) {
     return async function (dispatch) {
         try {
             var json = await axios.put("/update/" + id, payload)

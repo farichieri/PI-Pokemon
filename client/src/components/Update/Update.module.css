@@ -1,4 +1,4 @@
-.detailsPage {
+.updatePage {
     background-color: rgba(0, 0, 0, 0.46);
     height: 100vh;
   }
@@ -113,7 +113,7 @@
     text-align: center;
   }
   
-  progress {
+  .progressContainer input{
     border-radius: 7px; 
     width: 200px;
     height: 12px;
@@ -209,3 +209,44 @@
     font-size: 50px;
   }
   
+  .confirmUpdateButton {
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .5em;
+    border-radius: 50px;
+    padding: 6px;
+    background-color: rgba(20, 155, 15, 0.684);
+    color: rgba(255, 255, 255, 0.676);
+    border: none;
+    position: absolute;
+    z-index: 1;
+    bottom: 35px;
+    right: 50px;
+    transition: .3s;
+  }
+  
+  .confirmUpdateButton:hover {
+    background-color: green;
+    color: black;
+  }
+
+  .backToOriginal {
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .5em;
+    border-radius: 50px;
+    padding: 6px;
+    background-color: rgba(217, 220, 41, 0.684);
+    color: rgb(0, 0, 0);
+    border: none;
+    position: absolute;
+    z-index: 1;
+    bottom: 35px;
+    left: 50px;
+    transition: .3s;
+  }
+
+  .backToOriginal:hover {
+    background-color: green;
+    color: black;
+  }
