@@ -28,6 +28,8 @@ import shadow from '../../images/logos/shadow.jpg'
 
 function Details() {
     const myPokemon = useSelector((state) => state.detail);
+    console.log(myPokemon)
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const {id} = useParams();

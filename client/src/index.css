@@ -12,3 +12,20 @@ html {
   text-decoration: none;
   user-select: none;
 }
+
+body {
+  background-color: rgba(0, 0, 0, 0.46);
+  background-image:url(../src/images/background/Beyond.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100%;
+  min-width: 100vh;
+  font-size: 25px;
+  height: 100vh;
+  margin: 0 auto;
+  text-transform: none;
+  text-decoration: inherit;
+  color: #EFFCD5;
+}
