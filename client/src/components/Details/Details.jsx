@@ -47,17 +47,13 @@ function Details() {
 
     function handleDelete() {
       if (myPokemon[0].createdInDb) {
-        const confirm = window.confirm('Are you sure?');
-          if (confirm) {
             if(window.prompt('Password:') === myPassword) {
               dispatch(deletePokemon(id));
               dispatch(cleanDetail());
               dispatch(cleanPokemons());
               alert('Pokemon deleted');
               navigate('/home')
-          }
-          else alert("Password incorrect.")
-        }
+          } else alert("Password incorrect.")
       }
       else alert("You can't delete an original pokemon.")
     }
