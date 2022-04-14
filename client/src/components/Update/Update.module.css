@@ -71,79 +71,49 @@
   .back:hover {
     color: #CE2211;
   }
-  
-  .animated-progress {
-    width: 300px;
-    height: 30px;
-    border-radius: 5px;
-    margin: 20px 10px;
-    border: 1px solid rgb(189, 113, 113);
-    overflow: hidden;
-    position: relative;
-  }
-    
-  .animated-progress span {
-    height: 100%;
-    display: block;
-    width: 0;
-    color: rgb(255, 251, 251);
-    line-height: 30px;
-    position: absolute;
-    text-align: end;
-    padding-right: 5px;
-  }
-    
-  .progress-blue span {
-    background-color: blue;
-  }
-  .progress-green span {
-    background-color: green;
-  }
-  .progress-purple span {
-    background-color: indigo;
-  }
-  .progress-red span {
-    background-color: red;
-  }
     
   .progressContainer {
     display: flex;
-    color: white;
     margin-left: 30px;
     text-align: center;
   }
   
+/* Input range */
   .progressContainer input{
     border-radius: 7px; 
     width: 200px;
-    height: 12px;
-    margin: 1px;
+    height: 15px;
+    margin-top: 0px;
     animation: load 3s ease-out forwards;
     flex-direction: row;
     position: absolute;
     left: 22%;
   }
-  
-  progress::-webkit-progress-bar {
-    background-color: rgba(0, 0, 0, 0.722);
-    border-radius: 7px;    
+
+  .progressContainer input[type=range]  {
+    margin-top: 4.5px;
+    outline: none;
+    padding: 0;
+    width: 640px;
+    height: 10px;
+    border-radius: 10px;
+    cursor: pointer;
   }
-  
-  progress::-webkit-progress-value {
-    background:#04ff04;
-    box-shadow: 0px 0px 15px 0px #e1e1e1;
-    border-radius: 1px 10px 10px 1px;
-  }
-  
-  progress::-moz-progress-bar {
-    box-shadow: 0 10px 40px -10px #fff;
-  }
-  
+
+.progressContainer  input[type=range]::-webkit-slider-runnable-track {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+
   @keyframes load {
     0% { width: 0; }
     100% { width: 60%; }
   }
   
+/* End Input range */
+
   .details h3 {
     font-size: .6em;
     color:  #F5F5F5;
@@ -151,6 +121,7 @@
   }
   
   .details p {
+    margin-top: 4px;
     position: absolute;
     text-align: left;
     left: 590px;
@@ -205,10 +176,6 @@
     color: black;
   }
   
-  window {
-    font-size: 50px;
-  }
-  
   .confirmUpdateButton {
     cursor: pointer;
     font-family: 'Press Start 2P', cursive;
@@ -230,14 +197,14 @@
     color: black;
   }
 
-  .backToOriginal {
+  .cancelUpdate {
     cursor: pointer;
     font-family: 'Press Start 2P', cursive;
     font-size: .5em;
     border-radius: 50px;
     padding: 6px;
     background-color: rgba(217, 220, 41, 0.684);
-    color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.676);
     border: none;
     position: absolute;
     z-index: 1;
@@ -246,7 +213,7 @@
     transition: .3s;
   }
 
-  .backToOriginal:hover {
-    background-color: green;
+  .cancelUpdate:hover {
+    background-color: rgb(210, 255, 8);
     color: black;
   }

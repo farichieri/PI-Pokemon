@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState  } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { cleanDetail, cleanPokemons, updatePokemon } from '../../actions';
 import { useDispatch, useSelector } from 'react-redux';
+import { cleanDetail, cleanPokemons, updatePokemon, getDetail, getPokemons } from '../../actions';
 import styles from './Update.module.css'
 import Loader from '../Loader/Loader';
 
@@ -27,10 +27,14 @@ import unknown from '../../images/logos/unknown.png'
 import shadow from '../../images/logos/shadow.jpg'
 
 function Update() {
-  const dispatch = useDispatch();
   const myPokemon = useSelector((state) => state.detail);
-  const {id} = useParams();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {id} = useParams();
+
+  useEffect(() => {
+    dispatch(getDetail(id))
+}, [dispatch, id])
 
   function handleClick() {
     dispatch(cleanDetail());
@@ -84,13 +88,22 @@ function getLogoType(type) {
   }
 }
 
+// const [input, setInput] = useState({
+//   hp: myPokemon[0].hp,
+//   attack: myPokemon[0].attack,
+//   defense: myPokemon[0].defense,
+//   speed: myPokemon[0].speed,
+//   height: myPokemon[0].height,
+//   weight: myPokemon[0].weight,
+// })
+
 const [input, setInput] = useState({
-  hp: myPokemon[0].hp,
-  attack: myPokemon[0].attack,
-  defense: myPokemon[0].defense,
-  speed: myPokemon[0].speed,
-  height: myPokemon[0].height,
-  weight: myPokemon[0].weight,
+  hp: 0,
+  attack: 0,
+  defense: 0,
+  speed: 0,
+  height: 0,
+  weight: 0,
 })
 
 function handleChange(e) { 
@@ -100,12 +113,19 @@ function handleChange(e) {
   })
 }
 
+const myPassword = "frichieri update";
+
 function handleSubmit(e) {
+  if (myPokemon[0].createdInDb) {
+    if(window.prompt('Password:') === myPassword) {
       e.preventDefault();
-      dispatch(updatePokemon(id, input))
-      dispatch(cleanPokemons());
-      dispatch(cleanDetail());
-      navigate(`/home/${id}`);
+        dispatch(updatePokemon(id, input))
+        dispatch(cleanPokemons());
+        dispatch(cleanDetail());
+        window.alert('Pokemon updated successfully.')
+        navigate(`/home/${id}`);
+    } else window.alert('Password incorrect.')
+  } else window.alert("You can't update an original pokemon.")
 }
 
   return (
@@ -120,7 +140,7 @@ function handleSubmit(e) {
             myPokemon.length > 0 ?
             <div className={styles.detailsContainer}>
               
-                <Link to={'/home/' + id}><button className={styles.backToOriginal}>Cancel</button></Link>
+                <Link to={'/home/' + id}><button className={styles.cancelUpdate}>Cancel</button></Link>
                 <button className={styles.confirmUpdateButton} onClick={(e) => handleSubmit(e)}>Confirm</button>
 
 
@@ -130,19 +150,19 @@ function handleSubmit(e) {
                     <img className={styles.pokemonDetailImg} src={myPokemon[0].img} alt="" />
                     <h4>Stats:</h4>
                     <div className={styles.progressContainer}>
-                        <h3>Hp:</h3><input type='range' value={input.hp} name='hp' placeholder='Hp'max="250" min="0" onChange={handleChange} required/><p>{input.hp}</p>
+                        <h3>Hp:</h3><input type='range' value={input.hp} name='hp' placeholder='Hp'max="250" min="0" onChange={handleChange} autoComplete="off"/><p>{input.hp}</p>
                     </div>
                     <div className={styles.progressContainer}>
-                        <h3>Attack:</h3><input type='range' value={input.attack} name='attack' max="250" min="0" onChange={handleChange} required/><p>{input.attack}</p>
+                        <h3>Attack:</h3><input type='range' value={input.attack} name='attack' max="250" min="0" onChange={handleChange} autoComplete="off"/><p>{input.attack}</p>
                     </div>
                     <div className={styles.progressContainer}>
-                        <h3>Defense:</h3><input type='range' value={input.defense} name='defense' max="250" min="0" onChange={handleChange} required/><p>{input.defense}</p>
+                        <h3>Defense:</h3><input type='range' value={input.defense} name='defense' max="250" min="0" onChange={handleChange} autoComplete="off"/><p>{input.defense}</p>
                     </div>
                     <div className={styles.progressContainer}>
-                        <h3>Speed:</h3><input type='range' value={input.speed} name='speed' max="250" min="0" onChange={handleChange} required/><p>{input.speed}</p>
+                        <h3>Speed:</h3><input type='range' value={input.speed} name='speed' max="250" min="0" onChange={handleChange} autoComplete="off"/><p>{input.speed}</p>
                     </div>
                     <div className={styles.progressContainer}>
-                        <h3>Height:</h3><input type='range' value={input.height} name='height' max="250" min="0" onChange={handleChange} required/><p>{input.height}cms</p>
+                        <h3>Height:</h3><input type='range' value={input.height} name='height' max="250" min="0" onChange={handleChange} autoComplete="off"/><p>{input.height}cms</p>
                     </div>
                     <div className={styles.progressContainer}>
                         <h3>Weight:</h3><input type='range' className={styles.weightProgress} value={input.weight} name='weight' max="250" min="0" onChange={handleChange} required/><p>{input.weight}kgs</p>

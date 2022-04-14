@@ -93,19 +93,6 @@
   padding-right: 5px;
 }
   
-.progress-blue span {
-  background-color: blue;
-}
-.progress-green span {
-  background-color: green;
-}
-.progress-purple span {
-  background-color: indigo;
-}
-.progress-red span {
-  background-color: red;
-}
-  
 .progressContainer {
   display: flex;
   color: white;
@@ -117,7 +104,7 @@ progress {
   border-radius: 7px; 
   width: 200px;
   height: 12px;
-  margin: 1px;
+  margin-top: 2px;
   animation: load 3s ease-out forwards;
   flex-direction: row;
   position: absolute;
@@ -151,6 +138,7 @@ progress::-moz-progress-bar {
 }
 
 .details p {
+  margin-top: 4px;
   position: absolute;
   text-align: left;
   left: 590px;

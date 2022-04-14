@@ -60,6 +60,13 @@ function Details() {
       else alert("You can't delete an original pokemon.")
     }
 
+    function handleUpdate() {
+      if (myPokemon[0].createdInDb) {
+        navigate("/update/" + id)
+      }
+      else window.alert("You can't update an original pokemon")
+    }
+
     function getLogoType(type) {
         switch(type) {
           case 'bug':
@@ -119,9 +126,7 @@ function Details() {
             <div className={styles.detailsContainer}>
               <button className={styles.pokemonDelete} onClick={() => handleDelete()}>Delete</button>
               
-              <Link to={"/update/" + id}>
-                <button className={styles.updateButton}>Update</button>
-              </Link>
+                <button onClick={() => handleUpdate()} className={styles.updateButton}>Update</button>
 
 
                 <h2 className={styles.detailsId}>#{(myPokemon[0].id.length > 5 ? myPokemon[0].id.substring(0, 4) + "..." : myPokemon[0].id)}</h2>

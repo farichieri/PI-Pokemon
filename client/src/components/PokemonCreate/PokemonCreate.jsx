@@ -127,7 +127,7 @@ function PokemonCreate() {
         if(window.prompt('Password:') === myPassowrd) {
             e.preventDefault();
             dispatch(postPokemon(input))
-            alert('Pokemon created!')
+            alert('Pokemon created successfully.')
             setInput({
                 name: '',
                 hp: '',
@@ -142,7 +142,7 @@ function PokemonCreate() {
             dispatch(cleanPokemons());
             dispatch(cleanDetail());
             navigate('/home');
-        } else alert('Password incorrect');
+        } else alert('Password incorrect.');
     }
 
     function handleDelete(el) {
