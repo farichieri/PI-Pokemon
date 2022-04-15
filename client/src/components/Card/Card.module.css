@@ -9,6 +9,8 @@
   opacity: 1;
   transition: .5s;
   margin: 5px;
+  animation-name: appear;
+  animation-duration: 1s;
 }
 
 .cardContainer {
@@ -71,7 +73,9 @@
 
 .typesContainer {
   margin: 5px;
-
 }
 
-  
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

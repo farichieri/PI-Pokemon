@@ -117,13 +117,13 @@ const myPassword = "frichieri update";
 
 function handleSubmit(e) {
   if (myPokemon[0].createdInDb) {
+    dispatch(cleanPokemons());
+    dispatch(cleanDetail());
     if(window.prompt('Password:') === myPassword) {
       e.preventDefault();
-        dispatch(updatePokemon(id, input))
-        dispatch(cleanPokemons());
-        dispatch(cleanDetail());
-        window.alert('Pokemon updated successfully.')
-        navigate(`/home/${id}`);
+      dispatch(updatePokemon(id, input))
+      window.alert('Pokemon updated successfully.')
+      navigate(`/home/${id}`);
     } else window.alert('Password incorrect.')
   } else window.alert("You can't update an original pokemon.")
 }

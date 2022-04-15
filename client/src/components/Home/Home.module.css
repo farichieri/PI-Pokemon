@@ -19,7 +19,6 @@
   height: 80vh;
   justify-content: center;
   align-content: center;
-
 }
 
 /* CARDS END */
@@ -169,6 +168,11 @@
   width: 100%;
 }
 /* END PAGINATION */
+
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 
 /* RESPONSIVE */
 @media only screen and (max-width: 1300px) {

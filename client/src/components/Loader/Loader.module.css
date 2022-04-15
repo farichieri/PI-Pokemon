@@ -3,6 +3,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 .loading img {
@@ -15,3 +17,8 @@
     font-size: 1.2em;
 
 }
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }

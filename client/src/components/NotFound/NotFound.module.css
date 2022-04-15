@@ -9,6 +9,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     height: 200px;
+    animation-name: appear;
+    animation-duration: 1s;
 }
 
 .notFound img {
@@ -25,3 +27,8 @@
     color: whitesmoke;
     font-size: 1.2em;
 }
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }

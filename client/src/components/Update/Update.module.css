@@ -16,6 +16,8 @@
       background-color: rgba(0, 0, 0, 0.755);
       border-radius: 10%;
       box-shadow: 0 0 10px 1px aqua;    
+      animation-name: appear;
+      animation-duration: 2s;   
   }
   
   .details {
@@ -27,6 +29,8 @@
       height: 200px;
       width: 200px;
       border-radius: 10px;
+      animation-name: appear;
+      animation-duration: 3s;   
   }
   
   .detailsName {
@@ -216,4 +220,9 @@
   .cancelUpdate:hover {
     background-color: rgb(210, 255, 8);
     color: black;
+  }
+
+  @keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
   }
