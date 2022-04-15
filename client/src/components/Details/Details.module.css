@@ -72,6 +72,9 @@
   color: #CE2211;
 }
 
+/* Progress bar */
+
+
 .animated-progress {
   width: 300px;
   height: 30px;
@@ -100,7 +103,7 @@
   text-align: center;
 }
 
-progress {
+.progressContainer progress {
   border-radius: 7px; 
   width: 200px;
   height: 12px;
@@ -111,25 +114,52 @@ progress {
   left: 22%;
 }
 
-progress::-webkit-progress-bar {
+.progressContainer progress::-webkit-progress-bar {
   background-color: rgba(0, 0, 0, 0.722);
   border-radius: 7px;    
 }
 
-progress::-webkit-progress-value {
+.progressContainer progress::-webkit-progress-value {
   background:#04ff04;
   box-shadow: 0px 0px 15px 0px #e1e1e1;
   border-radius: 1px 10px 10px 1px;
 }
 
-progress::-moz-progress-bar {
+.progressContainerprogress::-moz-progress-bar {
   box-shadow: 0 10px 40px -10px #fff;
+}
+
+/* test */
+.progressContainer progress[value] {
+  -moz-appearance: none;
+  appearance: none;
+  border: none;                /* Firefox also renders a border */
+  -webkit-transition: all 2s;
+  transition: all 2s;
+
+}
+
+.progressContainer progress::-webkit-progress-value {
+  border-radius: 1px 10px 10px 1px;
+  background-color: #04ff04;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+}
+
+.progressContainer progress::-moz-progress-bar { /* for FF ::progress-bar is the value bar */
+  border-radius: 1px 10px 10px 1px;
+  background-color: rgba(162, 162, 162, 0.784);
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  background:#04ff04;
+  box-shadow: 0px 0px 10px 1px #fff;
 }
 
 @keyframes load {
   0% { width: 0; }
   100% { width: 60%; }
 }
+/* End Progress bar */
 
 .details h3 {
   font-size: .6em;

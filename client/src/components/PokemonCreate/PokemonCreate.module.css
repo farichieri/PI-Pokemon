@@ -39,55 +39,88 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
-  height: 600px;
+  height: 570px;
   max-width: 900px;
-  margin-top: 40px;
+  margin-top: 30px;
   background-color: rgba(0, 0, 0, 0.755);
   border-radius: 70px;
   box-shadow: 0 0 10px 1px aqua;    
 }
 
 .pokemonCreate {
-  margin: 0% 10% 10% 10%;
+  margin: 0% 10% 0 10%;
 }
 
 .pokemonCreate h1 {
   color: #CE2211;
   font-size: 2em;
-  margin: 50px 0 50px 0;
+  margin: 30px 0 45px 0;
 }
 
 .pokemonCreate form {
   max-height: 350px;
 }
 
-
+/* Progress bar */
 .pokemonCreate progress {
-  border-radius: 50px; 
+  border-radius: 7px; 
   height: 13px;
+  margin-top: 2px;
   animation: load 3s ease-out forwards;
   flex-direction: row;
   position: absolute;
   left: 35%;
 }
 
+
 .pokemonCreate progress::-webkit-progress-bar {
   background-color: rgba(162, 162, 162, 0.784);
+  border-radius: 1px 10px 10px 1px;
 }
 
 .pokemonCreate progress::-webkit-progress-value {
   background:#04ff04;
+  border-radius: 1px 10px 10px 1px;
   box-shadow: 0px 0px 15px 0px #e1e1e1;
+
 }
 
 .pokemonCreate progress::-moz-progress-bar {
   box-shadow: 0 10px 40px -10px #fff;
+  /* background:#04ff04; */
+}
+
+/* test */
+.pokemonCreate progress[value] {
+  -moz-appearance: none;
+  appearance: none;
+  border: none;                /* Firefox also renders a border */
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.pokemonCreate progress::-webkit-progress-value {
+  border-radius: 1px 10px 10px 1px;
+  background-color: #04ff04;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+}
+
+.pokemonCreate progress::-moz-progress-bar { /* for FF ::progress-bar is the value bar */
+  border-radius: 1px 10px 10px 1px;
+  background-color: rgba(162, 162, 162, 0.784);
+  box-shadow: 0 10px 40px -10px #fff;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  background:#04ff04;
+  box-shadow: 0px 0px 10px 1px #fff;
 }
 
 @keyframes load {
   0% { width: 0; }
   100% { width: 52%; }
 }
+/* End Progress bar */
 
 .pokemonCreate input {
   width: 60px
@@ -151,7 +184,7 @@
   color: black;
   transition: .3s;
   width: 50%;
-  margin-top: 100px;
+  margin-top: 105px;
 }
 
 .createButton:hover {
@@ -281,7 +314,7 @@ input::-webkit-outer-spin-button {
   width: 125px;
   height: 125px;
   border-radius: 10px;
-  bottom: 12%;
+  bottom: 10%;
   left: 43%;
 }
 

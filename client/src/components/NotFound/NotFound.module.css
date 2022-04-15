@@ -1,18 +1,27 @@
+.notFoundContainer {
+    height: 80vh;
+    width: 800px;
+}
+
 .notFound{
-    position: absolute;
-    top: 55%;
+    position: relative;
+    top: 62%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 200px;
 }
 
 .notFound img {
-    margin-right: 15%;
-    margin-top: 17%;
     width: 400px;
     height: auto;
 }
 
 .notFound h1 {
+    position: absolute;
+    width: 100%;
+    top: 94%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: whitesmoke;
     font-size: 1.2em;
 }

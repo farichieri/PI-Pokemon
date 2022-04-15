@@ -231,7 +231,7 @@ return (
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Hp: </label>
-                        <input type='number' value={input.hp} name='hp' placeholder='Hp'max="250" min="0" onChange={handleChange} required/>
+                        <input type='number' value={input.hp} name='hp' placeholder='Hp'max="250" min="0" onChange={handleChange} required />
                         <progress max="250" value={input.hp}></progress>
                         <span>{errors.hp && (<p className='error'>{errors.hp}</p>)}</span>
                     </div>

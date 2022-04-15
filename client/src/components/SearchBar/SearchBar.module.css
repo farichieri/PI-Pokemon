@@ -13,7 +13,7 @@
   font-family: 'Press Start 2P', cursive;
   width: 100%;
   float: left;
-  color: #ff0000;
+  color: #CE2211;
   border: 0;
   background: transparent;
   border-radius: 20px 0 0 20px;
@@ -24,6 +24,10 @@
   background-repeat: no-repeat;
   margin: 5px auto;
   margin-left: 20px;
+}
+
+.searchBarContainer input::placeholder{
+  color: gray;
 }
   
 .searchBarContainer input:focus {
