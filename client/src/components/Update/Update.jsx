@@ -125,6 +125,7 @@ function handleSubmit(e) {
       window.alert('Pokemon updated successfully.')
       navigate(`/home/${id}`);
     } else window.alert('Password incorrect.')
+      navigate(`/home/${id}`);
   } else window.alert("You can't update an original pokemon.")
 }
 

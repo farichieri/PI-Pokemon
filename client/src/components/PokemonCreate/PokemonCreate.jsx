@@ -121,7 +121,7 @@ function PokemonCreate() {
         }
     }
 
-    const myPassowrd = "frichieri";
+    const myPassowrd = "frichieri create";
 
     function handleSubmit(e) {
         if(window.prompt('Password:') === myPassowrd) {
