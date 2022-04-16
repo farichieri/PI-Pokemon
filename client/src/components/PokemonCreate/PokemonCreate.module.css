@@ -68,7 +68,7 @@
   border-radius: 7px; 
   height: 13px;
   margin-top: 2px;
-  animation: load 3s ease-out forwards;
+  animation: load 3s ease-in forwards;
   flex-direction: row;
   position: absolute;
   left: 35%;

@@ -3,12 +3,12 @@
   justify-content: center;
   align-items: center;
   list-style-type: none;
-  width: 200px;
+  width: 100%;
   margin: 0 auto;
   bottom: 13px;
   position: relative;
   bottom: 5px;
-  filter: brightness(90%)
+  filter: brightness(90%);
  }
   
 .paginationContainer li:hover {

@@ -4,7 +4,8 @@ const getApiInfo = async () => {
     try {
         const apiUrl = await axios.get('https://pokeapi.co/api/v2/pokemon') 
         const apiUrlRest = await axios.get(apiUrl.data.next);
-        const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results);
+        const apiUrlRest2 = await axios.get(apiUrlRest.data.next);
+        const allPokemons = apiUrl.data.results.concat(apiUrlRest.data.results).concat(apiUrlRest2.data.results)
         
         function capitalizeFirstLetter(str) {
             return str.charAt(0).toUpperCase() + str.slice(1);
