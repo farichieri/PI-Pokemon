@@ -8,7 +8,7 @@ export default function LandingPage() {
             <div className={styles.welcomeText}>
                 <h1>Welcome</h1>
             </div>
-            <h1 className={styles.casePhone}>I'm sorry, I'm not responsive at the moment :(</h1>
+            <h1 className={styles.casePhone}>I'm sorry, I'm not responsive at the moment :( Whatch me in a computer!</h1>
             <div className={styles.welcome}>
                 <div className={styles.image} />
                 <Link to='/home'> 
