@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getTypes, postPokemon, cleanPokemons, cleanDetail, getPokemons } from '../../actions';
 import { useDispatch, useSelector} from 'react-redux';
 import styles from './PokemonCreate.module.css'
-import FileBase from 'react-file-base64';
+// import FileBase from 'react-file-base64';
 
 import bug from '../../images/logos/bug.png'
 import dark from '../../images/logos/dark.png'
@@ -288,14 +288,14 @@ return (
                     </div>
                     <div className={styles.inputContainer}>
                         <label>Image: </label>
-                        {/* <input type='text' value={input.img} name='img' placeholder='Link' onChange={handleChange} /> */}
-                        <FileBase type="file" multiple={false} name='img' onDone={({base64}) => setInput({ ...input, img: base64 })} />
+                        <input type='text' value={input.img} name='img' placeholder='Link' onChange={handleChange} />
+                        {/* <FileBase type="file" multiple={false} name='img' onDone={({base64}) => setInput({ ...input, img: base64 })} /> */}
 
                         <img src={input.img} alt=""/>
                         <span>{errors.img && (<p className='error'>{errors.img}</p>)}</span>
                     </div>
-                        {/* <button className={styles.createButton} type='submit' disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.img || errors.types || input.name === '' ? true : false } >Create</button> */}
-                        <button className={styles.createButton} type='submit' disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.types || input.name === '' ? true : false } >Create</button>
+                        <button className={styles.createButton} type='submit' disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.img || errors.types || input.name === '' ? true : false } >Create</button>
+                        {/* <button className={styles.createButton} type='submit' disabled={errors.name || errors.hp || errors.attack || errors.defense || errors.speed || errors.height || errors.weight || errors.types || input.name === '' ? true : false } >Create</button> */}
                 </form>
             </div>
         </div>
