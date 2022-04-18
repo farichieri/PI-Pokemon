@@ -203,7 +203,7 @@ function PokemonCreate() {
             errors.weight = 'Weight required';
         } if (!input.img.length) {
             errors.img = 'Link image required';
-        } if (!/([^\s(["<,>/]*)(\/)[^\s[",><]*(.png|.jpg|jpeg|avatars|png|svg|.jpeg|jpg)(\?[^\s[",><]*)?/g.test(input.img)) {
+        } if (!/([^\s(["<,>/]*)(\/)[^\s[",><]*(.png|.jpg|jpeg|avatars|png|svg|.jpeg|jpg|encrypted)(\?[^\s[",><]*)?/g.test(input.img)) {
             errors.img = 'Try with other link';
         } if (!input.img) {
             errors.img = 'Image required'
